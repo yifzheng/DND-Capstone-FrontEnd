@@ -7,11 +7,13 @@ import {
 
 const initialState = {
   characters: [],
-  dndData: [],
-  classes: [],
-  // subclasses: [],
-  // races: [],
+  dndData: {},
+  class: [],
+  subclass: [],
+  skil: [] // static doesnt change 
+
 }
+
 
 const gotAllCharacters = (data) => {
   return {
@@ -34,6 +36,7 @@ export const getAllCharacters = () => {
 
 // Dynamic API calls
 const gotApiData = (data) => {
+  console.log(`API DATA ACTION CREATOR`)
   return {
     type: GOT_API_DATA,
     data,
@@ -41,6 +44,7 @@ const gotApiData = (data) => {
 }
 
 export const getApiData = (searchApi) => {
+  console.log(`API DATA ACTION THUNK`)
   return async (dispatch) => {
     try {
       const response = await axios.get(
@@ -69,7 +73,7 @@ export const getAllClasses = () => {
         `http://localhost:8080/api/dndapi/classes`
       )
       console.log('getAllClasses axios response:', response.data.response)
-      dispatch(gotAllClasses(response.data.response))
+      dispatch(gotAllClasses(response.data.response.results))
     } catch (error) {
       console.error(error)
     }
