@@ -33,6 +33,7 @@ class IndividualSubClass extends Component {
         return (
             <div>
                 <h1>{ this.props.class.name }</h1>
+                <h2>Class: {this.props.class.class.name}</h2>
                 <h2>Sub Class Flavor: { this.props.class.subclass_flavor }</h2>
                 <div className="subclass-desc">
                     <h2>Sub Class Desciption</h2>
