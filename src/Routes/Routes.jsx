@@ -1,6 +1,8 @@
 import React from 'react'
+
 import { Route, Switch } from 'react-router-dom'
 
+// Main Imports
 import Homepage from '../components/Homepage'
 import AllCharacters from '../components/AllCharacters'
 
@@ -14,9 +16,21 @@ import StartingEquipments from "../components/classes/startingEquipment/Starting
 import IndividualEquipment from "../components/classes/startingEquipment/IndividualEquipment";
 import DisplayProficiencies from "../components/classes/classes/displayClass/individualClass/DisplayProficiencies"
 import ClassLevels from "../components/classes/classes/displayClass/individualClass/ClassLevels"
+// Races Imports
 import Races from '../components/races/Races'
 import IndividualRace from '../components/races/IndividualRace'
 import Bonus from '../components/races/Bonus'
+import Language from '../components/races/Language'
+import Trait from '../components/races/Trait'
+import Proficiency from '../components/races/Proficiency'
+
+// Monsters Imports
+import Monsters from '../components/monsters/Monsters'
+import IndividualMonster from '../components/monsters/IndividualMonster'
+import ConditionImmunity from '../components/monsters/ConditionImmunity'
+
+// Create Character Imports
+import CreateCharacter from '../components/characterCreation/CreateCharacter'
 
 const Routes = () => {
 	return (
@@ -33,11 +47,30 @@ const Routes = () => {
 			<Route exact path="/starting-equipments" component={ StartingEquipments } />
 			<Route exact path="/proficiencies/:index" component={ DisplayProficiencies } />
 			<Route exact path="/class/:index/levels" component={ ClassLevels } />
-			<Route path="/races/:race" component={ IndividualRace } />
-			<Route eaxct path="/races" component={ Races } />
-			<Route path="/bonus/:bonus" component={ Bonus } />
-		</Switch>
-	);
-};
+			{/* RACES ROUTES BELOW */}
+      <Route path="/races/:race" component={IndividualRace} />
+      <Route eaxct path="/races" component={Races} />
+      <Route path="/bonus/:bonus" component={Bonus} />
+      <Route path="/languages/:language" component={Language} />
+      <Route path="/traits/:trait" component={Trait} />
+      <Route path="/proficiencies/:proficiency" component={Proficiency} />
+      {/* END OF RACES ROUTES */}
+      {/* MONSTERS ROUTES BELOW */}
+      <Route path="/monsters/:monster" component={IndividualMonster} />
+      <Route exact path="/monsters" component={Monsters} />
+      <Route
+        path="/conditionImmunity/:condition"
+        component={ConditionImmunity}
+      />
+      {/* END OF MONSTERS ROUTES */}
+
+      {/* CREATE CHARACTER ROUTES */}
+      <Route path="/createCharacter" component={CreateCharacter} />
+      {/* END OF CREATE CHARACTER ROUTES */}
+      
+    </Switch>
+  )
+}
+
 
 export default Routes

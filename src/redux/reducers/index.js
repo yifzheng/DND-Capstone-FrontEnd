@@ -10,10 +10,8 @@ const initialState = {
   dndData: {},
   class: [],
   subclass: [],
-  skil: [] // static doesnt change 
-
+  skil: [], // static doesnt change
 }
-
 
 const gotAllCharacters = (data) => {
   return {
@@ -34,7 +32,7 @@ export const getAllCharacters = () => {
   }
 }
 
-// Dynamic API calss
+// Dynamic API calls
 const gotApiData = (data) => {
   console.log(`API DATA ACTION CREATOR`)
   return {

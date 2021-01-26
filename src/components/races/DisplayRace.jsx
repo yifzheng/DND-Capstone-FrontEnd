@@ -7,7 +7,7 @@ class DisplayRace extends Component {
     console.log('in the display race component')
     return (
       <div>
-        <Link to={`/races/${this.props.name}`}>{this.props.name}</Link>
+        <Link to={`/races/${this.props.index}`}>{this.props.name}</Link>
       </div>
     )
   }

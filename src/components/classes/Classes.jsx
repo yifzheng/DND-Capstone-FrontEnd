@@ -1,4 +1,5 @@
-import React from 'react'
+// import React from 'react'
+
 
 import Class from './classes/Classes';
 import SubClass from "./subclasses/SubClass";
@@ -16,3 +17,4 @@ const Classes = () => {
     )
 
 export default Classes;
+
