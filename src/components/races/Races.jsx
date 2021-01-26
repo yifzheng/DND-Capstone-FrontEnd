@@ -24,7 +24,7 @@ class races extends Component {
         <h1>Races</h1>
         {this.props.races.results !== undefined ? (
           this.props.races.results.map((race, index) => (
-            <DisplayRace key={index} name={race.name} />
+            <DisplayRace key={index} index={race.index} name={race.name} />
           ))
         ) : (
           <span />

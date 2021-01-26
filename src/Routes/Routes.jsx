@@ -8,6 +8,8 @@ import IndividualClass from '../components/classes/classes/displayClass/individu
 import Races from '../components/races/Races'
 import IndividualRace from '../components/races/IndividualRace'
 import Bonus from '../components/races/Bonus'
+import Language from '../components/races/Language'
+import Trait from '../components/races/Trait'
 
 const Routes = () => {
   return (
@@ -19,6 +21,8 @@ const Routes = () => {
       <Route path="/races/:race" component={IndividualRace} />
       <Route eaxct path="/races" component={Races} />
       <Route path="/bonus/:bonus" component={Bonus} />
+      <Route path="/languages/:language" component={Language} />
+      <Route path="/traits/:trait" component={Trait} />
     </Switch>
   )
 }

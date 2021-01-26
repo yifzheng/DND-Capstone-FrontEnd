@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 class IndividualRace extends Component {
   componentDidMount = () => {
-    let race = 'races/' + this.props.match.params.race.toLowerCase()
+    const race = 'races/' + this.props.match.params.race
     this.props.getApiData(race)
 
     setTimeout(() => {
@@ -18,7 +18,7 @@ class IndividualRace extends Component {
   render() {
     return (
       <div>
-        <h1>{this.props.match.params.race}</h1>
+        <h1>Race: {this.props.race.name}</h1>
 
         <h3>Ability Bonuses</h3>
         {this.props.race.ability_bonuses !== undefined ? (
@@ -71,7 +71,9 @@ class IndividualRace extends Component {
             console.log('element', element)
             return (
               <div key={index}>
-                <p>{element.name}</p>
+                <Link to={`/languages/${element.index}`}>
+                  <p>{element.name}</p>
+                </Link>
               </div>
             )
           })
@@ -147,7 +149,9 @@ class IndividualRace extends Component {
             console.log('element', element)
             return (
               <div key={index}>
-                <p>{element.name}</p>
+                <Link to={`/traits/${element.index}`}>
+                  <p>{element.name}</p>
+                </Link>
               </div>
             )
           })

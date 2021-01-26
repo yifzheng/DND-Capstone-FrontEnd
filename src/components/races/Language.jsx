@@ -5,17 +5,22 @@ import { getApiData } from '../../redux/reducers'
 
 import { Link } from 'react-router-dom'
 
-class Bonus extends Component {
+class Language extends Component {
   state = {
-    raceThatCalled: this.props.bonus, // holds the race that called this page before redux state is overwritten
+    raceThatCalled: this.props.language, // holds the race that called this page before redux state is overwritten
   }
 
-  componentDidMount = () => {
-    const bonus = 'ability-scores/' + this.props.match.params.bonus
-    this.props.getApiData(bonus)
+  componentDidMount = async () => {
+    const language = 'languages/' + this.props.match.params.language
+    await this.props.getApiData(language)
+
+    setTimeout(() => {
+      console.log('language:', this.props.language)
+    }, 800)
   }
 
   render() {
+    console.log('url param:', this.props.match.params.language)
     return (
       <div>
         {/* If page refreshes, then race that called this is undefined b/c its overwritten, thus it shows nothing */}
@@ -27,19 +32,15 @@ class Bonus extends Component {
           <span />
         )}
 
-        <h1>Bonus: {this.props.bonus.full_name}</h1>
+        <h1>Language: {this.props.language.name}</h1>
 
         <h3>Description</h3>
-        {this.props.bonus.desc !== undefined ? (
-          this.props.bonus.desc.map((element, index) => {
-            return (
-              <div key={index}>
-                <p>{element}</p>
-              </div>
-            )
-          })
+        {this.props.language.desc !== undefined ? (
+          this.props.language.desc
         ) : (
-          <span />
+          <div>
+            <p>This language does not have a description.</p>
+          </div>
         )}
       </div>
     )
@@ -48,7 +49,7 @@ class Bonus extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    bonus: state.dndData,
+    language: state.dndData,
   }
 }
 
@@ -58,4 +59,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Bonus)
+export default connect(mapStateToProps, mapDispatchToProps)(Language)
