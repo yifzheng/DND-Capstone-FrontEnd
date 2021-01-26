@@ -55,6 +55,11 @@ const Routes = () => {
         component={IndividualEquipment}
       />
       <Route exact path="/starting-equipments" component={StartingEquipments} />
+
+      {/* For races */}
+      <Route path="/races/proficiencies/:proficiency" component={Proficiency} />
+
+      {/* For classes */}
       <Route
         exact
         path="/proficiencies/:index"
@@ -70,7 +75,6 @@ const Routes = () => {
       <Route eaxct path="/spells" component={Spells} />
       <Route path="/languages/:language" component={Language} />
       <Route path="/traits/:trait" component={Trait} />
-      <Route path="/races/proficiencies/:proficiency" component={Proficiency} />
       {/* END OF RACES ROUTES */}
 
       {/* MONSTERS ROUTES BELOW */}
