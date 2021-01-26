@@ -3,7 +3,6 @@ import {
   GOT_ALL_CHARACTERS,
   GOT_ALL_CLASSES,
   GOT_API_DATA,
-  GOT_ALL_CLASSES,
 } from './actionTypes'
 
 const initialState = {
@@ -33,7 +32,7 @@ export const getAllCharacters = () => {
   }
 }
 
-// Dynamic API calss
+// Dynamic API calls
 const gotApiData = (data) => {
   return {
     type: GOT_API_DATA,
