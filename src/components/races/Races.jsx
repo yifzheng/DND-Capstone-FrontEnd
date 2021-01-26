@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { getApiData } from '../../redux/reducers'
 
 class races extends Component {
+  // test comment
   componentDidMount = async () => {
     const response = await this.props.getApiData('proficiencies') // the first slash is redundant
     console.log('API DATA:', response)
