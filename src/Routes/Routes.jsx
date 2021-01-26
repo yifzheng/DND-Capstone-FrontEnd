@@ -24,6 +24,9 @@ import Monsters from '../components/monsters/Monsters'
 import IndividualMonster from '../components/monsters/IndividualMonster'
 import ConditionImmunity from '../components/monsters/ConditionImmunity'
 
+// Create Character Imports
+import CreateCharacter from '../components/characterCreation/CreateCharacter'
+
 const Routes = () => {
   return (
     <Switch>
@@ -50,6 +53,10 @@ const Routes = () => {
         component={ConditionImmunity}
       />
       {/* END OF MONSTERS ROUTES */}
+
+      {/* CREATE CHARACTER ROUTES */}
+      <Route path="/createCharacter" component={CreateCharacter} />
+      {/* END OF CREATE CHARACTER ROUTES */}
     </Switch>
   )
 }
