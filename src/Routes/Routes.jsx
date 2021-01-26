@@ -20,8 +20,15 @@ import ClassLevels from "../components/classes/classes/displayClass/individualCl
 import Races from '../components/races/Races'
 import IndividualRace from '../components/races/IndividualRace'
 import Bonus from '../components/races/Bonus'
+
+import Spells from '../components/spells/Spells'
+
 import Language from '../components/races/Language'
 import Trait from '../components/races/Trait'
+
+import IndividualSpell from '../components/spells/IndividualSpell'
+
+
 import Proficiency from '../components/races/Proficiency'
 
 // Monsters Imports
@@ -31,6 +38,7 @@ import ConditionImmunity from '../components/monsters/ConditionImmunity'
 
 // Create Character Imports
 import CreateCharacter from '../components/characterCreation/CreateCharacter'
+
 
 const Routes = () => {
 	return (
@@ -51,8 +59,15 @@ const Routes = () => {
       <Route path="/races/:race" component={IndividualRace} />
       <Route eaxct path="/races" component={Races} />
       <Route path="/bonus/:bonus" component={Bonus} />
+	  <Route path="/spells/:spell" component={IndividualSpell} />
+	  <Route eaxct path="/spells" component={Spells} />
+	  
+
       <Route path="/languages/:language" component={Language} />
       <Route path="/traits/:trait" component={Trait} />
+
+
+
       <Route path="/proficiencies/:proficiency" component={Proficiency} />
       {/* END OF RACES ROUTES */}
       {/* MONSTERS ROUTES BELOW */}
@@ -67,7 +82,7 @@ const Routes = () => {
       {/* CREATE CHARACTER ROUTES */}
       <Route path="/createCharacter" component={CreateCharacter} />
       {/* END OF CREATE CHARACTER ROUTES */}
-      
+
     </Switch>
   )
 }
