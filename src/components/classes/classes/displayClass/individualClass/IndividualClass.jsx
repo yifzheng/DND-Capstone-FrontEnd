@@ -46,6 +46,7 @@ class IndividualClass extends Component {
         }
         return (
             <div>
+                <Link to = {`/classes`}><h4>Back to Classes Information</h4></Link>
                 <h1>{ this.props.class.name }</h1>
                 <h2>Hit Die: { this.props.class.hit_die }</h2>
                 <div className="p_choices">
@@ -72,8 +73,8 @@ class IndividualClass extends Component {
                         )
                     } ) }
                 </div>
-                <Link to={ `/starting-equipment/${this.props.match.params.index}` }><h2>Starting Equipment { this.props.class.starting_equipment }</h2></Link>
-                <Link to={ `/classes/${this.props.match.params.index}/levels` }><h2>Class Levels: { this.props.class.class_levels }</h2></Link>
+                <Link to={ `/starting-equipment/${this.props.match.params.index}` }><h2>Starting Equipment</h2></Link>
+                <Link to={ `/class/${this.props.match.params.index}/levels` }><h2>Class Levels</h2></Link>
                 <div className="subclasses">
                     <h2>Sub-Classes</h2>
                     { this.props.class.subclasses.map( ( item, index ) => {

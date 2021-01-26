@@ -5,7 +5,7 @@ const SavingThrows = ({ name, classIndex }) => {
     console.log(`Display class index ${classIndex}`);
     return(
         <div>
-            <Link to = {`/ability-scores/${classIndex}`}><h4>{name}</h4></Link>
+            <Link to = {`/bonus/${classIndex}`}><h4>{name}</h4></Link>
         </div>
     )
 }
