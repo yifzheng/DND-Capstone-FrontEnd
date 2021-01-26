@@ -1,18 +1,28 @@
 import React from 'react'
+
 import { Route, Switch } from 'react-router-dom'
 
+// Main Imports
 import Homepage from '../components/Homepage'
 import AllCharacters from '../components/AllCharacters'
 
+// Classes Imports
 import Classes from '../components/classes/Classes'
 import IndividualClass from '../components/classes/classes/displayClass/individualClass/IndividualClass'
 import SubClasses from '../components/classes/subclasses/SubClasses'
 import IndividualSubClass from '../components/classes/subclasses/IndividualSubClass'
+
+// Races Imports
 import Races from '../components/races/Races'
 import IndividualRace from '../components/races/IndividualRace'
 import Bonus from '../components/races/Bonus'
 import Language from '../components/races/Language'
 import Trait from '../components/races/Trait'
+
+// Monsters Imports
+import Monsters from '../components/monsters/Monsters'
+import IndividualMonster from '../components/monsters/IndividualMonster'
+import ConditionImmunity from '../components/monsters/ConditionImmunity'
 
 const Routes = () => {
   return (
@@ -23,11 +33,23 @@ const Routes = () => {
       <Route exact path="/class/:index" component={IndividualClass} />
       <Route exact path="/subclasses" component={SubClasses} />
       <Route exact path="/subclass/:index" component={IndividualSubClass} />
+
+      {/* RACES ROUTES BELOW */}
       <Route path="/races/:race" component={IndividualRace} />
       <Route eaxct path="/races" component={Races} />
       <Route path="/bonus/:bonus" component={Bonus} />
       <Route path="/languages/:language" component={Language} />
       <Route path="/traits/:trait" component={Trait} />
+      {/* END OF RACES ROUTES */}
+
+      {/* MONSTERS ROUTES BELOW */}
+      <Route path="/monsters/:monster" component={IndividualMonster} />
+      <Route exact path="/monsters" component={Monsters} />
+      <Route
+        path="/conditionImmunity/:condition"
+        component={ConditionImmunity}
+      />
+      {/* END OF MONSTERS ROUTES */}
     </Switch>
   )
 }
