@@ -126,23 +126,24 @@ class IndividualRace extends Component {
         )}
 
         <h3>Starting Proficiency Options</h3>
-        <p>
-          Choose:
-          {this.props.race.starting_proficiency_options !== undefined ? (
-            this.props.race.starting_proficiency_options.choose
-          ) : (
-            <div>
-              <p>None</p>
-            </div>
-          )}
-        </p>
+
+        {this.props.race.starting_proficiency_options !== undefined ? (
+          <div>
+            Choose: {this.props.race.starting_proficiency_options.choose}
+          </div>
+        ) : (
+          <div>
+            <p>Choose: None</p>
+          </div>
+        )}
+
         {this.props.race.starting_proficiency_options !== undefined ? (
           this.props.race.starting_proficiency_options.from.length !== 0 ? (
             this.props.race.starting_proficiency_options.from.map(
               (element, index) => {
                 return (
                   <div key={index}>
-                    <Link to={`/proficiencies/${element.index}`}>
+                    <Link to={`/races/proficiencies/${element.index}`}>
                       <p>{element.name}</p>
                     </Link>
                   </div>
