@@ -18,6 +18,7 @@ import IndividualRace from '../components/races/IndividualRace'
 import Bonus from '../components/races/Bonus'
 import Language from '../components/races/Language'
 import Trait from '../components/races/Trait'
+import Proficiency from '../components/races/Proficiency'
 
 // Monsters Imports
 import Monsters from '../components/monsters/Monsters'
@@ -32,7 +33,7 @@ const Routes = () => {
     <Switch>
       <Route exact path="/" component={Homepage} />
       <Route path="/allCharacters" component={AllCharacters} />
-      <Route exact path="/classes" component={Classes} />
+      {/* <Route exact path="/classes" component={Classes} /> */}
       <Route exact path="/class/:index" component={IndividualClass} />
       <Route exact path="/subclasses" component={SubClasses} />
       <Route exact path="/subclass/:index" component={IndividualSubClass} />
@@ -43,6 +44,7 @@ const Routes = () => {
       <Route path="/bonus/:bonus" component={Bonus} />
       <Route path="/languages/:language" component={Language} />
       <Route path="/traits/:trait" component={Trait} />
+      <Route path="/proficiencies/:proficiency" component={Proficiency} />
       {/* END OF RACES ROUTES */}
 
       {/* MONSTERS ROUTES BELOW */}
