@@ -14,6 +14,5 @@ const Classes = () => {
             <StartingEquipment />
         </div>
     )
-}
 
-export default Classes
+export default Classes;

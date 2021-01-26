@@ -1,5 +1,9 @@
 import axios from 'axios'
-import { GOT_ALL_CHARACTERS, GOT_API_DATA } from './actionTypes'
+import {
+  GOT_ALL_CHARACTERS,
+  GOT_ALL_CLASSES,
+  GOT_API_DATA,
+} from './actionTypes'
 
 const initialState = {
   characters: [],
@@ -7,7 +11,9 @@ const initialState = {
   class: [],
   subclass: [],
   skil: [] // static doesnt change 
+
 }
+
 
 const gotAllCharacters = (data) => {
   return {
@@ -28,6 +34,7 @@ export const getAllCharacters = () => {
   }
 }
 
+// Dynamic API calss
 const gotApiData = (data) => {
   console.log(`API DATA ACTION CREATOR`)
   return {
@@ -51,6 +58,28 @@ export const getApiData = (searchApi) => {
   }
 }
 
+// Classes API Call
+const gotAllClasses = (data) => {
+  return {
+    type: GOT_ALL_CLASSES,
+    data,
+  }
+}
+
+export const getAllClasses = () => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:8080/api/dndapi/classes`
+      )
+      console.log('getAllClasses axios response:', response.data.response)
+      dispatch(gotAllClasses(response.data.response.results))
+    } catch (error) {
+      console.error(error)
+    }
+  }
+}
+
 const rootReducer = (state = initialState, action) => {
   console.log('action in rootReducer:', action)
   switch (action.type) {
@@ -63,6 +92,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         dndData: action.data,
+      }
+    case GOT_ALL_CLASSES:
+      return {
+        ...state,
+        classes: action.data,
       }
     default:
       return state

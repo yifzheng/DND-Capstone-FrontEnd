@@ -3,16 +3,43 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getApiData } from '../../redux/reducers'
 
+import DisplayRace from './DisplayRace'
+
 class races extends Component {
+  state = {
+    races: [],
+  }
+
+  // test comment
   componentDidMount = async () => {
-    const response = await this.props.getApiData('proficiencies') // the first slash is redundant
-    console.log('API DATA:', response)
+    this.fetchRaces('races')
+  }
+
+  fetchRaces = async (searchApi) => {
+    await this.props.getApiData(searchApi)
+
+    setTimeout(() => {
+      this.setState({
+        races: this.props.races.results,
+      })
+    }, 200)
+
+    setTimeout(() => {
+      console.log('RACES STATE', this.state.races)
+    }, 400)
   }
 
   render() {
     return (
       <div>
-        <p>races component</p>
+        <h1>Races</h1>
+        {this.state.races !== undefined ? (
+          this.state.races.map((race, index) => (
+            <DisplayRace key={index} name={race.name} />
+          ))
+        ) : (
+          <span />
+        )}
       </div>
     )
   }
@@ -20,7 +47,7 @@ class races extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    dndData: state.dndData,
+    races: state.dndData,
   }
 }
 
