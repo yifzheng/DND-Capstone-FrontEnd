@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-
-import Routes from "./Routes/Routes";
-import NavBar from "./components/navbar/Navbar";
+import Routes from './Routes/Routes'
+import NavBar from './components/navbar/Navbar'
 
 class App extends Component {
   render() {
