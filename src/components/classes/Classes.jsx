@@ -1,13 +1,14 @@
-import React from 'react'
+// import React from 'react'
 
-import Class from './classes/Classes'
+// import Class from './classes/Classes';
+// import SubClass from "./subclasses/SubClass";
 
-const Classes = () => {
-  return (
-    <div>
-      <Class />
-    </div>
-  )
-}
+// const Classes = () => {
+//     return(
+//         <div>
+//             <Class />
+//             <SubClass />
+//         </div>
+//     )
 
-export default Classes
+// export default Classes

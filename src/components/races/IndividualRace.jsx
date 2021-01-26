@@ -6,32 +6,23 @@ import { getApiData } from '../../redux/reducers'
 import { Link } from 'react-router-dom'
 
 class IndividualRace extends Component {
-  state = {
-    race: '',
-  }
-
   componentDidMount = () => {
-    let race = 'races/' + this.props.match.params.race.toLowerCase()
+    const race = 'races/' + this.props.match.params.race
     this.props.getApiData(race)
 
     setTimeout(() => {
-      this.setState({ race: this.props.race })
-    }, 600)
-
-    setTimeout(() => {
-      console.log('race state:', this.state.race)
-      console.log(this.state.race.ability_bonuses)
-    }, 700)
+      console.log('race prop:', this.props.race)
+    }, 300)
   }
 
   render() {
     return (
       <div>
-        <h1>{this.props.match.params.race}</h1>
+        <h1>Race: {this.props.race.name}</h1>
 
         <h3>Ability Bonuses</h3>
-        {this.state.race.ability_bonuses !== undefined ? (
-          this.state.race.ability_bonuses.map((element, index) => {
+        {this.props.race.ability_bonuses !== undefined ? (
+          this.props.race.ability_bonuses.map((element, index) => {
             console.log('element', element)
             return (
               <div key={index}>
@@ -48,39 +39,41 @@ class IndividualRace extends Component {
         )}
 
         <h3>Age</h3>
-        {this.state.race !== undefined ? (
+        {this.props.race !== undefined ? (
           <div>
-            <p>{this.state.race.age}</p>
+            <p>{this.props.race.age}</p>
           </div>
         ) : (
           <span />
         )}
 
         <h3>Alignment</h3>
-        {this.state.race !== undefined ? (
+        {this.props.race !== undefined ? (
           <div>
-            <p>{this.state.race.alignment}</p>
+            <p>{this.props.race.alignment}</p>
           </div>
         ) : (
           <span />
         )}
 
         <h3>Language Description</h3>
-        {this.state.race !== undefined ? (
+        {this.props.race !== undefined ? (
           <div>
-            <p>{this.state.race.language_desc}</p>
+            <p>{this.props.race.language_desc}</p>
           </div>
         ) : (
           <span />
         )}
 
         <h3>Languages</h3>
-        {this.state.race.ability_bonuses !== undefined ? (
-          this.state.race.languages.map((element, index) => {
+        {this.props.race.ability_bonuses !== undefined ? (
+          this.props.race.languages.map((element, index) => {
             console.log('element', element)
             return (
               <div key={index}>
-                <p>{element.name}</p>
+                <Link to={`/languages/${element.index}`}>
+                  <p>{element.name}</p>
+                </Link>
               </div>
             )
           })
@@ -89,27 +82,27 @@ class IndividualRace extends Component {
         )}
 
         <h3>Size</h3>
-        {this.state.race !== undefined ? (
+        {this.props.race !== undefined ? (
           <div>
-            <p>{this.state.race.size}</p>
+            <p>{this.props.race.size}</p>
           </div>
         ) : (
           <span />
         )}
 
         <h3>Size Description</h3>
-        {this.state.race !== undefined ? (
+        {this.props.race !== undefined ? (
           <div>
-            <p>{this.state.race.size_description}</p>
+            <p>{this.props.race.size_description}</p>
           </div>
         ) : (
           <span />
         )}
 
         <h3>Speed</h3>
-        {this.state.race !== undefined ? (
+        {this.props.race !== undefined ? (
           <div>
-            <p>{this.state.race.speed}</p>
+            <p>{this.props.race.speed}</p>
           </div>
         ) : (
           <span />
@@ -117,9 +110,9 @@ class IndividualRace extends Component {
 
         {/* No race seems to have any starting proficiencies so this will always print none */}
         <h3>Starting Proficiencies</h3>
-        {this.state.race.starting_proficiencies !== undefined ? (
-          !this.state.race.starting_proficiencies.length === 0 ? (
-            this.state.race.starting_proficiencies.map((element, index) => {
+        {this.props.race.starting_proficiencies !== undefined ? (
+          !this.props.race.starting_proficiencies.length === 0 ? (
+            this.props.race.starting_proficiencies.map((element, index) => {
               console.log('element', element)
               return (
                 <div key={index}>
@@ -137,8 +130,8 @@ class IndividualRace extends Component {
         )}
 
         <h3>Sub Races</h3>
-        {this.state.race.subraces !== undefined ? (
-          this.state.race.subraces.map((element, index) => {
+        {this.props.race.subraces !== undefined ? (
+          this.props.race.subraces.map((element, index) => {
             console.log('element', element)
             return (
               <div key={index}>
@@ -151,12 +144,14 @@ class IndividualRace extends Component {
         )}
 
         <h3>Traits</h3>
-        {this.state.race.traits !== undefined ? (
-          this.state.race.traits.map((element, index) => {
+        {this.props.race.traits !== undefined ? (
+          this.props.race.traits.map((element, index) => {
             console.log('element', element)
             return (
               <div key={index}>
-                <p>{element.name}</p>
+                <Link to={`/traits/${element.index}`}>
+                  <p>{element.name}</p>
+                </Link>
               </div>
             )
           })

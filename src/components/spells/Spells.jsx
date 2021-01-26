@@ -49,7 +49,9 @@ class Spells extends Component {
             <h1>Spells</h1>
             {this.state.spell !== undefined ? (
               this.state.spell.map((spell, index) => (
-                <SpellDisplay key={index} name={spell.name} />
+                <SpellDisplay key={index} name={spell.name} 
+                index={spell.index}
+                />
               ))
             ) : (
               <span />
