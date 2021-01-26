@@ -3,7 +3,6 @@ import {
   GOT_ALL_CHARACTERS,
   GOT_ALL_CLASSES,
   GOT_API_DATA,
-  GOT_ALL_CLASSES,
 } from './actionTypes'
 
 const initialState = {
@@ -13,6 +12,7 @@ const initialState = {
   // subclasses: [],
   // races: [],
 }
+
 
 const gotAllCharacters = (data) => {
   return {
@@ -70,7 +70,7 @@ export const getAllClasses = () => {
         `http://localhost:8080/api/dndapi/classes`
       )
       console.log('getAllClasses axios response:', response.data.response)
-      dispatch(gotAllClasses(response.data.response))
+      dispatch(gotAllClasses(response.data.response.results))
     } catch (error) {
       console.error(error)
     }
