@@ -1,13 +1,17 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
+import React from 'react'
+import { Route, Switch } from 'react-router-dom'
 
 import Homepage from '../components/Homepage'
 import AllCharacters from '../components/AllCharacters'
+
 import Classes from "../components/classes/Classes"
 import IndividualClass from "../components/classes/classes/displayClass/individualClass/IndividualClass"
 import SubClasses from "../components/classes/subclasses/SubClasses";
 import IndividualSubClass from "../components/classes/subclasses/IndividualSubClass"
-
+import Races from '../components/races/Races'
+import IndividualRace from '../components/races/IndividualRace'
+import Bonus from '../components/races/Bonus'
+        
 const Routes = () => {
 	return (
 		<Switch>
@@ -17,8 +21,11 @@ const Routes = () => {
             <Route exact path = "/class/:index" component = {IndividualClass} />
 			<Route exact path = "/subclasses" component = {SubClasses} />
 			<Route exact path = "/subclass/:index" component = {IndividualSubClass} />
+       <Route path="/races/:race" component={IndividualRace} />
+      <Route eaxct path="/races" component={Races} />
+      <Route path="/bonus/:bonus" component={Bonus} />
 		</Switch>
 	);
 };
 
-export default Routes;
+export default Routes
