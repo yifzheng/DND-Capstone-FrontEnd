@@ -11,7 +11,7 @@ const Routes = () => {
 		<Switch>
 			<Route exact path="/" component={Homepage} />
             <Route path="/allCharacters" component={AllCharacters} />
-            <Route path = "/classes" component = {Classes} />
+            <Route exact path = "/classes" component = {Classes} />
             <Route exact path = "/class/:index" component = {IndividualClass} />
 		</Switch>
 	);
