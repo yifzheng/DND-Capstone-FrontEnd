@@ -38,8 +38,8 @@ export const getApiData = (searchApi) => {
       const response = await axios.get(
         `http://localhost:8080/api/dndapi/${searchApi}`
       )
-      console.log('getApiData axios response:', response.data.response.results) // returns raw data from api
-      dispatch(gotApiData(response.data.response.results))
+      console.log('getApiData axios response:', response.data.response) // returns raw data from api
+      dispatch(gotApiData(response.data.response))
     } catch (error) {
       console.error(error)
     }

@@ -8,7 +8,7 @@ class Proficiencies extends React.Component{
 
     render(){
         return(
-            <Link to = {`/proficiencies/${this.props.classIndex}`}><h3>{this.props.name}</h3></Link>
+            <Link to = {`/proficiencies/${this.props.classIndex}`}><h4>{this.props.name}</h4></Link>
         )
     }
 }
