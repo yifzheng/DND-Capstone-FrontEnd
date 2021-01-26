@@ -23,7 +23,6 @@ class IndividualRace extends Component {
         <h3>Ability Bonuses</h3>
         {this.props.race.ability_bonuses !== undefined ? (
           this.props.race.ability_bonuses.map((element, index) => {
-            console.log('element', element)
             return (
               <div key={index}>
                 <Link to={`/bonus/${element.ability_score.index}`}>
@@ -68,7 +67,6 @@ class IndividualRace extends Component {
         <h3>Languages</h3>
         {this.props.race.ability_bonuses !== undefined ? (
           this.props.race.languages.map((element, index) => {
-            console.log('element', element)
             return (
               <div key={index}>
                 <Link to={`/languages/${element.index}`}>
@@ -108,15 +106,13 @@ class IndividualRace extends Component {
           <span />
         )}
 
-        {/* No race seems to have any starting proficiencies so this will always print none */}
         <h3>Starting Proficiencies</h3>
         {this.props.race.starting_proficiencies !== undefined ? (
-          !this.props.race.starting_proficiencies.length === 0 ? (
+          this.props.race.starting_proficiencies.length !== 0 ? (
             this.props.race.starting_proficiencies.map((element, index) => {
-              console.log('element', element)
               return (
                 <div key={index}>
-                  <p>{element}</p>
+                  <p>{element.name}</p>
                 </div>
               )
             })
@@ -129,16 +125,54 @@ class IndividualRace extends Component {
           <span />
         )}
 
+        <h3>Starting Proficiency Options</h3>
+        <p>
+          Choose:
+          {this.props.race.starting_proficiency_options !== undefined ? (
+            this.props.race.starting_proficiency_options.choose
+          ) : (
+            <div>
+              <p>None</p>
+            </div>
+          )}
+        </p>
+        {this.props.race.starting_proficiency_options !== undefined ? (
+          this.props.race.starting_proficiency_options.from.length !== 0 ? (
+            this.props.race.starting_proficiency_options.from.map(
+              (element, index) => {
+                return (
+                  <div key={index}>
+                    <Link to={`/proficiencies/${element.index}`}>
+                      <p>{element.name}</p>
+                    </Link>
+                  </div>
+                )
+              }
+            )
+          ) : (
+            <div>
+              <p>None</p>
+            </div>
+          )
+        ) : (
+          <span />
+        )}
+
         <h3>Sub Races</h3>
         {this.props.race.subraces !== undefined ? (
-          this.props.race.subraces.map((element, index) => {
-            console.log('element', element)
-            return (
-              <div key={index}>
-                <p>{element.name}</p>
-              </div>
-            )
-          })
+          this.props.race.subraces.length !== 0 ? (
+            this.props.race.subraces.map((element, index) => {
+              return (
+                <div key={index}>
+                  <p>{element.name}</p>
+                </div>
+              )
+            })
+          ) : (
+            <div>
+              <p>None</p>
+            </div>
+          )
         ) : (
           <span />
         )}
@@ -146,7 +180,6 @@ class IndividualRace extends Component {
         <h3>Traits</h3>
         {this.props.race.traits !== undefined ? (
           this.props.race.traits.map((element, index) => {
-            console.log('element', element)
             return (
               <div key={index}>
                 <Link to={`/traits/${element.index}`}>
