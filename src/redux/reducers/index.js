@@ -4,6 +4,9 @@ import { GOT_ALL_CHARACTERS, GOT_API_DATA } from './actionTypes'
 const initialState = {
   characters: [],
   dndData: {},
+  class: [],
+  subclass: [],
+  skil: [] // static doesnt change 
 }
 
 const gotAllCharacters = (data) => {
@@ -26,6 +29,7 @@ export const getAllCharacters = () => {
 }
 
 const gotApiData = (data) => {
+  console.log(`API DATA ACTION CREATOR`)
   return {
     type: GOT_API_DATA,
     data,
@@ -33,6 +37,7 @@ const gotApiData = (data) => {
 }
 
 export const getApiData = (searchApi) => {
+  console.log(`API DATA ACTION THUNK`)
   return async (dispatch) => {
     try {
       const response = await axios.get(

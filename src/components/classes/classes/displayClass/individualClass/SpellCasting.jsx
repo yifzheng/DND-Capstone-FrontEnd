@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import SpellCastingInfo from "./SpellCastingInfo";
 
 const SpellCasting = ( { info, level, spellcasting_ability } ) => {
-    console.log( JSON.stringify( info) )
+    console.log("spellcasting info#1" + info);
     return (
         <div>
             <h2>Spell Casting ability</h2>

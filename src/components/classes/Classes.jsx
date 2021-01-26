@@ -1,12 +1,13 @@
 import React from 'react'
 
-import Class from './classes/Classes'
-import Races from '../races/Races'
+import Class from './classes/Classes';
+import SubClass from "./subclasses/SubClass";
 
 const Classes = () => {
     return(
         <div>
             <Class />
+            <SubClass />
         </div>
     )
 }
