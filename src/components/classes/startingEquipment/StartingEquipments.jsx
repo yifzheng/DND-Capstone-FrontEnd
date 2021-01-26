@@ -3,36 +3,36 @@ import axios from 'axios';
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-import DisplayFeatures from "./DisplayFeatures"
+import DisplayClass from "./DisplayClass"
 
-class Features extends Component {
+class StartingEqupments extends Component {
     constructor ( props ) {
         super( props );
 
         this.state = {
-            features: []
+            class: []
         }
     }
 
     async componentDidMount () {
-        const { data } = await axios.get( "https://www.dnd5eapi.co/api/features" );
+        const { data } = await axios.get( "https://www.dnd5eapi.co/api/starting-equipment" );
         this.setState( {
-            features: data.results
+            class: data.results
         } )
     }
 
     render () {
         console.log( `this is the rendering for the features` )
         console.log( this.props )
-        console.log(this.state.features)
+        console.log(this.state.class)
         {console.log("About to go to displayfeature")}
         return (
             <div className="class-container">
-                <h1>Features</h1>
+                <h1>Starting Equipments</h1>
                 {
-                    this.state.features.map( ( item, ind ) => {
+                    this.state.class.map( ( item, ind ) => {
                         return (
-                            <DisplayFeatures key = {ind} name={ item.name } index={ item.index } />
+                            <DisplayClass key = {ind} name={ item.class } index={ item.index } />
                         )
                     } )
                 }
@@ -41,4 +41,4 @@ class Features extends Component {
     }
 }
 
-export default Features;
+export default StartingEqupments;
