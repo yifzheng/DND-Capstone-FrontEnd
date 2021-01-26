@@ -3,9 +3,9 @@ import axios from 'axios';
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-import DisplayClass from "./displayClass/DisplayClass"
+import DisplaySubClass from "./DisplaySubClass"
 
-class Classes extends Component {
+class SubClasses extends Component {
     constructor ( props ) {
         super( props );
 
@@ -15,22 +15,22 @@ class Classes extends Component {
     }
 
     async componentDidMount () {
-        const { data } = await axios.get( "https://www.dnd5eapi.co/api/classes" );
+        const { data } = await axios.get( "https://www.dnd5eapi.co/api/subclasses" );
         this.setState( {
             classes: data.results
         } )
     }
 
     render () {
-        {console.log("About to go to displayclass")}
+        {console.log("About to go to displaysubclass")}
         return (
-            <div className="class-container">
-                <h1>Classes</h1>
+            <div className="subclass-container">
+                <h1>SubClasses</h1>
                 
                 {
                     this.state.classes.map( ( item, ind ) => {
                         return (
-                            <DisplayClass key = {ind} name={ item.name } index={ item.index } />
+                            <DisplaySubClass key = {ind} name={ item.name } index={ item.index } />
                         )
                     } )
                 }
@@ -39,4 +39,4 @@ class Classes extends Component {
     }
 }
 
-export default Classes;
+export default SubClasses;
