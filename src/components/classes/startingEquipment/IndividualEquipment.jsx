@@ -49,7 +49,7 @@ class IndividualEquipment extends Component {
                         </div>
                     }
                 </div>
-                <div className="equip-options">
+                {/* <div className="equip-options">
                     <h2>Starting Equipment Options</h2>
                     {
                         this.props.equipment.starting_equipment_options.length > 0 ?
@@ -65,7 +65,7 @@ class IndividualEquipment extends Component {
                                 <h3>This Class Has No Starting Equipment Options</h3>
                                 </div>
                     }
-                </div>
+                </div> */}
             </div>
         )
     }

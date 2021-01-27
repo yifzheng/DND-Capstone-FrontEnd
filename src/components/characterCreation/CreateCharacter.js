@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-
+import { Link } from 'react-router-dom'
 class CreateCharacter extends Component {
   render() {
     return (
       <div>
-        <p>Chara create comp</p>
+        <Link to = {`/CharacterCreation`}><button>Create Character</button></Link>
       </div>
     )
   }

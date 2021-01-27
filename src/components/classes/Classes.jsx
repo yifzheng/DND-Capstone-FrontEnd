@@ -15,6 +15,5 @@ const Classes = () => {
             <StartingEquipment />
         </div>
     )
-
+}
 export default Classes;
-
