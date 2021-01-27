@@ -29,7 +29,9 @@ class CharacterCreationForm extends React.Component {
         int: Math.floor(Math.random() * 20),
         wis: Math.floor(Math.random() * 20),
         cha: Math.floor(Math.random() * 20),
+        public: false,
       },
+      displayStatus: '',
     }
   }
 
@@ -137,6 +139,16 @@ class CharacterCreationForm extends React.Component {
         [e.target.name]: e.target.value,
       },
     })
+  }
+
+  handleDisplayStatusChange = (e) => {
+    this.setState({
+      displayStatus: e.target.value,
+    })
+
+    setTimeout(() => {
+      console.log('displayStatus state:', this.state.displayStatus)
+    }, 800)
   }
 
   handleFormSubmit = async (e) => {
@@ -442,9 +454,30 @@ class CharacterCreationForm extends React.Component {
             <span id="cha-modifier"></span>
           </label>
 
+          <br />
+          <br />
+          {/* Display Status: public or private */}
+          <input
+            type="radio"
+            name="displayStatus"
+            value="public"
+            onChange={(e) => this.handleDisplayStatusChange(e)}
+          />
+          <label>Public</label>
+
+          <input
+            type="radio"
+            name="displayStatus"
+            value="private"
+            onChange={(e) => this.handleDisplayStatusChange(e)}
+          />
+          <label>Private</label>
+          <br />
+          {/* END Display Status: public or private */}
+
           <br></br>
           <input type="submit" value="Create Your Character"></input>
-          <input type="reset" value="Reset"></input>
+          {/* <input type="reset" value="Reset"></input> Does not work with modifiers */}
           <Link to="/createCharacter">
             <input type="button" value="Cancel"></input>
           </Link>
