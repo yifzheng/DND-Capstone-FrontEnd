@@ -30,12 +30,20 @@ const Navbarr = () => {
             <li className="nav-item">
               <Link to="/builds">Builds</Link>
             </li>
-            <li className="profile nav-item">
-              <Link to="/classes">Profile</Link>
-            </li>
             <li className="nav-item">
               <Link to="/createCharacter">Create Character</Link>
             </li>
+            <li className="profile nav-item">
+              <div className="dropdown">
+                <li className="dropbtn">Profile</li>
+                <div className="dropdown-content">
+                  <Link>User Profile</Link>
+                  <Link>Login</Link>
+                  <Link>Sign Up</Link>
+                </div>
+              </div>
+            </li>
+
           </ul>
         </div>
       </div>
