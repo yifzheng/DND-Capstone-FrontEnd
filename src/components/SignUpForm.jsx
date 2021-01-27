@@ -37,8 +37,9 @@ class SignUpForm extends Component {
         return false;
     }
     handleSubmit = e => {
+        e.preventDefault();
         if ( this.comparePassword() ) {
-            console.log( "userinfo",this.state.userInfo )
+            console.log( "userinfo", this.state.userInfo )
         }
         else {
             alert( "Passwords Need To Match" )
