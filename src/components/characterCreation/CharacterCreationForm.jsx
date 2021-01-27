@@ -29,7 +29,9 @@ class CharacterCreationForm extends React.Component {
         int: Math.floor(Math.random() * 20),
         wis: Math.floor(Math.random() * 20),
         cha: Math.floor(Math.random() * 20),
+        userId: '',
       },
+      public: true,
     }
   }
 
@@ -139,14 +141,75 @@ class CharacterCreationForm extends React.Component {
     })
   }
 
-  handleFormSubmit = async (e) => {
+  handleDisplayStatusChange = (e) => {
+    this.setState({
+      public: e.target.value,
+    })
+
+    setTimeout(() => {
+      console.log('public state:', this.state.public)
+    }, 800)
+  }
+
+  handleFormSubmit = (e) => {
     e.preventDefault()
 
-    await this.props.createCharacter(this.state.characterInfo)
+    console.log('public state in submit:', this.state.public)
+
+    if (this.state.public === "false") {
+      console.log('Not Public therefore userId = 1')
+      this.setState({
+        characterInfo: {
+          ...this.state.characterInfo,
+          userId: 1,
+        },
+      })
+    }
+    else{
+      console.log('Public therefore userId = ""')
+      this.setState({
+        characterInfo: {
+          ...this.state.characterInfo,
+          userId: "",
+        },
+      })
+    }
+   setTimeout(()=> {
+    alert(this.state.characterInfo.userId)
+   }, 1000)
+    // if (!this.state.public) {
+    //   delete this.state.characterInfo.userId
+    // } else {
+    //   this.setState({
+    //     characterInfo: {
+    //       ...this.state.characterInfo,
+    //       userId: 1,
+    //     },
+    //   })
+    // }
+    // else {
+    //   this.setState({
+    //     characterInfo: {
+    //       ...this.state.characterInfo,
+    //       userId: this.props.loggedInUser.id,
+    //     },
+    //   })
+    // }
+
+    /* setTimeout(() => {
+      console.log(
+        'this.state.characterInfo.userId',
+        this.state.characterInfo.userId
+      )
+    }, 800)
+
+    setTimeout(() => {
+      this.props.createCharacter(this.state.characterInfo)
+    }, 1400)
 
     setTimeout(() => {
       console.log('CREATED CHARACTER REDUX STATE:', this.props.newCharacter)
-    }, 2000)
+    }, 2000) */
   }
 
   render() {
@@ -442,9 +505,30 @@ class CharacterCreationForm extends React.Component {
             <span id="cha-modifier"></span>
           </label>
 
+          <br />
+          <br />
+          {/* Display Status: public or private */}
+          <input
+            type="radio"
+            name="public" // this is a state, not value
+            value="true"
+            onChange={(e) => this.handleDisplayStatusChange(e)}
+          />
+          <label>Public</label>
+
+          <input
+            type="radio"
+            name="public" // this is a state, not value
+            value="false"
+            onChange={(e) => this.handleDisplayStatusChange(e)}
+          />
+          <label>Private</label>
+          <br />
+          {/* END Display Status: public or private */}
+
           <br></br>
           <input type="submit" value="Create Your Character"></input>
-          <input type="reset" value="Reset"></input>
+          {/* <input type="reset" value="Reset"></input> Does not work with modifiers */}
           <Link to="/createCharacter">
             <input type="button" value="Cancel"></input>
           </Link>
