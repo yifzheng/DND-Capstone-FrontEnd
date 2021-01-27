@@ -28,7 +28,7 @@ const Navbarr = () => {
               <Link to="/monsters">Monsters</Link>
             </li>
             <li className="nav-item">
-              <Link to="/builds">Builds</Link>
+              <Link to="/builds">Characters</Link>
             </li>
             <li className="nav-item">
               <Link to="/createCharacter">Create Character</Link>
