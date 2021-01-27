@@ -9,6 +9,7 @@ class CharacterCreationForm extends React.Component {
             CharacterName: '',
             Class: '',
             Race: '',
+            Gender: '',
             ProficiencyBonus: 0,
             ArmorClass: 0,
             Initiative: 0,
@@ -54,6 +55,15 @@ class CharacterCreationForm extends React.Component {
                             {/* map throught the array and create an options tag for race*/ }
                         </select>
                     </label>
+                    <br></br>
+                    <input type="radio" id="male" name="gender" value="male" onChange={e => this.setState({Gender: male})}></input>
+                    <label for="male">Male</label>
+                    <br></br>
+                    <input type="radio" id="female" name="gender" value="female" onChange={e => this.setState({Gender: female})}></input>
+                    <label for="female">Female</label>
+                    <br></br>
+                    <input type="radio" id="other" name="gender" value="other" onChange={e => this.setState({Gender: other})}></input>
+                    <label for="other">Other</label>
                     <br></br>
                     <label>
                         Proficiency Bonus
