@@ -19,13 +19,13 @@ class Bonus extends Component {
     return (
       <div>
         {/* If page refreshes, then race that called this is undefined b/c its overwritten, thus it shows nothing */}
-        {this.state.raceThatCalled.index !== undefined ? (
+        {/* {this.state.raceThatCalled.index !== undefined ? (
           <Link to={`/races/${this.state.raceThatCalled.index}`}>
             <p>Back to {this.state.raceThatCalled.name} information</p>
           </Link>
         ) : (
           <span />
-        )}
+        )} */}
 
         <h1>Bonus: {this.props.bonus.full_name}</h1>
 

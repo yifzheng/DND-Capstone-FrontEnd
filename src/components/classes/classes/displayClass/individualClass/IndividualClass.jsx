@@ -66,7 +66,7 @@ class IndividualClass extends Component {
                     } ) }
                 </div>
                 <div className="saving-throws">
-                    <h2>Saving Throws</h2>
+                    <h2>Saving Throws: </h2>
                     { this.props.class.saving_throws.map( ( item, index ) => {
                         return (
                             <SavingThrows key={ index } name={ item.name } classIndex={ item.index } />
@@ -88,7 +88,7 @@ class IndividualClass extends Component {
                         <SpellCasting info={ this.props.class.spellcasting.info } level={ this.props.class.spellcasting.level } spellcasting_ability={ this.props.class.spellcasting.spellcasting_ability } />
                     </div> :
                     <div className='no-spell-casting'> <h2>No Spell Casting for this class</h2></div> }
-                <Link to={ `/class/${this.props.match.params.index}/spells` }><h2>{ this.props.class.name} Class Spells</h2></Link>
+                {this.props.class.spells && <Link to={ `/classSpells/${this.props.match.params.index}/spells` }><h2>{ this.props.class.name} Class Spells</h2></Link>}
             </div>
         )
     }

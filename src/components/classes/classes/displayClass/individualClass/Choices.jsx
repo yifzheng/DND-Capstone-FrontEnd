@@ -9,7 +9,7 @@ const Choices = ( { choose, from } ) => {
             <h3>Choose { choose } from:</h3>
             {from.map( ( item, index ) => {
                 return (
-                    <PChoices key = {index} name={ item.name } />
+                    <PChoices key = {index} name={ item.name } classIndex = {item.index}/>
                 )
             } ) }
         </div>

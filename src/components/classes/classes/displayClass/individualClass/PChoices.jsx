@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from 'react-router-dom'
 
-const PChoices = ({name}) =>{
+const PChoices = ({name, classIndex}) =>{
     
     return(
-        <h4>{name}</h4>
+        <Link to = {`/skills/${classIndex}`}><h4>{name}</h4></Link>
     )
 
 }

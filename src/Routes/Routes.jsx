@@ -16,6 +16,7 @@ import StartingEquipments from '../components/classes/startingEquipment/Starting
 import IndividualEquipment from '../components/classes/startingEquipment/IndividualEquipment'
 import DisplayProficiencies from '../components/classes/classes/displayClass/individualClass/DisplayProficiencies'
 import ClassLevels from '../components/classes/classes/displayClass/individualClass/ClassLevels'
+import Skills from "../components/classes/classes/displayClass/individualClass/Skills"
 // Races Imports
 import Races from '../components/races/Races'
 import IndividualRace from '../components/races/IndividualRace'
@@ -32,6 +33,7 @@ import ConditionImmunity from '../components/monsters/ConditionImmunity'
 // Create Character Imports
 import CreateCharacter from '../components/characterCreation/CreateCharacter'
 import CharacterCreationForm from '../components/characterCreation/CharacterCreationForm'
+import ClassSpells from '../components/classes/classes/displayClass/individualClass/ClassSpells'
 
 const Routes = () => {
   return (
@@ -56,7 +58,8 @@ const Routes = () => {
         component={DisplayProficiencies}
       />
       <Route exact path="/class/:index/levels" component={ClassLevels} />
-
+      <Route path = "/skills/:index" component = {Skills}/>
+      <Route path = "/classSpells/:index/spells" component = {ClassSpells}/>
       {/* RACES ROUTES BELOW */}
       <Route path="/races/:race" component={IndividualRace} />
       <Route eaxct path="/races" component={Races} />

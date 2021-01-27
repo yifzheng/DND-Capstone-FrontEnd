@@ -13,6 +13,12 @@ const initialState = {
   allClasses: [],
   allRaces: [],
   allSkills: [],
+  user: {
+    id: '',
+    userName: '',
+    email: '',
+    hashKey: ''
+  }
 }
 
 const gotAllCharacters = (data) => {
