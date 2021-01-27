@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getAllClasses } from '../redux/reducers'
+
+import "./homepage.css";
 class Homepage extends Component {
   async componentDidMount() {
     await this.props.getAllClasses()
@@ -8,7 +10,7 @@ class Homepage extends Component {
   render() {
     console.log('classes', this.props.classes)
     return (
-      <div>
+      <div className = "homepage">
         <h1>Homepage Component</h1>
       </div>
     )

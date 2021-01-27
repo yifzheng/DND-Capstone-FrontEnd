@@ -1,6 +1,7 @@
 import axios from "axios";
 import {
 	GOT_ALL_CHARACTERS,
+	GOT_ALL_USER_CHARACTERS,
 	GOT_SINGLE_CHARACTER,
 	GOT_ALL_CLASSES,
 	GOT_API_DATA,
@@ -13,6 +14,7 @@ import {
 
 const initialState = {
 	characters: [],
+	userCharacters: [],
 	character: [],
 	users: [],
 	dndData: {},
@@ -49,6 +51,29 @@ export const getAllCharacters = () => {
 		}
 	};
 };
+
+// GET -> Read all characters for users
+const gotAllUserCharacters = (data) => {
+	return {
+		type: GOT_ALL_CHARACTERS,
+		data,
+	};
+};
+
+export const getAllUserCharacters = (userId) => {
+	return async (dispatch) => {
+		try {
+			const response = await axios.get(
+				`http://localhost:8080/api/characters/user/${userId}`
+			);
+			console.log("getAllCharacters axios response:", response);
+			dispatch(gotAllUserCharacters(response.data));
+		} catch (error) {
+			console.error(error);
+		}
+	};
+};
+
 // GET -> Find single character
 const gotSingleCharacter = (data) => {
 	return {
@@ -264,6 +289,11 @@ const rootReducer = (state = initialState, action) => {
 			return {
 				...state,
 				characters: action.data,
+			};
+		case GOT_ALL_USER_CHARACTERS:
+			return {
+				...state,
+				userCharacters: action.data,
 			};
 		case GOT_SINGLE_CHARACTER:
 			return {

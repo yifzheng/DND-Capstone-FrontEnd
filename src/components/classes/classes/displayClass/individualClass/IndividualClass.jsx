@@ -51,7 +51,7 @@ class IndividualClass extends Component {
                 <h2>Hit Die: { this.props.class.hit_die }</h2>
                 <div className="p_choices">
                     <h2>Proficiency Choices</h2>
-                    { this.props.class.proficiency_choices.map( ( item, index ) => {
+                    { this.props.class.proficiency_choices !== undefined && this.props.class.proficiency_choices.map( ( item, index ) => {
                         return (
                             <Choices key={ index } choose={ item.choose } from={ item.from } />
                         )
@@ -59,7 +59,7 @@ class IndividualClass extends Component {
                 </div>
                 <div className="proficiencies">
                     <h2>Proficiencies</h2>
-                    { this.props.class.proficiencies.map( ( item, index ) => {
+                    { this.props.class.proficiencies !== undefined && this.props.class.proficiencies.map( ( item, index ) => {
                         return (
                             <Proficiencies key={ index } name={ item.name } classIndex={ item.index } />
                         )
@@ -67,7 +67,7 @@ class IndividualClass extends Component {
                 </div>
                 <div className="saving-throws">
                     <h2>Saving Throws: </h2>
-                    { this.props.class.saving_throws.map( ( item, index ) => {
+                    { this.props.class.saving_throws !== undefined && this.props.class.saving_throws.map( ( item, index ) => {
                         return (
                             <SavingThrows key={ index } name={ item.name } classIndex={ item.index } />
                         )
@@ -77,17 +77,17 @@ class IndividualClass extends Component {
                 <Link to={ `/class/${this.props.match.params.index}/levels` }><h2>Class Levels</h2></Link>
                 <div className="subclasses">
                     <h2>Sub-Classes</h2>
-                    { this.props.class.subclasses.map( ( item, index ) => {
+                    { this.props.class.subclasses !== undefined && this.props.class.subclasses.map( ( item, index ) => {
                         return (
                             <Subclass key={ index } name={ item.name } classIndex={ item.index } />
                         )
                     } ) }
                 </div>
-                {this.props.class.spellcasting ?
+                {this.props.class.spellcasting !== undefined && (this.props.class.spellcasting ?
                     <div className="spellcasting">
                         <SpellCasting info={ this.props.class.spellcasting.info } level={ this.props.class.spellcasting.level } spellcasting_ability={ this.props.class.spellcasting.spellcasting_ability } />
                     </div> :
-                    <div className='no-spell-casting'> <h2>No Spell Casting for this class</h2></div> }
+                    <div className='no-spell-casting'> <h2>No Spell Casting for this class</h2></div>) }
                 {this.props.class.spells && <Link to={ `/classSpells/${this.props.match.params.index}/spells` }><h2>{ this.props.class.name} Class Spells</h2></Link>}
             </div>
         )

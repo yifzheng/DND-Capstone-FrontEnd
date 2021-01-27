@@ -39,7 +39,8 @@ import Builds from "../components/builds/Builds"
 import DisplayCharacter from "../components/builds/DisplayCharacter"
 // SignUp form
 import SignUpForm from "../components/SignUpForm"
-
+//userprofile
+import Profile from "../components/profile/Profile"
 const Routes = () => {
   return (
     <Switch>
@@ -93,6 +94,7 @@ const Routes = () => {
       {/* END OF CREATE CHARACTER ROUTES */ }
       {/* SIGNUP FORM */ }
       <Route path="/signup" component={ SignUpForm } />
+      <Route path="/userprofile" component={ Profile } />
     </Switch>
   )
 }
