@@ -5,6 +5,7 @@ import {
   GOT_API_DATA,
   GOT_ALL_RACES,
   GOT_ALL_SKILLS,
+  CREATED_CHARACTER,
 } from './actionTypes'
 
 const initialState = {
@@ -14,13 +15,14 @@ const initialState = {
   allRaces: [],
   allSkills: [],
   user: {
-    id: '',
-    userName: '',
+    username: '',
+    password: '',
     email: '',
-    hashKey: ''
-  }
+  },
+  newCharacter: '',
 }
 
+// GET -> Read all character
 const gotAllCharacters = (data) => {
   return {
     type: GOT_ALL_CHARACTERS,
@@ -128,6 +130,52 @@ export const getAllSkills = () => {
   }
 }
 
+// POST -> Create character
+const createdCharacter = (data) => {
+  return {
+    type: CREATED_CHARACTER,
+    data,
+  }
+}
+
+export const createCharacter = (characterInfo) => {
+  return async (dispatch) => {
+    try {
+      // cannot pass array as data type while keeping sanity
+      const skill1 = characterInfo.skills[0]
+      const skill2 = characterInfo.skills[1]
+      const skill3 = characterInfo.skills[2]
+      const skill4 = characterInfo.skills[3]
+
+      const response = await axios.post(
+        'http://localhost:8080/api/characters',
+        {
+          name: characterInfo.characterName,
+          class: characterInfo.class,
+          race: characterInfo.race,
+          gender: characterInfo.gender,
+          armorClass: characterInfo.armorClass,
+          speed: characterInfo.speed,
+          skill1: skill1,
+          skill2: skill2,
+          skill3: skill3,
+          skill4: skill4,
+          str: characterInfo.str,
+          dex: characterInfo.dex,
+          con: characterInfo.con,
+          int: characterInfo.int,
+          wis: characterInfo.wis,
+          cha: characterInfo.cha,
+        }
+      )
+      console.log('createCharacter axios post response:', response)
+      dispatch(createdCharacter(response))
+    } catch (error) {
+      console.error(error)
+    }
+  }
+}
+
 const rootReducer = (state = initialState, action) => {
   console.log('action in rootReducer:', action)
   switch (action.type) {
@@ -155,6 +203,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         allSkills: action.data,
+      }
+    case CREATED_CHARACTER:
+      return {
+        ...state,
+        newCharacter: action.data,
       }
     default:
       return state
