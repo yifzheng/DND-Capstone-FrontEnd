@@ -31,7 +31,6 @@ import IndividualMonster from '../components/monsters/IndividualMonster'
 import ConditionImmunity from '../components/monsters/ConditionImmunity'
 // Create Character Imports
 import CreateCharacter from '../components/characterCreation/CreateCharacter'
-import CreateCharacterForm from "../components/characterCreation/CharacterCreationForm"
 
 const Routes = () => {
 	return (
@@ -48,6 +47,7 @@ const Routes = () => {
 			<Route exact path="/starting-equipments" component={ StartingEquipments } />
 			<Route exact path="/proficiencies/:index" component={ DisplayProficiencies } />
 			<Route exact path="/class/:index/levels" component={ ClassLevels } />
+
 			{/* RACES ROUTES BELOW */ }
 			<Route path="/races/:race" component={ IndividualRace } />
 			<Route eaxct path="/races" component={ Races } />
@@ -56,8 +56,9 @@ const Routes = () => {
 			<Route eaxct path="/spells" component={ Spells } />
 			<Route path="/languages/:language" component={ Language } />
 			<Route path="/traits/:trait" component={ Trait } />
-			<Route path="/proficiencies/:proficiency" component={ Proficiency } />
+			<Route path="/races/proficiencies/:proficiency" component={ Proficiency } />
 			{/* END OF RACES ROUTES */ }
+
 			{/* MONSTERS ROUTES BELOW */ }
 			<Route path="/monsters/:monster" component={ IndividualMonster } />
 			<Route exact path="/monsters" component={ Monsters } />
@@ -66,13 +67,12 @@ const Routes = () => {
 				component={ ConditionImmunity }
 			/>
 			{/* END OF MONSTERS ROUTES */ }
+
 			{/* CREATE CHARACTER ROUTES */ }
 			<Route path="/createCharacter" component={ CreateCharacter } />
-			<Route path="/CharacterCreation" component={ CreateCharacterForm } />
 			{/* END OF CREATE CHARACTER ROUTES */ }
 		</Switch>
 	)
 }
-
 
 export default Routes
