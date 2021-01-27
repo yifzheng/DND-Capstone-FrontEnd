@@ -5,11 +5,14 @@ import {
   GOT_API_DATA,
   GOT_ALL_RACES,
   GOT_ALL_SKILLS,
+  GOT_ALL_USERS,
   CREATED_CHARACTER,
+  CREATED_USER,
 } from './actionTypes'
 
 const initialState = {
   characters: [],
+  users: [],
   dndData: {},
   allClasses: [],
   allRaces: [],
@@ -20,9 +23,10 @@ const initialState = {
     email: '',
   },
   newCharacter: '',
+  newUser: '',
 }
 
-// GET -> Read all character
+// GET -> Read all characters
 const gotAllCharacters = (data) => {
   return {
     type: GOT_ALL_CHARACTERS,
@@ -36,6 +40,26 @@ export const getAllCharacters = () => {
       const response = await axios.get('http://localhost:8080/api/characters')
       console.log('getAllCharacters axios response:', response)
       dispatch(gotAllCharacters(response.data))
+    } catch (error) {
+      console.error(error)
+    }
+  }
+}
+
+// GET -> Read all users
+const gotAllUsers = (data) => {
+  return {
+    type: GOT_ALL_USERS,
+    data,
+  }
+}
+
+export const getAllUsers = () => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.get('http://localhost:8080/api/users')
+      console.log('getAllUsers axios response:', response)
+      dispatch(gotAllUsers(response.data))
     } catch (error) {
       console.error(error)
     }
@@ -169,7 +193,31 @@ export const createCharacter = (characterInfo) => {
         }
       )
       console.log('createCharacter axios post response:', response)
-      dispatch(createdCharacter(response))
+      dispatch(createdCharacter(response.data))
+    } catch (error) {
+      console.error(error)
+    }
+  }
+}
+
+// POST -> Create user
+const createdUser = (data) => {
+  return {
+    type: CREATED_USER,
+    data,
+  }
+}
+
+export const createUser = (userInfo) => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.post('http://localhost:8080/api/users', {
+        username: userInfo.username,
+        email: userInfo.email,
+        password: userInfo.password,
+      })
+      console.log('createUser axios post response:', response)
+      dispatch(createdUser(response.data))
     } catch (error) {
       console.error(error)
     }
@@ -208,6 +256,16 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         newCharacter: action.data,
+      }
+    case CREATED_USER:
+      return {
+        ...state,
+        newUser: action.data,
+      }
+    case GOT_ALL_USERS:
+      return {
+        ...state,
+        users: action.data,
       }
     default:
       return state
