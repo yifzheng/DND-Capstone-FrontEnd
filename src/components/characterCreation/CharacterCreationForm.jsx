@@ -29,9 +29,9 @@ class CharacterCreationForm extends React.Component {
         int: Math.floor(Math.random() * 20),
         wis: Math.floor(Math.random() * 20),
         cha: Math.floor(Math.random() * 20),
-        public: false,
+        userId: '',
       },
-      displayStatus: '',
+      public: true,
     }
   }
 
@@ -143,18 +143,58 @@ class CharacterCreationForm extends React.Component {
 
   handleDisplayStatusChange = (e) => {
     this.setState({
-      displayStatus: e.target.value,
+      public: e.target.value,
     })
 
     setTimeout(() => {
-      console.log('displayStatus state:', this.state.displayStatus)
+      console.log('public state:', this.state.public)
     }, 800)
   }
 
-  handleFormSubmit = async (e) => {
+  handleFormSubmit = (e) => {
     e.preventDefault()
 
-    await this.props.createCharacter(this.state.characterInfo)
+    console.log('public state in submit:', this.state.public)
+
+    if (!this.state.public) {
+      console.log('Not Public therefore userId = 1')
+      this.setState({
+        characterInfo: {
+          ...this.state.characterInfo,
+          userId: 1,
+        },
+      })
+    }
+
+    // if (!this.state.public) {
+    //   delete this.state.characterInfo.userId
+    // } else {
+    //   this.setState({
+    //     characterInfo: {
+    //       ...this.state.characterInfo,
+    //       userId: 1,
+    //     },
+    //   })
+    // }
+    // else {
+    //   this.setState({
+    //     characterInfo: {
+    //       ...this.state.characterInfo,
+    //       userId: this.props.loggedInUser.id,
+    //     },
+    //   })
+    // }
+
+    setTimeout(() => {
+      console.log(
+        'this.state.characterInfo.userId',
+        this.state.characterInfo.userId
+      )
+    }, 800)
+
+    setTimeout(() => {
+      this.props.createCharacter(this.state.characterInfo)
+    }, 1400)
 
     setTimeout(() => {
       console.log('CREATED CHARACTER REDUX STATE:', this.props.newCharacter)
@@ -459,16 +499,16 @@ class CharacterCreationForm extends React.Component {
           {/* Display Status: public or private */}
           <input
             type="radio"
-            name="displayStatus"
-            value="public"
+            name="public" // this is a state, not value
+            value="true"
             onChange={(e) => this.handleDisplayStatusChange(e)}
           />
           <label>Public</label>
 
           <input
             type="radio"
-            name="displayStatus"
-            value="private"
+            name="public" // this is a state, not value
+            value="false"
             onChange={(e) => this.handleDisplayStatusChange(e)}
           />
           <label>Private</label>
