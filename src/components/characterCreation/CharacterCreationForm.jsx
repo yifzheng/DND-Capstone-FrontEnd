@@ -13,8 +13,8 @@ class CharacterCreationForm extends React.Component {
         class: '',
         race: '',
         gender: '',
-        proficiencyBonus: 2,
-        armorClass: 0,
+        proficiencyBonus: '2',
+        armorClass: 10,
         initiative: 0,
         speed: 0,
         skills: [],
@@ -44,12 +44,32 @@ class CharacterCreationForm extends React.Component {
   }
 
   handleRaceSelectChange = (e) => {
-    this.setState({
-      characterInfo: {
-        ...this.state.characterInfo,
-        race: e.target.value,
-      },
-    })
+    const { value } = e.target
+
+    if (
+      value === 'dragonborn' ||
+      value === 'elf' ||
+      value === 'half-elf' ||
+      value === 'half-orc' ||
+      value === 'human' ||
+      value === 'tiefling'
+    ) {
+      this.setState({
+        characterInfo: {
+          ...this.state.characterInfo,
+          race: e.target.value,
+          speed: 30,
+        },
+      })
+    } else {
+      this.setState({
+        characterInfo: {
+          ...this.state.characterInfo,
+          race: e.target.value,
+          speed: 25,
+        },
+      })
+    }
   }
 
   handleGenderSelectChange = (e) => {
@@ -82,6 +102,30 @@ class CharacterCreationForm extends React.Component {
   }
 
   handleAbilityScoreChange = (e) => {
+    let modifier = Math.floor((parseInt(e.target.value) - 10) / 2)
+    document.getElementById(`${e.target.name}` + '-modifier').innerHTML =
+      '+' + modifier
+
+    if (e.target.name === 'dex') {
+      console.log('dex modifier:', modifier)
+      this.setState({
+        characterInfo: {
+          ...this.state.characterInfo,
+          [e.target.name]: e.target.value,
+          armorClass: 10 + modifier,
+        },
+      })
+    } else {
+      this.setState({
+        characterInfo: {
+          ...this.state.characterInfo,
+          [e.target.name]: e.target.value,
+        },
+      })
+    }
+  }
+
+  handleMainStatChange = (e) => {
     this.setState({
       characterInfo: {
         ...this.state.characterInfo,
@@ -108,7 +152,7 @@ class CharacterCreationForm extends React.Component {
         <form onSubmit={(e) => this.handleFormSubmit(e)}>
           {/* Character Name */}
           <label>
-            CharacterName :<br></br>
+            Character Name:<br></br>
             <input
               type="text"
               name="characterName"
@@ -212,10 +256,10 @@ class CharacterCreationForm extends React.Component {
           <br></br>
           {/* Main Stats */}
           <label>
-            Proficiency Bonus (+2 For Lvl.1)
-            <br></br>
-            <input
-              type="number"
+            Proficiency Bonus (+2 For Lvl.1) :
+            <span
+              id="proficiencyBonus-display"
+              // type="number"
               name="proficiencyBonus"
               // placeholder={Math.floor(Math.random() * 6)}
               // defaultValue={Math.floor(Math.random() * 6)}
@@ -224,24 +268,27 @@ class CharacterCreationForm extends React.Component {
                 alert('A lvl.1 character has +2 proficieny bonus!')
               }
               required
-            ></input>
+            >
+              {' '}
+              {this.state.characterInfo.proficiencyBonus}
+            </span>
           </label>
 
           <br></br>
           <label>
-            Armor Class
-            <br></br>
-            <input
+            Armor Class :
+            <span
+              id="armorClass-display"
               type="number"
               name="armorClass"
-              // placeholder={Math.floor(Math.random() * 15)}
-              // defaultValue={Math.floor(Math.random() * 15)}
-              placeholder="10 + dex by default"
-              onChange={(e) => this.handleMainStatChange(e)}
               required
-            ></input>
+            >
+              {' '}
+              {this.state.characterInfo.armorClass}
+            </span>
           </label>
-          <br></br>
+
+          {/* <br></br>
           <label>
             Initiative
             <br></br>
@@ -253,19 +300,21 @@ class CharacterCreationForm extends React.Component {
               onChange={(e) => this.handleMainStatChange(e)}
               required
             ></input>
-          </label>
+          </label> */}
+
           <br></br>
           <label>
-            Speed
-            <br></br>
-            <input
+            Speed :
+            <span
+              id="speed-display"
               type="number"
-              name="Speed"
-              placeholder={Math.floor(Math.random() * 15)}
-              // defaultValue={Math.floor(Math.random() * 15)}
-              onChange={(e) => this.handleMainStatChange(e)}
+              name="speed"
+              value={this.state.characterInfo.speed}
               required
-            ></input>
+            >
+              {' '}
+              {this.state.characterInfo.speed}
+            </span>
           </label>
           <br></br>
           {/* End Main Stats */}
@@ -307,6 +356,7 @@ class CharacterCreationForm extends React.Component {
               onChange={(e) => this.handleAbilityScoreChange(e)}
               required
             ></input>
+            <span id="str-modifier"></span>
           </label>
 
           <br></br>
@@ -320,6 +370,7 @@ class CharacterCreationForm extends React.Component {
               onChange={(e) => this.handleAbilityScoreChange(e)}
               required
             ></input>
+            <span id="dex-modifier"></span>
           </label>
 
           <br></br>
@@ -333,6 +384,7 @@ class CharacterCreationForm extends React.Component {
               onChange={(e) => this.handleAbilityScoreChange(e)}
               required
             ></input>
+            <span id="con-modifier"></span>
           </label>
 
           <br></br>
@@ -346,6 +398,7 @@ class CharacterCreationForm extends React.Component {
               onChange={(e) => this.handleAbilityScoreChange(e)}
               required
             ></input>
+            <span id="int-modifier"></span>
           </label>
 
           <br></br>
@@ -359,6 +412,7 @@ class CharacterCreationForm extends React.Component {
               onChange={(e) => this.handleAbilityScoreChange(e)}
               required
             ></input>
+            <span id="wis-modifier"></span>
           </label>
 
           <br></br>
@@ -372,6 +426,7 @@ class CharacterCreationForm extends React.Component {
               onChange={(e) => this.handleAbilityScoreChange(e)}
               required
             ></input>
+            <span id="cha-modifier"></span>
           </label>
 
           <br></br>
