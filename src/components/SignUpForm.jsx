@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-
+import { createUser, getAllUsers } from "../redux/reducers"
 class SignUpForm extends Component {
     constructor ( props ) {
         super( props );
@@ -15,9 +15,6 @@ class SignUpForm extends Component {
         }
     }
     handleInputChange = e => {
-        /* if (e.target.name === "email"){
-            if (e.target.value.includes("@"))
-        } */
         this.setState( {
             userInfo: {
                 ...this.state.userInfo,
@@ -36,10 +33,10 @@ class SignUpForm extends Component {
         }
         return false;
     }
-    handleSubmit = e => {
+    handleSubmit = async ( e ) => {
         e.preventDefault();
         if ( this.comparePassword() ) {
-            console.log( "userinfo", this.state.userInfo )
+            await this.props.createUser( this.state.userInfo )
         }
         else {
             alert( "Passwords Need To Match" )
@@ -77,4 +74,17 @@ class SignUpForm extends Component {
     }
 }
 
-export default SignUpForm;
+const mapStateToProps = state => {
+    return {
+        user: state.users,
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        createUser: ( userInfo ) => dispatch( createUser( userInfo ) ),
+        getAllUsers: () => dispatch( getAllUsers() ),
+    }
+}
+
+export default connect( mapStateToProps, mapDispatchToProps )( SignUpForm );
