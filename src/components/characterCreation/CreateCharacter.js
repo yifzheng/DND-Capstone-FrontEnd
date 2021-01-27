@@ -4,7 +4,9 @@ class CreateCharacter extends Component {
   render() {
     return (
       <div>
-        <Link to = {`/CharacterCreation`}><button>Create Character</button></Link>
+        <Link to={`/CharacterCreation`}>
+          <button>Create Character</button>
+        </Link>
       </div>
     )
   }

@@ -1,3 +1,5 @@
 export const GOT_ALL_CHARACTERS = 'GOT_ALL_CHARACTERS'
 export const GOT_API_DATA = 'GOT_API_DATA'
 export const GOT_ALL_CLASSES = 'GOT_ALL_CLASSES'
+export const GOT_ALL_RACES = 'GOT_ALL_RACES'
+export const GOT_ALL_SKILLS = 'GOT_ALL_SKILLS'

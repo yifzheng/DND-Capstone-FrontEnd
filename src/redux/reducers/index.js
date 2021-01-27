@@ -3,14 +3,16 @@ import {
   GOT_ALL_CHARACTERS,
   GOT_ALL_CLASSES,
   GOT_API_DATA,
+  GOT_ALL_RACES,
+  GOT_ALL_SKILLS,
 } from './actionTypes'
 
 const initialState = {
   characters: [],
   dndData: {},
-  class: [],
-  subclass: [],
-  skil: [], // static doesnt change
+  allClasses: [],
+  allRaces: [],
+  allSkills: [],
 }
 
 const gotAllCharacters = (data) => {
@@ -78,6 +80,48 @@ export const getAllClasses = () => {
   }
 }
 
+// Races API Call
+const gotAllRaces = (data) => {
+  return {
+    type: GOT_ALL_RACES,
+    data,
+  }
+}
+
+export const getAllRaces = () => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.get('http://localhost:8080/api/dndapi/races')
+      console.log('getAllRaces axios response:', response.data.response)
+      dispatch(gotAllRaces(response.data.response.results))
+    } catch (error) {
+      console.error(error)
+    }
+  }
+}
+
+// Skills API Call
+const gotAllSkills = (data) => {
+  return {
+    type: GOT_ALL_SKILLS,
+    data,
+  }
+}
+
+export const getAllSkills = () => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.get(
+        'http://localhost:8080/api/dndapi/skills'
+      )
+      console.log('getAllSkills axios response:', response.data.response)
+      dispatch(gotAllSkills(response.data.response.results))
+    } catch (error) {
+      console.error(error)
+    }
+  }
+}
+
 const rootReducer = (state = initialState, action) => {
   console.log('action in rootReducer:', action)
   switch (action.type) {
@@ -94,7 +138,17 @@ const rootReducer = (state = initialState, action) => {
     case GOT_ALL_CLASSES:
       return {
         ...state,
-        classes: action.data,
+        allClasses: action.data,
+      }
+    case GOT_ALL_RACES:
+      return {
+        ...state,
+        allRaces: action.data,
+      }
+    case GOT_ALL_SKILLS:
+      return {
+        ...state,
+        allSkills: action.data,
       }
     default:
       return state
