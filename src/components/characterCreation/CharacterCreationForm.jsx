@@ -13,7 +13,7 @@ class CharacterCreationForm extends React.Component {
         class: '',
         race: '',
         gender: '',
-        proficiencyBonus: 0,
+        proficiencyBonus: 2,
         armorClass: 0,
         initiative: 0,
         speed: 0,
@@ -62,6 +62,17 @@ class CharacterCreationForm extends React.Component {
   }
 
   handleSkillsSelectChange = (e) => {
+    if (this.state.characterInfo.skills.length === 4) {
+      alert('You may only have 4 skills per character!')
+      return
+    }
+    for (const skill of this.state.characterInfo.skills) {
+      if (skill === e.target.value) {
+        alert('No duplicate skills allowed!')
+        return
+      }
+    }
+
     this.setState({
       characterInfo: {
         ...this.state.characterInfo,
@@ -70,14 +81,24 @@ class CharacterCreationForm extends React.Component {
     })
   }
 
+  handleAbilityScoreChange = (e) => {
+    this.setState({
+      characterInfo: {
+        ...this.state.characterInfo,
+        [e.target.name]: e.target.value,
+      },
+    })
+  }
+
   handleFormSubmit = (e) => {
     e.preventDefault()
+    console.log('submitted')
   }
 
   render() {
     // console.log('all classes:', this.props.allClasses)
     // console.log('all races:', this.props.allRaces)
-    console.log('all skills:', this.props.allSkills)
+    // console.log('all skills:', this.props.allSkills)
     console.log('characterInfo:', this.state.characterInfo)
     return (
       <div className="creation-form">
@@ -189,26 +210,34 @@ class CharacterCreationForm extends React.Component {
           {/* End Gender Select  */}
 
           <br></br>
+          {/* Main Stats */}
           <label>
-            Proficiency Bonus
+            Proficiency Bonus (+2 For Lvl.1)
             <br></br>
             <input
               type="number"
-              name="ProficiencyBonus"
-              placeholder={Math.floor(Math.random() * 6)}
-              defaultValue={Math.floor(Math.random() * 6)}
+              name="proficiencyBonus"
+              // placeholder={Math.floor(Math.random() * 6)}
+              // defaultValue={Math.floor(Math.random() * 6)}
+              value="2"
+              onChange={(e) =>
+                alert('A lvl.1 character has +2 proficieny bonus!')
+              }
               required
             ></input>
           </label>
+
           <br></br>
           <label>
             Armor Class
             <br></br>
             <input
               type="number"
-              name="ArmourClass"
-              placeholder={Math.floor(Math.random() * 15)}
-              defaultValue={Math.floor(Math.random() * 15)}
+              name="armorClass"
+              // placeholder={Math.floor(Math.random() * 15)}
+              // defaultValue={Math.floor(Math.random() * 15)}
+              placeholder="10 + dex by default"
+              onChange={(e) => this.handleMainStatChange(e)}
               required
             ></input>
           </label>
@@ -220,7 +249,8 @@ class CharacterCreationForm extends React.Component {
               type="number"
               name="Initiative"
               placeholder={Math.floor(Math.random() * 15)}
-              defaultValue={Math.floor(Math.random() * 15)}
+              // defaultValue={Math.floor(Math.random() * 15)}
+              onChange={(e) => this.handleMainStatChange(e)}
               required
             ></input>
           </label>
@@ -232,15 +262,17 @@ class CharacterCreationForm extends React.Component {
               type="number"
               name="Speed"
               placeholder={Math.floor(Math.random() * 15)}
-              defaultValue={Math.floor(Math.random() * 15)}
+              // defaultValue={Math.floor(Math.random() * 15)}
+              onChange={(e) => this.handleMainStatChange(e)}
               required
             ></input>
           </label>
           <br></br>
+          {/* End Main Stats */}
 
           {/* Skill Select */}
           <label>
-            Select Your Skills
+            Select Your Skills (Choose up to 4)
             <br></br>
             <select
               name="skillsSelect"
@@ -264,79 +296,86 @@ class CharacterCreationForm extends React.Component {
           {/* End Skill Select */}
 
           <br></br>
+          {/* Ability Scores */}
           <label>
             Strength
             <br></br>
             <input
               type="number"
-              name="Str"
-              placeholder={Math.floor(Math.random() * 20)}
-              defaultValue={Math.floor(Math.random() * 20)}
+              name="str"
+              defaultValue={Math.floor(Math.random() * 30)}
+              onChange={(e) => this.handleAbilityScoreChange(e)}
               required
             ></input>
           </label>
+
           <br></br>
           <label>
             Dexterity
             <br></br>
             <input
               type="number"
-              name="Dex"
-              placeholder={Math.floor(Math.random() * 20)}
-              defaultValue={Math.floor(Math.random() * 20)}
+              name="dex"
+              defaultValue={Math.floor(Math.random() * 30)}
+              onChange={(e) => this.handleAbilityScoreChange(e)}
               required
             ></input>
           </label>
+
           <br></br>
           <label>
             Constitution
             <br></br>
             <input
               type="number"
-              name="Con"
-              placeholder={Math.floor(Math.random() * 20)}
-              defaultValue={Math.floor(Math.random() * 20)}
+              name="con"
+              defaultValue={Math.floor(Math.random() * 30)}
+              onChange={(e) => this.handleAbilityScoreChange(e)}
               required
             ></input>
           </label>
+
           <br></br>
           <label>
             Intelligence
             <br></br>
             <input
               type="number"
-              name="Int"
-              placeholder={Math.floor(Math.random() * 20)}
-              defaultValue={Math.floor(Math.random() * 20)}
+              name="int"
+              defaultValue={Math.floor(Math.random() * 30)}
+              onChange={(e) => this.handleAbilityScoreChange(e)}
               required
             ></input>
           </label>
+
           <br></br>
           <label>
             Wisdom
             <br></br>
             <input
               type="number"
-              name="Wis"
-              placeholder={Math.floor(Math.random() * 20)}
-              defaultValue={Math.floor(Math.random() * 20)}
+              name="wis"
+              defaultValue={Math.floor(Math.random() * 30)}
+              onChange={(e) => this.handleAbilityScoreChange(e)}
               required
             ></input>
           </label>
+
           <br></br>
           <label>
             Charisma
             <br></br>
             <input
               type="number"
-              name="Cha"
-              placeholder={Math.floor(Math.random() * 20)}
-              defaultValue={Math.floor(Math.random() * 20)}
+              name="cha"
+              defaultValue={Math.floor(Math.random() * 30)}
+              onChange={(e) => this.handleAbilityScoreChange(e)}
               required
             ></input>
           </label>
+
           <br></br>
-          <input type="button" value="Create Your Character"></input>
+          <input type="submit" value="Create Your Character"></input>
           <input type="reset" value="Reset"></input>
           <Link to="/createCharacter">
             <input type="button" value="Cancel"></input>
