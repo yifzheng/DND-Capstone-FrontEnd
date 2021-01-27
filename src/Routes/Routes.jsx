@@ -35,6 +35,9 @@ import CreateCharacter from '../components/characterCreation/CreateCharacter'
 import CharacterCreationForm from '../components/characterCreation/CharacterCreationForm'
 import ClassSpells from '../components/classes/classes/displayClass/individualClass/ClassSpells'
 
+// SignUp form
+import SignUpForm from "../components/SignUpForm"
+
 const Routes = () => {
   return (
     <Switch>
@@ -84,6 +87,8 @@ const Routes = () => {
       <Route path="/createCharacter" component={CreateCharacter} />
       <Route path="/CharacterCreation" component={CharacterCreationForm} />
       {/* END OF CREATE CHARACTER ROUTES */}
+      {/* SIGNUP FORM */}
+      <Route path = "/signup" component = {SignUpForm} />
     </Switch>
   )
 }

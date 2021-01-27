@@ -33,17 +33,14 @@ const Navbarr = () => {
             <li className="nav-item">
               <Link to="/createCharacter">Create Character</Link>
             </li>
-            <li className="profile nav-item">
-              <div className="dropdown">
-                <li className="dropbtn">Profile</li>
-                <div className="dropdown-content">
-                  <Link>User Profile</Link>
-                  <Link>Login</Link>
-                  <Link>Sign Up</Link>
-                </div>
+            <div className="dropdown">
+              <li className="dropbtn">Profile</li>
+              <div className="dropdown-content">
+                <Link>User Profile</Link>
+                <Link>Login</Link>
+                <Link to="/signup">Sign Up</Link>
               </div>
-            </li>
-
+            </div>
           </ul>
         </div>
       </div>
