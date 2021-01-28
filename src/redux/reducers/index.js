@@ -237,7 +237,7 @@ const createdCharacter = (data) => {
   }
 }
 
-export const createCharacter = (characterInfo, userToken) => {
+export const createCharacter = (characterInfo) => {
   return async (dispatch) => {
     try {
       // cannot pass array as data type while keeping sanity
@@ -266,8 +266,7 @@ export const createCharacter = (characterInfo, userToken) => {
           wis: characterInfo.wis,
           cha: characterInfo.cha,
           userId: characterInfo.userId,
-        }, 
-        { headers : {"Authorization" : `Bearer ${userToken}`}}
+        }
       )
       console.log('createCharacter axios post response:', response)
       dispatch(createdCharacter(response.data))

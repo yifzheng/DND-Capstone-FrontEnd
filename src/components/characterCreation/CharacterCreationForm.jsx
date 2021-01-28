@@ -166,7 +166,7 @@ class CharacterCreationForm extends React.Component {
     }
 
     setTimeout(() => {
-      this.props.createCharacter(this.state.characterInfo, this.props.currentUser.token)
+      this.props.createCharacter(this.state.characterInfo)
     }, 1200)
 
     setTimeout(() => {
