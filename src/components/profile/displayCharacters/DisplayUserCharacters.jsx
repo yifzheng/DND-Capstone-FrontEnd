@@ -18,7 +18,7 @@ class DisplayUserCharacters extends Component {
         }
     }
     render () {
-        console.log( this.props.characters )
+        console.log("user characters", this.props.characters )
         return (
             <div>
                 <h1>Characters</h1>
