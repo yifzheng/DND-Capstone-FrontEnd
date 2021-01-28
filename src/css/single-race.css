@@ -1,0 +1,108 @@
+h1 {
+  margin: 0;
+  padding: 0;
+}
+h3 {
+  margin: 0;
+  padding: 0;
+}
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+.signle-race-root-container {
+  background-color: #eeeeee;
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+}
+
+.single-race-container {
+  width: 60%;
+  margin: auto;
+  /* text-align: center; */
+}
+
+.single-race-title h1 {
+  margin: 0;
+}
+
+.single-race-title {
+  padding-top: 10px;
+  padding-bottom: 12px;
+
+  font-family: fantasy;
+  font-size: 40px;
+
+  color: #f39c12;
+  background-color: #111111;
+}
+
+.single-race-image {
+  text-align: center;
+}
+
+/* .clear-float {
+  clear: both;
+} */
+
+.single-race-info {
+  /* border-left: 3px #de140d solid; */
+}
+
+.race-info-title {
+  font-family: fantasy;
+  font-size: 30px;
+
+  color: #ecf0f1;
+  background-color: #c0392b;
+
+  text-align: right;
+  padding: 10px 5rem;
+
+  /* width: 900px; */
+  width: 50%;
+  margin-left: auto;
+  border-radius: 7px;
+
+  margin-right: 7rem;
+}
+
+.race-info-title h3 {
+  margin: 0;
+}
+
+.race-info {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+
+  line-height: 4rem;
+
+  color: #2c3e50;
+
+  /* margin-left: 30px; */
+}
+
+.race-info-bits {
+  text-align: center;
+  /* text-align: right;
+  margin-right: 10rem; */
+
+  font-family: fantasy;
+  font-size: 25px;
+
+  line-height: 4rem;
+
+  color: #333333;
+}
+
+.race-info-bits a {
+  color: #f39c12;
+  text-decoration: none;
+}
+
+.race-info-bits a:visited {
+  color: #f39c12;
+}
