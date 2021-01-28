@@ -37,7 +37,7 @@ class IndividualFeature extends Component {
                 <h2>Level: { this.props.feature.level }</h2>
                 <div>
                     <h2>Prerequisites</h2>
-                    { this.props.feature.prerequisites.length > 0 ?
+                    { this.props.feature.prerequisites !== undefined ?
                         <div>
                             {
                                 this.props.feature.prerequisites.map( item => {
@@ -55,17 +55,17 @@ class IndividualFeature extends Component {
                 </div>
                 <div className = "feature-desc">
                     <h2>Description</h2>
-                    {
+                    { this.props.feature.desc !== undefined &&
                         this.props.feature.desc.map( (item, index) => {
                             return(
-                                <h3 key = {index}>{item}</h3>
+                                <p key = {index}>{item}</p>
                             )
                         })
                     }
                 </div>
                  <div className = "feature-choices">
                     <h2>Choices</h2>
-                    { this.props.feature.choice ?
+                    { this.props.feature.choice !== undefined ?
                         <div>
                             <h3>Choose {this.props.feature.choice.choose} from:</h3>
                             <FeatureChoice from = {this.props.feature.choice.from} />

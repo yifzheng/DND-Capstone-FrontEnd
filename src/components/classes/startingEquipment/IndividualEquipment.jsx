@@ -25,7 +25,6 @@ class IndividualEquipment extends Component {
 
     render () {
         console.log( `this is the rendering for the individual class` )
-        console.log( this.props )
         if ( !this.props.equipment.class ) {
             return <h1>Loading</h1>
         }

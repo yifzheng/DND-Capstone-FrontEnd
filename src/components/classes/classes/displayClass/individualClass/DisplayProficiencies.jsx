@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom";
+import axios from "axios"
 import { connect } from "react-redux";
 import { getApiData } from "../../../../../redux/reducers";
 
@@ -12,6 +13,7 @@ class DisplayProficiencies extends React.Component {
         console.log( "component did mount " + this.props )
         let url = `/proficiencies/${this.props.match.params.index}`;
         await this.props.getApiData( url );
+        //const {data} = await axios.get(`https://www.dnd5eapi.co/api/equipment/${this.props.prof.references.index}`)
     }
     render () {
         console.log( this.props )
@@ -59,6 +61,15 @@ class DisplayProficiencies extends React.Component {
                             <h3>This Skill Is Not Tied To Any Race</h3>
                         </div> }
                 </div>
+                {
+                    this.props.prof.references !== undefined && 
+                    <div>
+                        <h2>References</h2>
+                        {this.props.prof.references.map( (item, index) => {
+                            <Link to = {`/equipment/${item.index}`}><p>{item.name}</p></Link>
+                        })}
+                        </div>
+                }
             </div>
 
         )
