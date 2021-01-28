@@ -25,7 +25,7 @@ class IndividualFeature extends Component {
 
     render () {
         console.log( `this is the rendering for the individual class` )
-        console.log( this.props )
+        console.log( this.props.feature.prerequisites )
         if ( !this.props.feature.class ) {
             return <h1>Loading</h1>
         }
@@ -34,7 +34,7 @@ class IndividualFeature extends Component {
                 <Link to={ `/class/${this.props.feature.class.name.toLowerCase()}` }><h4>Back to { this.props.feature.class.name.toLowerCase() } Information</h4></Link>
                 <h1>{ this.props.feature.name }</h1>
                 <h2>Class: { this.props.feature.class.name }</h2>
-                <h2>Level: { this.props.feature.level }</h2>
+                {this.props.feature.level !== undefined && <h2>Level: { this.props.feature.level }</h2> }
                 <div>
                     <h2>Prerequisites</h2>
                     { this.props.feature.prerequisites !== undefined ?
@@ -42,7 +42,7 @@ class IndividualFeature extends Component {
                             {
                                 this.props.feature.prerequisites.map( item => {
                                     return(
-                                        <h3>{item}</h3>
+                                        <h3>{item.type}</h3>
                                     )
                                 })
                             }
@@ -63,7 +63,7 @@ class IndividualFeature extends Component {
                         })
                     }
                 </div>
-                 <div className = "feature-choices">
+                <div className = "feature-choices">
                     <h2>Choices</h2>
                     { this.props.feature.choice !== undefined ?
                         <div>

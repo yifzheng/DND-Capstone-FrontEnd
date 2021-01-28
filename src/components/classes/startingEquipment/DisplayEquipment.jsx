@@ -17,12 +17,13 @@ class DisplayEquipment extends Component {
         }
     }
     render () {
+        console.log(this.state.equipment)
         if ( this.state.equipment === undefined ) {
             return ( <h1>Loading</h1> )
         }
         return (
             <div>
-                <h1>Equipment Name : { this.state.equipment.name }</h1>
+                <h1>{ this.state.equipment.name }</h1>
                 {this.state.equipment.desc !== undefined && <div> <h2>Description:</h2>{
                     this.state.equipment.desc.map( ( item, index ) => {
                         return (
@@ -41,6 +42,7 @@ class DisplayEquipment extends Component {
                 Max Bonus: {this.state.equipment.armor_class.max_bonus}</h2>}
                 {this.state.equipment.category_range !== undefined && <h2>Category Range : { this.state.equipment.category_range }</h2> }
                 {this.state.equipment.damage !== undefined && <h2>Damage Dice/Type : { this.state.equipment.damage.damage_dice }/ { this.state.equipment.damage.damage_type.name } </h2> }
+                {this.state.equipment.two_handed_damage !== undefined && <h2>Two Handed Damage Dice/Type : { this.state.equipment.two_handed_damage.damage_dice }/ { this.state.equipment.two_handed_damage.damage_type.name } </h2> }
                 {this.state.equipment.cost !== undefined && <h2>Cost : { this.state.equipment.cost.quantity } { this.state.equipment.cost.unit }</h2> }
                 {this.state.equipment.quantity !== undefined && <h2>Quantity : { this.state.equipment.quantity}</h2> }
                 {this.state.equipment.contents !== undefined &&
@@ -65,6 +67,8 @@ class DisplayEquipment extends Component {
                         } )
                     }
                 </div> }
+                {this.state.equipment.speed !== undefined && <h2>Speed: {this.state.equipment.speed.quantity} {this.state.equipment.speed.unit}</h2>}
+                {this.state.equipment.capacity !== undefined && <h2>Capacity: {this.state.equipment.capacity}</h2>}
                 {this.state.equipment.str_minimum !== undefined && <h2>Strength Minimum : {this.state.equipment.str_minimum}</h2>}
                 {this.state.equipment.stealth_advantage !== undefined && <h2>Stealth Advantage : {this.state.equipment.stealth_advantage === true ? "True" : "False"}</h2>}
                 {this.state.equipment.stealth_disadvantage !== undefined && <h2>Stealth Disadvantage : {this.state.equipment.stealth_disadvantage === true ? "True" : "False"}</h2>}
