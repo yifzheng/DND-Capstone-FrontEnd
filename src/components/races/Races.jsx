@@ -20,15 +20,20 @@ class races extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Races</h1>
+      <div className="root-race-container">
+        <div className="races-title">
+          <h1>Races</h1>
+        </div>
         {this.props.races.results !== undefined ? (
-          this.props.races.results.map((race, index) => (
-            <DisplayRace key={index} index={race.index} name={race.name} />
-          ))
+          <div className="race-preview-container">
+            {this.props.races.results.map((race, index) => (
+              <DisplayRace key={index} index={race.index} name={race.name} />
+            ))}
+          </div>
         ) : (
           <span />
         )}
+        <div className="clear-float"></div>
       </div>
     )
   }
