@@ -1,5 +1,5 @@
 .root-race-container {
-  background-color: black;
+  background-color: #222222;
 }
 
 .clear-float {
@@ -15,7 +15,9 @@
 
 .race-preview {
   float: left;
-  width: 470px;
+  /* width: 470px; */
+  /* width: 420px; */
+  width: 30.8%;
   text-align: center;
   margin: 17px;
   /* height: 640px; */
@@ -56,7 +58,8 @@
 .races-title {
   font-family: fantasy;
   font-size: 50px;
-  color: #8b0000;
+  /* color: #8b0000; */
+  color: rgba(255, 166, 0, 0.842);
 
-  background-color: black;
+  background-color: #111111;
 }
