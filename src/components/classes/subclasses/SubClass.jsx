@@ -1,11 +1,11 @@
 import React from 'react'
 
 import { Link } from "react-router-dom";
-
+import "../../../css/subclass.css"
 const SubClass = () => {
     return(
-        <div>
-            <Link to = {`/subclasses`}><h1>SubClasses</h1></Link>
+        <div id = "subclass">
+            <Link to = {`/subclasses`} style={{ textDecoration: 'none' }}><h1>SubClasses</h1></Link>
         </div>
     )
 }

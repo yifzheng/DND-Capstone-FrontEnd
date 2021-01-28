@@ -32,7 +32,7 @@ class IndividualSubClass extends Component {
         }
         return (
             <div>
-                <Link to={ `/class/${this.props.class.class.index}` }><h4>Back to { this.props.class.class.name } Information</h4></Link>
+                <Link to={ `/class/${this.props.class.class.index}` }style={{ textDecoration: 'none' }}><h4>Back to { this.props.class.class.name } Information</h4></Link>
                 <h1>{ this.props.class.name }</h1>
                 <h2>Class: {this.props.class.class.name}</h2>
                 <h2>Sub Class Flavor: { this.props.class.subclass_flavor }</h2>

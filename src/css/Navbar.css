@@ -30,6 +30,7 @@
   padding: 4px;
   font-family: fantasy;
   font-size: 20px;
+  width: 100vw;
 }
 
 .navbar a {
@@ -45,7 +46,7 @@
 .dropdown:hover .dropbtn {
   width: 100px;
   background-color: #8b0000;
-  color: white;
+  color: rgb(150, 120, 120);
 }
 
 /* .dropdown-content {
@@ -74,7 +75,7 @@
 }
 .dropbtn {
   background-color: #161616;
-  color: white;
+  color: rgb(209, 178, 178);
   padding: 15px;
   min-width: 160px;
   font-size: 16px;

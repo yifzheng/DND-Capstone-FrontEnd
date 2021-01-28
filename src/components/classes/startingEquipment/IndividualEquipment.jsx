@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import { getApiData } from "../../../redux/reducers/index"
 import Options from "./Options"
-
+import "../../../css/individualequipment.css"
 
 class IndividualEquipment extends Component {
     constructor ( props ) {
@@ -30,23 +30,25 @@ class IndividualEquipment extends Component {
         }
         return (
             <div>
-                <Link to={ `/class/${this.props.match.params.index}` }><h4>Back to { this.props.equipment.class.name } Information</h4></Link>
-                <h1>Class : { this.props.equipment.class.name }</h1>
-                <div className="starting-equip">
-                    <h2>Sarting Equipment</h2>
-                    { this.props.equipment.starting_equipment.length > 0 ?
-                        this.props.equipment.starting_equipment.map( ( item, index ) => {
-                            return (
-                                <div>
-                                    <h3>Quantity: { item.quantity }</h3>
-                                    <Link to={ `/equipment/${item.equipment.index}` }><h3>{ item.equipment.name }</h3></Link>
-                                </div>
-                            )
-                        } ) :
-                        <div>
-                            <h3>This Class Has No Starting Equipment</h3>
-                        </div>
-                    }
+                <Link to={ `/class/${this.props.match.params.index}` } style={ { textDecoration: 'none' } }><h3 id = "back">Back to { this.props.equipment.class.name } Information</h3></Link>
+                <div id = "individual-equipment-container">
+                    <h1 id = "equipmentclass">Class : { this.props.equipment.class.name }</h1>
+                    <div className="starting-equip">
+                        <h2>Sarting Equipment</h2>
+                        { this.props.equipment.starting_equipment !== undefined ?
+                            this.props.equipment.starting_equipment.map( ( item, index ) => {
+                                return (
+                                    <div>
+                                        <h3>Quantity: { item.quantity }</h3>
+                                        <Link to={ `/equipment/${item.equipment.index}` } style={ { textDecoration: 'none' } }><h3>{ item.equipment.name }</h3></Link>
+                                    </div>
+                                )
+                            } ) :
+                            <div>
+                                <h3>This Class Has No Starting Equipment</h3>
+                            </div>
+                        }
+                    </div>
                 </div>
                 {/* <div className="equip-options">
                     <h2>Starting Equipment Options</h2>

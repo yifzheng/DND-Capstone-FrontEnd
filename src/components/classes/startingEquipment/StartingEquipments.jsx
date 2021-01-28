@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 import DisplayClass from "./DisplayClass"
-
+import "../../../css/startingEquipment.css"
 class StartingEqupments extends Component {
     constructor ( props ) {
         super( props );
@@ -23,17 +23,20 @@ class StartingEqupments extends Component {
 
     render () {
         console.log( `this is the rendering for the features` )
-        {console.log("About to go to displayfeature")}
+        { console.log( "About to go to displayfeature" ) }
         return (
-            <div className="class-container">
+            <div className="equipment-container">
                 <h1>Starting Equipments</h1>
-                {
-                    this.state.class.map( ( item, ind ) => {
-                        return (
-                            <DisplayClass key = {ind} name={ item.class } index={ item.index } />
-                        )
-                    } )
-                }
+                <div className="equipment-card">
+                    {
+                        this.state.class.map( ( item, ind ) => {
+                            return (
+                                <DisplayClass key={ ind } name={ item.class } index={ item.index } />
+                            )
+                        } )
+                    }
+                </div>
+
             </div>
         )
     }

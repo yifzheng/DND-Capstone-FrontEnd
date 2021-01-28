@@ -11,7 +11,7 @@ const SubClassSpells = ( props ) => {
                     )
                 } )
             }
-            <Link to = {`/spells/${props.spell.index}`}><h3>Spell: {props.spell.name }</h3></Link>
+            <Link to = {`/spells/${props.spell.index}`}style={{ textDecoration: 'none' }}><h3>Spell: {props.spell.name }</h3></Link>
         </div>
     )
 }

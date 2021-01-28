@@ -1,0 +1,39 @@
+#prof-container{
+    margin-top: 8%;
+}
+h1{
+    text-align: center;
+    font-size: 46px;
+    font-family: fantasy;
+    font-weight: 100;
+    color: rgb(209, 178, 178);
+}
+.prof-classes{
+    text-align: center;
+    font-size: 1.6em;
+}
+#pof-classes{
+    display: inline-flex;
+    flex-direction: row;
+    flex-grow: 1;
+    font-size: 1.1em;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+#pof-races{
+    display: inline-flex;
+    flex-direction: row;
+    flex-grow: 1;
+    font-size: 1.1em;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.prof-races{
+    text-align: center;
+    font-size: 1.6em;
+}
+#references{
+    text-align: center;
+    font-size: 1.6em;
+}

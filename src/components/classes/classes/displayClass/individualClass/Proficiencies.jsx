@@ -1,14 +1,14 @@
 import React from "react"
 import { Link } from "react-router-dom";
-
-class Proficiencies extends React.Component{
-    constructor(props){
-        super(props)
+import "../../../../../css/individualclass.css"
+class Proficiencies extends React.Component {
+    constructor ( props ) {
+        super( props )
     }
 
-    render(){
-        return(
-            <Link to = {`/proficiencies/${this.props.classIndex}`}><h4>{this.props.name}</h4></Link>
+    render () {
+        return (
+            <div id = "profs"><Link to={ `/proficiencies/${this.props.classIndex}` } style={ { textDecoration: 'none' } }><h4> {" | "}{ this.props.name }</h4></Link> </div>
         )
     }
 }

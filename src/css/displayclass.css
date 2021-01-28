@@ -1,0 +1,14 @@
+#class {
+    padding: 20px 0;
+	width: 255px;
+	margin: 2%;
+	background-color: #8b0000;
+	text-align: center; 
+}
+#class h3{
+    text-decoration: none;
+    color: rgb(209, 178, 178);
+    text-underline-position: unset;
+    font-size: 36px;
+    font-family: fantasy;
+}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom"
 import axios from "axios";
-
+import "../../../css/equipment.css";
 class AllEquipment extends Component {
     state = {
         equipment: []
@@ -21,16 +21,19 @@ class AllEquipment extends Component {
             return ( <h1>Loading</h1> )
         }
         return (
-            <div>
+            <div className="all-equipment-container">
                 <h1>Equipment</h1>
-                {this.state.equipment !== undefined && <div>
-                    {this.state.equipment.map( (item, index) => {
-                        return(
-                            <Link to = {`/equipment/${item.index}`}><h3>{item.name}</h3></Link>
-                        )
-                    })}
-                    </div>}
-                <footer>If page didn't load refresh the page</footer>
+                <div >
+                    { this.state.equipment !== undefined && <div className="all-equipment-card">
+                        { this.state.equipment.map( ( item, index ) => {
+                            return (
+                                <div id = "all-equipment">
+                                <Link to={ `/equipment/${item.index}` } style={ { textDecoration: 'none' } }><h3>{ item.name }</h3></Link>
+                                </div>
+                            )
+                        } ) }
+                    </div> }
+                </div>
             </div>
         )
     }

@@ -26,14 +26,16 @@ class Classes extends Component {
         return (
             <div className="class-container">
                 <h1 id = "classes">Classes</h1>
-                
-                {
+                <div className="class-cards">
+                    {
                     this.state.classes.map( ( item, ind ) => {
                         return (
                             <DisplayClass key = {ind} name={ item.name } index={ item.index } />
                         )
                     } )
                 }
+                </div>
+                
             </div>
         )
     }

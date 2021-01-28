@@ -40,7 +40,7 @@ class ClassLevels extends Component {
         }
         return (
             <div>
-                <Link to={ `/class/${this.props.match.params.index}` }><h4>Back to { this.props.match.params.index } Information</h4></Link>
+                <Link to={ `/class/${this.props.match.params.index}` }style={{ textDecoration: 'none' }}><h4>Back to { this.props.match.params.index } Information</h4></Link>
                 <h1>{ this.props.match.params.index.charAt( 0 ).toUpperCase() }{ this.props.match.params.index.substring( 1 ) }</h1>
                 {
 
@@ -54,7 +54,7 @@ class ClassLevels extends Component {
                                     <h2>Feature Choices</h2>
                                     { item.feature_choices.map( ( item, index ) => {
                                         return (
-                                            <Link to={ `/feature/${item.index}` }><h3 key={ index }>{ item.name }</h3></Link>
+                                            <Link to={ `/feature/${item.index}` }style={{ textDecoration: 'none' }}><h3 key={ index }>{ item.name }</h3></Link>
                                         )
                                     } ) }
                                 </div> }
@@ -62,7 +62,7 @@ class ClassLevels extends Component {
                                     <h2>Features</h2>
                                     { item.features.map( ( item, index ) => {
                                         return (
-                                            <Link to={ `/feature/${item.index}` }><h3 key={ index }>{ item.name }</h3></Link>
+                                            <Link to={ `/feature/${item.index}` }style={{ textDecoration: 'none' }}><h3 key={ index }>{ item.name }</h3></Link>
                                         )
                                     } ) }
                                 </div> }
