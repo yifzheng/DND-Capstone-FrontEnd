@@ -1,28 +1,29 @@
-
-html, body{
-    margin: 0;
-    padding: 0;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 .homepage {
-    background-image: url("https://wallpapercave.com/wp/wp2227193.jpg");
-    height: 92.75vh;
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-image: url('https://wallpapercave.com/wp/wp2227193.jpg');
+  height: 92.75vh;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-.home-page-logo{
-    width: 1300px;
-    margin-right: auto;
-    position: absolute;
+.home-page-logo {
+  width: 1300px;
+  margin-right: auto;
+  position: absolute;
 }
 .homepage button {
-    background-color: #CD0000;
-    height: 60px;
-    padding: 10px;
-    border-radius: 10px;
-    color: white;
-    font-family:fantasy;
-    font-size: 1.3rem;
-    margin-top: 30%;
-    margin-left: 5vw;
-    outline: none;
+  background-color: #cd0000;
+  height: 60px;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  font-family: fantasy;
+  font-size: 1.3rem;
+  margin-top: 30%;
+  margin-left: 5vw;
+  outline: none;
+  cursor: pointer;
 }

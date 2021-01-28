@@ -1,5 +1,5 @@
 .root-race-container {
-  background-color: #222222;
+  background-color: #ecf0f1;
 }
 
 .clear-float {
@@ -9,20 +9,13 @@
 .race-preview-container {
   width: 80%;
   margin: auto;
-  /* margin-top: 70px; */
-  background-color: grey;
+  text-align: center;
 }
 
 .race-preview {
-  float: left;
-  /* width: 470px; */
-  /* width: 420px; */
+  display: inline-block;
   width: 30.8%;
-  text-align: center;
   margin: 17px;
-  /* height: 640px; */
-  /* line-height: 615px; */
-  /* background-color: lightblue; */
 }
 
 .race-preview a {
@@ -35,7 +28,6 @@
   line-height: 50px;
   background-color: #8b0000;
 
-  /* border: 2px solid #161616; */
   border-radius: 11px;
 
   position: relative;
@@ -58,8 +50,7 @@
 .races-title {
   font-family: fantasy;
   font-size: 50px;
-  /* color: #8b0000; */
-  color: rgba(255, 166, 0, 0.842);
+  color: #f39c12;
 
   background-color: #111111;
 }
