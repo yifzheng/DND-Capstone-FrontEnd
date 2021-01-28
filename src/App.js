@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 
 import Routes from './Routes/Routes'
 import NavBar from './components/navbar/Navbar'
+import ScrollToTop from './helper/scroll-to-top'
 
 // global styles
 import './css/global-styles.css'
@@ -12,10 +13,12 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          <header>
-            <NavBar />
-          </header>
-          <Routes />
+          <ScrollToTop>
+            <header>
+              <NavBar />
+            </header>
+            <Routes />
+          </ScrollToTop>
         </Router>
       </div>
     )

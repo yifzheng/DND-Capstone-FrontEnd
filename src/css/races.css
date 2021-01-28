@@ -20,7 +20,7 @@
 
 .race-preview a {
   text-decoration: none;
-  color: white;
+  color: #ecf0f1;
 
   display: block;
   width: 320px;
@@ -39,7 +39,7 @@
 }
 
 .race-preview a:hover {
-  color: orange;
+  color: #f39c12;
   background-color: #161616;
 }
 
@@ -48,6 +48,8 @@
 }
 
 .races-title {
+  border-top: 8px solid #8b0000;
+
   font-family: fantasy;
   font-size: 50px;
   color: #f39c12;
