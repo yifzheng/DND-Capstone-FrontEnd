@@ -1,71 +1,95 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { loginUser } from '../redux/reducers'
 
 class LoginPage extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
+  state = {
+    loginInfo: {
       username: '',
+      email: '',
       password: '',
-    }
-
-    this.handlePasswordChange = this.handlePasswordChange.bind(this)
-    this.handleUserChange = this.handleUserChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    },
   }
 
-  handleUserChange(event) {
+  handleLoginFormChange = (e) => {
     this.setState({
-      username: event.target.value,
+      loginInfo: {
+        ...this.state.loginInfo,
+        [e.target.name]: e.target.value,
+      },
     })
   }
 
-  handlePasswordChange(event) {
-    this.setState({
-      password: event.target.value,
-    })
-  }
+  handleLoginFormSubmit = async (e) => {
+    e.preventDefault()
+    console.log('logging in with info:', this.state.loginInfo)
+    await this.props.loginUser(this.state.loginInfo)
 
-  handleSubmit(event) {
-    event.preventDefault()
-    if (!this.state.username) {
-      alert('please enter username')
-    }
-
-    if (!this.state.password) {
-      alert('please enter password')
-    }
+    setTimeout(() => {
+      console.log(
+        'currentLoggedInUserInfo:',
+        this.props.currentLoggedInUserInfo
+      )
+    }, 2000)
   }
 
   render() {
+    console.log('loginInfo state:', this.state.loginInfo)
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>UserName</label>
-        <input
-          type="text"
-          value={this.state.username}
-          onChange={this.handleUserChange}
-        />
+      <div>
+        {/* LOGIN FORM */}
+        <form onSubmit={(e) => this.handleLoginFormSubmit(e)}>
+          <label>Username</label>
+          <input
+            type="text"
+            name="username"
+            value={this.state.username}
+            required
+            onChange={(e) => this.handleLoginFormChange(e)}
+          />
+          <br />
+          <br />
 
-        <label>Password</label>
-        <input
-          type="password"
-          value={this.state.password}
-          onChange={this.handlePasswordChange}
-        />
-        <button onClick={this.handleSubmit}>Submit</button>
-      </form>
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            value={this.state.email}
+            required
+            onChange={(e) => this.handleLoginFormChange(e)}
+          />
+          <br />
+          <br />
+
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            value={this.state.password}
+            required
+            onChange={(e) => this.handleLoginFormChange(e)}
+          />
+          <br />
+          <br />
+
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
     )
   }
 }
 
-function mapState(state) {
-  return
+const mapStateToProps = (state) => {
+  return {
+    currentLoggedInUserInfo: state.currentLoggedInUserInfo,
+  }
 }
 
-// const connectedLoginPage = connect(mapState, actionCreators)(LoginPage);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loginUser: (loginInfo) => dispatch(loginUser(loginInfo)),
+  }
+}
 
-// export {connectedLoginPage as LoginPage};
-
-export default LoginPage
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage)

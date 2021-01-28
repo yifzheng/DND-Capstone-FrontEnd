@@ -33,9 +33,9 @@ const Navbarr = () => {
             <div className="dropdown">
               <li className="dropbtn">Profile</li>
               <div className="dropdown-content">
-                <Link to = "/userprofile">User Profile</Link>
+                <Link to="/userprofile">User Profile</Link>
                 <Link to="/signup">Sign Up</Link>
-                <Link>Login</Link>
+                <Link to="/login">Login</Link>
                 <Link>Logout</Link>
               </div>
             </div>
