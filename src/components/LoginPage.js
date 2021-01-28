@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { loginUser } from '../redux/reducers'
 
@@ -10,6 +10,7 @@ class LoginPage extends React.Component {
       email: '',
       password: '',
     },
+    redirect: false,
   }
 
   handleLoginFormChange = (e) => {
@@ -24,18 +25,31 @@ class LoginPage extends React.Component {
   handleLoginFormSubmit = async (e) => {
     e.preventDefault()
     console.log('logging in with info:', this.state.loginInfo)
-    await this.props.loginUser(this.state.loginInfo)
-
-    setTimeout(() => {
-      console.log(
-        'currentLoggedInUserInfo:',
-        this.props.currentLoggedInUserInfo
-      )
-    }, 2000)
+    await this.props
+      .loginUser(this.state.loginInfo)
+      .then(() => {
+        console.log(
+          'current logged in user info:',
+          this.props.currentLoggedInUserInfo
+        )
+        if (this.props.currentLoggedInUserInfo) {
+          this.setState({
+            redirect: true,
+          })
+        } else {
+          alert('Incorrect credentials!')
+        }
+      })
+      .catch((err) => {
+        console.err(err)
+      })
   }
 
   render() {
     console.log('loginInfo state:', this.state.loginInfo)
+    if (this.state.redirect) {
+      return <Redirect to="/" />
+    }
     return (
       <div>
         {/* LOGIN FORM */}
