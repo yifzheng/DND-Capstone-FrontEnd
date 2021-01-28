@@ -40,7 +40,7 @@ class IndividualSubClass extends Component {
                     <h2>Sub Class Desciption</h2>
                     { this.props.class.desc.map( ( item ) => {
                         return (
-                            <h3>{ item }</h3>
+                            <p>{ item }</p>
                         )
                     } ) }
                 </div>

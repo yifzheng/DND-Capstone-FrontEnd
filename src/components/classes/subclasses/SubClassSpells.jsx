@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom"
 
 const SubClassSpells = ( props ) => {
     return (
@@ -10,7 +11,7 @@ const SubClassSpells = ( props ) => {
                     )
                 } )
             }
-            <h3>Spell: {props.spell.name }</h3>
+            <Link to = {`/spells/${props.spell.index}`}><h3>Spell: {props.spell.name }</h3></Link>
         </div>
     )
 }

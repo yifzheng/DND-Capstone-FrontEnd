@@ -29,7 +29,7 @@ class Skill extends React.Component {
                 {this.state.skills.desc &&
                     this.state.skills.desc.map( ( item, index ) => {
                         return (
-                            <h3 key={ index }> {item }</h3>
+                            <p key={ index }> {item }</p>
                         )
                     } )
                 }

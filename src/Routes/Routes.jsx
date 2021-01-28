@@ -17,6 +17,8 @@ import IndividualEquipment from '../components/classes/startingEquipment/Individ
 import DisplayProficiencies from '../components/classes/classes/displayClass/individualClass/DisplayProficiencies'
 import ClassLevels from '../components/classes/classes/displayClass/individualClass/ClassLevels'
 import Skills from '../components/classes/classes/displayClass/individualClass/Skills'
+import DisplayEquipment from '../components/classes/startingEquipment/DisplayEquipment'
+import AllEquipment from '../components/classes/startingEquipment/AllEquipment'
 // Races Imports
 import Races from '../components/races/Races'
 import IndividualRace from '../components/races/IndividualRace'
@@ -71,6 +73,8 @@ const Routes = () => {
       <Route exact path="/class/:index/levels" component={ClassLevels} />
       <Route path="/skills/:index" component={Skills} />
       <Route path="/classSpells/:index/spells" component={ClassSpells} />
+      <Route path="/equipment/:index" component={DisplayEquipment} />
+      <Route path="/allequipment" component={AllEquipment} />
       {/* RACES ROUTES BELOW */}
       <Route path="/races/:race" component={IndividualRace} />
       <Route eaxct path="/races" component={Races} />

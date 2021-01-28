@@ -23,8 +23,6 @@ class StartingEqupments extends Component {
 
     render () {
         console.log( `this is the rendering for the features` )
-        console.log( this.props )
-        console.log(this.state.class)
         {console.log("About to go to displayfeature")}
         return (
             <div className="class-container">
