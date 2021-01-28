@@ -196,7 +196,7 @@ class CharacterCreationForm extends React.Component {
     //   })
     // }
 
-    /* setTimeout(() => {
+    setTimeout(() => {
       console.log(
         'this.state.characterInfo.userId',
         this.state.characterInfo.userId
@@ -209,7 +209,7 @@ class CharacterCreationForm extends React.Component {
 
     setTimeout(() => {
       console.log('CREATED CHARACTER REDUX STATE:', this.props.newCharacter)
-    }, 2000) */
+    }, 2000)
   }
 
   render() {

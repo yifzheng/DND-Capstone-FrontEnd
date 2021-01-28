@@ -5,6 +5,7 @@ const Profile = ( props ) => {
     return (
         <div>
             <UserProfile />
+            {/* if a user exists then render the component below, else it doesn't render */}
             <DisplayUserCharacters />
         </div>
     )
