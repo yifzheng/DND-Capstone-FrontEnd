@@ -154,62 +154,24 @@ class CharacterCreationForm extends React.Component {
   handleFormSubmit = (e) => {
     e.preventDefault()
 
-    console.log('public state in submit:', this.state.public)
-
-    if (this.state.public === "false") {
-      console.log('Not Public therefore userId = 1')
+    if (this.state.public === 'false') {
       this.setState({
         characterInfo: {
           ...this.state.characterInfo,
-          userId: 1,
+          userId: '1',
         },
       })
+    } else {
+      delete this.state.characterInfo.userId
     }
-    else{
-      console.log('Public therefore userId = ""')
-      this.setState({
-        characterInfo: {
-          ...this.state.characterInfo,
-          userId: "",
-        },
-      })
-    }
-   setTimeout(()=> {
-    alert(this.state.characterInfo.userId)
-   }, 1000)
-    // if (!this.state.public) {
-    //   delete this.state.characterInfo.userId
-    // } else {
-    //   this.setState({
-    //     characterInfo: {
-    //       ...this.state.characterInfo,
-    //       userId: 1,
-    //     },
-    //   })
-    // }
-    // else {
-    //   this.setState({
-    //     characterInfo: {
-    //       ...this.state.characterInfo,
-    //       userId: this.props.loggedInUser.id,
-    //     },
-    //   })
-    // }
-
-    setTimeout(() => {
-      console.log(
-        'this.state.characterInfo.userId',
-        this.state.characterInfo.userId
-      )
-    }, 800)
 
     setTimeout(() => {
       this.props.createCharacter(this.state.characterInfo)
-    }, 1400)
+    }, 1200)
 
     setTimeout(() => {
       console.log('CREATED CHARACTER REDUX STATE:', this.props.newCharacter)
-    }, 2000)
+    }, 2200)
   }
 
   render() {
