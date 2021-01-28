@@ -164,7 +164,6 @@ class CharacterCreationForm extends React.Component {
     } else {
       delete this.state.characterInfo.userId
     }
-
     setTimeout(() => {
       console.log('token sent to create chara:', this.props.currentUser.token)
       this.props.createCharacter(
@@ -172,10 +171,6 @@ class CharacterCreationForm extends React.Component {
         this.props.currentUser.token
       )
     }, 1200)
-
-    setTimeout(() => {
-      console.log('CREATED CHARACTER REDUX STATE:', this.props.newCharacter)
-    }, 2200)
   }
 
   render() {

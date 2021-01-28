@@ -382,7 +382,7 @@ const rootReducer = (state = initialState, action) => {
     case LOGGED_OUT_USER:
       return{
         ...state,
-        currentLoggedInUserInfo: null,
+        currentLoggedInUserInfo: '',
         characters : [],
       }
     default:

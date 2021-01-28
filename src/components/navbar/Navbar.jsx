@@ -6,6 +6,8 @@ import './Navbar.css'
 
 class Navbar extends React.Component {
   render () {
+    let bool = false;
+    console.log("current useer", this.props.currentUser)
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
@@ -38,7 +40,8 @@ class Navbar extends React.Component {
                   <Link to="/userprofile">User Profile</Link>
                   <Link to="/signup">Sign Up</Link>
                   <Link to="/login">Login</Link>
-                  <button onClick={ e => this.props.logoutUser() }>Logout</button>
+                  {this.props.currentUser !== undefined ? (this.props.currentUser.token !== undefined ? <Link to = "/"><button onClick={ e => this.props.logoutUser() }>Logout</button></Link> : <span/>) : <span/>}
+                  
                 </div>
               </div>
             </ul>
@@ -49,10 +52,15 @@ class Navbar extends React.Component {
   }
 }
 
+const mapStateToProps = state => {
+  return{
+    currentUser : state.currentLoggedInUserInfo,
+  }
+}
 const mapDispatchToProps = dispatch => {
   return {
     logoutUser: () => dispatch( logoutUser() ),
   }
 }
 
-export default connect( null, mapDispatchToProps )( Navbar );
+export default connect( mapStateToProps, mapDispatchToProps )( Navbar );
