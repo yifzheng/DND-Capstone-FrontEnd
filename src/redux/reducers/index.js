@@ -10,6 +10,7 @@ import {
   GOT_ALL_USERS,
   CREATED_CHARACTER,
   CREATED_USER,
+  LOGGED_IN_USER,
 } from './actionTypes'
 
 const initialState = {
@@ -28,6 +29,7 @@ const initialState = {
   },
   newCharacter: '',
   newUser: '',
+  currentLoggedInUserInfo: '',
 }
 
 // GET -> Read all characters
@@ -108,6 +110,31 @@ export const getAllUsers = () => {
       const response = await axios.get('http://localhost:8080/api/users')
       console.log('getAllUsers axios response:', response)
       dispatch(gotAllUsers(response.data))
+    } catch (error) {
+      console.error(error)
+    }
+  }
+}
+
+// POST -> Login a user if their credentials match
+const loggedInUser = (data) => {
+  return {
+    type: LOGGED_IN_USER,
+    data,
+  }
+}
+
+export const loginUser = (loginInfo) => {
+  return async (dispatch) => {
+    try {
+      console.log('LOGIN INFO IN REDUX:', loginInfo)
+      const response = await axios.post('http://localhost:8080/user/login', {
+        username: loginInfo.username,
+        password: loginInfo.password,
+        email: loginInfo.email,
+      })
+      console.log('loginUser axios response:', response.data)
+      dispatch(loggedInUser(response.data))
     } catch (error) {
       console.error(error)
     }
@@ -260,7 +287,7 @@ const createdUser = (data) => {
 export const createUser = (userInfo) => {
   return async (dispatch) => {
     try {
-      const response = await axios.post('http://localhost:8080/api/users', {
+      const response = await axios.post('http://localhost:8080/user/sign-up', {
         username: userInfo.username,
         email: userInfo.email,
         password: userInfo.password,
@@ -325,6 +352,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         users: action.data,
+      }
+    case LOGGED_IN_USER:
+      return {
+        ...state,
+        currentLoggedInUserInfo: action.data,
       }
     default:
       return state
