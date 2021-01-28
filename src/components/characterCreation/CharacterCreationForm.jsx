@@ -166,7 +166,11 @@ class CharacterCreationForm extends React.Component {
     }
 
     setTimeout(() => {
-      this.props.createCharacter(this.state.characterInfo, this.props.currentUser.token)
+      console.log('token sent to create chara:', this.props.currentUser.token)
+      this.props.createCharacter(
+        this.state.characterInfo,
+        this.props.currentUser.token
+      )
     }, 1200)
 
     setTimeout(() => {
@@ -506,7 +510,7 @@ const mapStateToProps = (state) => {
     allRaces: state.allRaces,
     allSkills: state.allSkills,
     newCharacter: state.newCharacter,
-    currentUser :  state.currentLoggedInUserInfo,
+    currentUser: state.currentLoggedInUserInfo,
   }
 }
 
@@ -515,8 +519,8 @@ const mapDispatchToProps = (dispatch) => {
     getAllClasses: () => dispatch(getAllClasses()),
     getAllRaces: () => dispatch(getAllRaces()),
     getAllSkills: () => dispatch(getAllSkills()),
-    createCharacter: (characterInfo) =>
-      dispatch(createCharacter(characterInfo)),
+    createCharacter: (characterInfo, userToken) =>
+      dispatch(createCharacter(characterInfo, userToken)),
   }
 }
 
