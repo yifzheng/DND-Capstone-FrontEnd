@@ -246,7 +246,7 @@ const createdCharacter = (data) => {
   }
 }
 
-export const createCharacter = (characterInfo, userToken) => {
+export const createCharacter = (characterInfo) => {
   return async (dispatch) => {
     try {
       console.log('user token:', userToken)
