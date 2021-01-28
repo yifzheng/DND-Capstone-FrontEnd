@@ -9,9 +9,9 @@ class DisplayUserCharacters extends Component {
     }
 
     async componentDidMount () {
-        console.log( "Build component Mounted" )
+        console.log( "Build component Mounted", this.props.id )
         try {
-            await this.props.getAllUserCharacters(1);
+            await this.props.getAllUserCharacters(this.props.id);
 
         } catch ( error ) {
             console.log( error )

@@ -158,7 +158,7 @@ class CharacterCreationForm extends React.Component {
       this.setState({
         characterInfo: {
           ...this.state.characterInfo,
-          userId: '1',
+          userId: this.props.currentUser.userId,
         },
       })
     } else {
@@ -166,7 +166,7 @@ class CharacterCreationForm extends React.Component {
     }
 
     setTimeout(() => {
-      this.props.createCharacter(this.state.characterInfo)
+      this.props.createCharacter(this.state.characterInfo, this.props.currentUser.token)
     }, 1200)
 
     setTimeout(() => {
@@ -506,6 +506,7 @@ const mapStateToProps = (state) => {
     allRaces: state.allRaces,
     allSkills: state.allSkills,
     newCharacter: state.newCharacter,
+    currentUser :  state.currentLoggedInUserInfo,
   }
 }
 

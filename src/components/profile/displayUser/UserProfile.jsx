@@ -4,8 +4,8 @@ const UserProfile = (props) => {
     return(
         <div>
             <img alt = "userImage"></img>
-            <h2>Username: Anonymous</h2>
-            <h2>Email: anonymous@email.com</h2>
+            <h2>Username: {props.userName}</h2>
+            <h2>Email: {props.email}</h2>
         </div>
     )
 }
