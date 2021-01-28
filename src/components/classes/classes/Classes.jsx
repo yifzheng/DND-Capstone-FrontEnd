@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 import DisplayClass from "./displayClass/DisplayClass"
-
+import "../../../css/class.css"
 class Classes extends Component {
     constructor ( props ) {
         super( props );
@@ -25,7 +25,7 @@ class Classes extends Component {
         {console.log("About to go to displayclass")}
         return (
             <div className="class-container">
-                <h1>Classes</h1>
+                <h1 id = "classes">Classes</h1>
                 
                 {
                     this.state.classes.map( ( item, ind ) => {

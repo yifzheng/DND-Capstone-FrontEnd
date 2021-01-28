@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getAllClasses } from '../redux/reducers'
+import { Link } from "react-router-dom"
 
 import "../css/homepage.css";
 class Homepage extends Component {
@@ -12,8 +13,8 @@ class Homepage extends Component {
     return (
       <div className = "homepage">
         <img className = "home-page-logo" src = "https://dragonfirethegame.com/wp-content/uploads/2017/04/logo-dnd.png"></img>
-        <button className = "login-btn">Login To Create Character</button>
-        <button className = "signup-btn">Sign Up To Create Account</button>
+        <Link to = "/login"><button className = "login-btn">Login To Create Character</button></Link>
+        <Link to = "/signup"><button className = "signup-btn">Sign Up To Create Account</button></Link>
       </div>
     )
   }

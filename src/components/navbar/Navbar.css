@@ -1,4 +1,4 @@
-/* .nav-item {
+/* /* .nav-item {
 	margin-left: 50px;
 	margin-right: 50px;
 } */
@@ -10,7 +10,7 @@
 	padding: 14px 16px;
 	text-decoration: none;
 }
- */
+ 
 
 
 .dropdown .dropbtn {
@@ -52,3 +52,4 @@
 .dropdown:hover .dropdown-content {
 	display: block;
 }
+ */
