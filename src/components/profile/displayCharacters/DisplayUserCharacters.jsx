@@ -1,18 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getAllCharacters } from "../../redux/reducers";
+import { getAllUserCharacters } from "../../../redux/reducers";
 
 import { Link } from 'react-router-dom'
-class Builds extends Component {
+class DisplayUserCharacters extends Component {
     constructor ( props ) {
         super( props )
-
     }
 
     async componentDidMount () {
         console.log( "Build component Mounted" )
         try {
-            await this.props.getAllCharacters();
+            await this.props.getAllUserCharacters(1);
 
         } catch ( error ) {
             console.log( error )
@@ -45,8 +44,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getAllCharacters: () => dispatch( getAllCharacters() ),
+        getAllUserCharacters: (id) => dispatch( getAllUserCharacters(id) ),
     }
 }
 
-export default connect( mapStateToProps, mapDispatchToProps )( Builds );
+export default connect( mapStateToProps, mapDispatchToProps )( DisplayUserCharacters );

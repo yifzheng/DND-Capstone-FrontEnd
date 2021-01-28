@@ -8,7 +8,7 @@ class SignUpForm extends Component {
         this.state = {
             userInfo: {
                 username: "",
-                email: "",
+                email: "", 
                 password: ""
             },
             confirmpassword: '',
@@ -71,7 +71,7 @@ class SignUpForm extends Component {
                 </form>
             </div>
         )
-    }
+    } 
 }
 
 const mapStateToProps = state => {

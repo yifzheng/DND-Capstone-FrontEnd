@@ -34,61 +34,67 @@ import ConditionImmunity from '../components/monsters/ConditionImmunity'
 import CreateCharacter from '../components/characterCreation/CreateCharacter'
 import CharacterCreationForm from '../components/characterCreation/CharacterCreationForm'
 import ClassSpells from '../components/classes/classes/displayClass/individualClass/ClassSpells'
-
+// Builds Folder
+import Builds from "../components/builds/Builds"
+import DisplayCharacter from "../components/builds/DisplayCharacter"
 // SignUp form
 import SignUpForm from "../components/SignUpForm"
-
+//userprofile
+import Profile from "../components/profile/Profile"
 const Routes = () => {
   return (
     <Switch>
-      <Route exact path="/" component={Homepage} />
-      <Route path="/allCharacters" component={AllCharacters} />
-      <Route exact path="/classes" component={Classes} />
-      <Route exact path="/class/:index" component={IndividualClass} />
-      <Route exact path="/subclasses" component={SubClasses} />
-      <Route exact path="/subclass/:index" component={IndividualSubClass} />
-      <Route path="/feature/:index" component={IndividualFeature} />
-      <Route exact path="/features" component={Features} />
+      <Route exact path="/" component={ Homepage } />
+      <Route path="/builds" component={ Builds } />
+      <Route path="/character/:id" component={ DisplayCharacter } />
+      <Route path="/allCharacters" component={ AllCharacters } />
+      <Route exact path="/classes" component={ Classes } />
+      <Route exact path="/class/:index" component={ IndividualClass } />
+      <Route exact path="/subclasses" component={ SubClasses } />
+      <Route exact path="/subclass/:index" component={ IndividualSubClass } />
+      <Route path="/feature/:index" component={ IndividualFeature } />
+      <Route exact path="/features" component={ Features } />
       <Route
         exact
         path="/starting-equipment/:index"
-        component={IndividualEquipment}
+        component={ IndividualEquipment }
       />
-      <Route exact path="/starting-equipments" component={StartingEquipments} />
+      <Route exact path="/starting-equipments" component={ StartingEquipments } />
       <Route
         exact
         path="/proficiencies/:index"
-        component={DisplayProficiencies}
+        component={ DisplayProficiencies }
       />
-      <Route exact path="/class/:index/levels" component={ClassLevels} />
-      <Route path = "/skills/:index" component = {Skills}/>
-      <Route path = "/classSpells/:index/spells" component = {ClassSpells}/>
-      {/* RACES ROUTES BELOW */}
-      <Route path="/races/:race" component={IndividualRace} />
-      <Route eaxct path="/races" component={Races} />
-      <Route path="/bonus/:bonus" component={Bonus} />
-      <Route path="/spells/:spell" component={IndividualSpell} />
-      <Route eaxct path="/spells" component={Spells} />
-      <Route path="/languages/:language" component={Language} />
-      <Route path="/traits/:trait" component={Trait} />
-      <Route path="/races/proficiencies/:proficiency" component={Proficiency} />
-      {/* END OF RACES ROUTES */}
+      <Route exact path="/class/:index/levels" component={ ClassLevels } />
+      <Route path="/skills/:index" component={ Skills } />
+      <Route path="/classSpells/:index/spells" component={ ClassSpells } />
+      {/* RACES ROUTES BELOW */ }
+      <Route path="/races/:race" component={ IndividualRace } />
+      <Route eaxct path="/races" component={ Races } />
+      <Route path="/bonus/:bonus" component={ Bonus } />
+      <Route path="/spells/:spell" component={ IndividualSpell } />
+      <Route eaxct path="/spells" component={ Spells } />
+      <Route path="/languages/:language" component={ Language } />
+      <Route path="/traits/:trait" component={ Trait } />
+      <Route path="/races/proficiencies/:proficiency" component={ Proficiency } />
+      {/* END OF RACES ROUTES */ }
 
-      {/* MONSTERS ROUTES BELOW */}
-      <Route path="/monsters/:monster" component={IndividualMonster} />
-      <Route exact path="/monsters" component={Monsters} />
+      {/* MONSTERS ROUTES BELOW */ }
+      <Route path="/monsters/:monster" component={ IndividualMonster } />
+      <Route exact path="/monsters" component={ Monsters } />
       <Route
         path="/conditionImmunity/:condition"
-        component={ConditionImmunity}
+        component={ ConditionImmunity }
       />
-      {/* END OF MONSTERS ROUTES */}
+      {/* END OF MONSTERS ROUTES */ }
 
-      {/* CREATE CHARACTER ROUTES */}
-      <Route path="/createCharacter" component={CreateCharacter} />
-      <Route path="/CharacterCreation" component={CharacterCreationForm} />
-      {/* END OF CREATE CHARACTER ROUTES */}
-      {/* SIGNUP FORM */}
-      <Route path = "/signup" component = {SignUpForm} />
+      {/* CREATE CHARACTER ROUTES */ }
+      <Route path="/createCharacter" component={ CreateCharacter } />
+      <Route path="/CharacterCreation" component={ CharacterCreationForm } />
+      {/* END OF CREATE CHARACTER ROUTES */ }
+      {/* SIGNUP FORM */ }
+      <Route path="/signup" component={ SignUpForm } />
+      <Route path="/userprofile" component={ Profile } />
     </Switch>
   )
 }

@@ -29,7 +29,9 @@ class CharacterCreationForm extends React.Component {
         int: Math.floor(Math.random() * 20),
         wis: Math.floor(Math.random() * 20),
         cha: Math.floor(Math.random() * 20),
+        userId: '',
       },
+      public: true,
     }
   }
 
@@ -139,14 +141,37 @@ class CharacterCreationForm extends React.Component {
     })
   }
 
-  handleFormSubmit = async (e) => {
+  handleDisplayStatusChange = (e) => {
+    this.setState({
+      public: e.target.value,
+    })
+
+    setTimeout(() => {
+      console.log('public state:', this.state.public)
+    }, 800)
+  }
+
+  handleFormSubmit = (e) => {
     e.preventDefault()
 
-    await this.props.createCharacter(this.state.characterInfo)
+    if (this.state.public === 'false') {
+      this.setState({
+        characterInfo: {
+          ...this.state.characterInfo,
+          userId: '1',
+        },
+      })
+    } else {
+      delete this.state.characterInfo.userId
+    }
+
+    setTimeout(() => {
+      this.props.createCharacter(this.state.characterInfo)
+    }, 1200)
 
     setTimeout(() => {
       console.log('CREATED CHARACTER REDUX STATE:', this.props.newCharacter)
-    }, 2000)
+    }, 2200)
   }
 
   render() {
@@ -442,9 +467,30 @@ class CharacterCreationForm extends React.Component {
             <span id="cha-modifier"></span>
           </label>
 
+          <br />
+          <br />
+          {/* Display Status: public or private */}
+          <input
+            type="radio"
+            name="public" // this is a state, not value
+            value="true"
+            onChange={(e) => this.handleDisplayStatusChange(e)}
+          />
+          <label>Public</label>
+
+          <input
+            type="radio"
+            name="public" // this is a state, not value
+            value="false"
+            onChange={(e) => this.handleDisplayStatusChange(e)}
+          />
+          <label>Private</label>
+          <br />
+          {/* END Display Status: public or private */}
+
           <br></br>
           <input type="submit" value="Create Your Character"></input>
-          <input type="reset" value="Reset"></input>
+          {/* <input type="reset" value="Reset"></input> Does not work with modifiers */}
           <Link to="/createCharacter">
             <input type="button" value="Cancel"></input>
           </Link>

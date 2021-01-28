@@ -13,9 +13,6 @@ const Navbarr = () => {
               <Link to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <Link to="/characterData">Character Data</Link>
-            </li>
-            <li className="nav-item">
               <Link to="/classes">Classes</Link>
             </li>
             <li className="nav-item">
@@ -28,7 +25,7 @@ const Navbarr = () => {
               <Link to="/monsters">Monsters</Link>
             </li>
             <li className="nav-item">
-              <Link to="/builds">Builds</Link>
+              <Link to="/builds">Characters</Link>
             </li>
             <li className="nav-item">
               <Link to="/createCharacter">Create Character</Link>
@@ -36,9 +33,10 @@ const Navbarr = () => {
             <div className="dropdown">
               <li className="dropbtn">Profile</li>
               <div className="dropdown-content">
-                <Link>User Profile</Link>
-                <Link>Login</Link>
+                <Link to = "/userprofile">User Profile</Link>
                 <Link to="/signup">Sign Up</Link>
+                <Link>Login</Link>
+                <Link>Logout</Link>
               </div>
             </div>
           </ul>
