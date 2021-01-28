@@ -43,7 +43,7 @@ const gotAllCharacters = (data) => {
 export const getAllCharacters = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get('https://dnd-capstone-backend.herokuapp.com/api/characters')
+      const response = await axios.get('http://localhost:8080/api/characters')
       console.log('getAllCharacters axios response:', response)
       dispatch(gotAllCharacters(response.data))
     } catch (error) {
@@ -64,7 +64,7 @@ export const getAllUserCharacters = (userId) => {
   return async (dispatch) => {
     try {
       const response = await axios.get(
-        `https://dnd-capstone-backend.herokuapp.com/api/characters/user/${userId}`
+        `http://localhost:8080/api/characters/user/${userId}`
       )
       console.log('getAllCharacters axios response:', response)
       dispatch(gotAllUserCharacters(response.data))
@@ -86,7 +86,7 @@ export const getSingleCharacter = (id) => {
   return async (dispatch) => {
     try {
       const response = await axios.get(
-        `https://dnd-capstone-backend.herokuapp.com/api/characters/${id}`
+        `http://localhost:8080/api/characters/${id}`
       )
       console.log('getAllCharacters axios response:', response)
       dispatch(gotSingleCharacter(response.data))
@@ -107,7 +107,7 @@ const gotAllUsers = (data) => {
 export const getAllUsers = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get('https://dnd-capstone-backend.herokuapp.com/api/users')
+      const response = await axios.get('http://localhost:8080/api/users')
       console.log('getAllUsers axios response:', response)
       dispatch(gotAllUsers(response.data))
     } catch (error) {
@@ -128,7 +128,7 @@ export const loginUser = (loginInfo) => {
   return async (dispatch) => {
     try {
       console.log('LOGIN INFO IN REDUX:', loginInfo)
-      const response = await axios.post('https://dnd-capstone-backend.herokuapp.com/user/login', {
+      const response = await axios.post('http://localhost:8080/user/login', {
         username: loginInfo.username,
         password: loginInfo.password,
         email: loginInfo.email,
@@ -155,7 +155,7 @@ export const getApiData = (searchApi) => {
   return async (dispatch) => {
     try {
       const response = await axios.get(
-        `https://dnd-capstone-backend.herokuapp.com/api/dndapi/${searchApi}`
+        `http://localhost:8080/api/dndapi/${searchApi}`
       )
       console.log('getApiData axios response:', response.data.response) // returns raw data from api
       dispatch(gotApiData(response.data.response))
@@ -177,7 +177,7 @@ export const getAllClasses = () => {
   return async (dispatch) => {
     try {
       const response = await axios.get(
-        `https://dnd-capstone-backend.herokuapp.com/api/dndapi/classes`
+        `http://localhost:8080/api/dndapi/classes`
       )
       console.log('getAllClasses axios response:', response.data.response)
       dispatch(gotAllClasses(response.data.response.results))
@@ -198,7 +198,7 @@ const gotAllRaces = (data) => {
 export const getAllRaces = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get('https://dnd-capstone-backend.herokuapp.com/api/dndapi/races')
+      const response = await axios.get('http://localhost:8080/api/dndapi/races')
       console.log('getAllRaces axios response:', response.data.response)
       dispatch(gotAllRaces(response.data.response.results))
     } catch (error) {
@@ -219,7 +219,7 @@ export const getAllSkills = () => {
   return async (dispatch) => {
     try {
       const response = await axios.get(
-        'https://dnd-capstone-backend.herokuapp.com/api/dndapi/skills'
+        'http://localhost:8080/api/dndapi/skills'
       )
       console.log('getAllSkills axios response:', response.data.response)
       dispatch(gotAllSkills(response.data.response.results))
@@ -247,7 +247,7 @@ export const createCharacter = (characterInfo) => {
       const skill4 = characterInfo.skills[3]
 
       const response = await axios.post(
-        'https://dnd-capstone-backend.herokuapp.com/api/characters',
+        'http://localhost:8080/api/characters',
         {
           name: characterInfo.characterName,
           class: characterInfo.class,
@@ -283,11 +283,12 @@ const createdUser = (data) => {
     data,
   }
 }
+//https://dnd-capstone-backend.herokuapp.com/user/sign-up
 // http://localhost:8080/user/sign-up
 export const createUser = (userInfo) => {
   return async (dispatch) => {
     try {
-      const response = await axios.post('https://dnd-capstone-backend.herokuapp.com/user/sign-up', {
+      const response = await axios.post('http://localhost:8080/user/sign-up', {
         username: userInfo.username,
         email: userInfo.email,
         password: userInfo.password,
