@@ -25,13 +25,12 @@ class LoginPage extends React.Component {
     e.preventDefault()
     console.log('logging in with info:', this.state.loginInfo)
     await this.props.loginUser(this.state.loginInfo)
-
-    setTimeout(() => {
-      console.log(
-        'currentLoggedInUserInfo:',
-        this.props.currentLoggedInUserInfo
-      )
-    }, 2000)
+    if (this.props.currentLoggedInUserInfo){
+      this.props.history.push("/");
+    }
+    else{
+      alert("Login Credentials Incorrect")
+    }
   }
 
   render() {

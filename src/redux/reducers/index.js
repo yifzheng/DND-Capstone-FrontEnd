@@ -11,6 +11,7 @@ import {
   CREATED_CHARACTER,
   CREATED_USER,
   LOGGED_IN_USER,
+  LOGGED_OUT_USER,
 } from './actionTypes'
 
 const initialState = {
@@ -140,7 +141,21 @@ export const loginUser = (loginInfo) => {
     }
   }
 }
-
+// log out user
+const loggedOutUser = () => {
+  return{
+    type: LOGGED_OUT_USER,
+  }
+}
+export const logoutUser = () => {
+  return async (dispatch) => {
+    try {
+      dispatch(loggedOutUser())
+    } catch (error) {
+      console.error(error)
+    }
+  }
+}
 // Dynamic API calls
 const gotApiData = (data) => {
   console.log(`API DATA ACTION CREATOR`)
@@ -363,6 +378,12 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         currentLoggedInUserInfo: action.data,
+      }
+    case LOGGED_OUT_USER:
+      return{
+        ...state,
+        currentLoggedInUserInfo: null,
+        characters : [],
       }
     default:
       return state
