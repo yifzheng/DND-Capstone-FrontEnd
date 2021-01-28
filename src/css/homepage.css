@@ -1,0 +1,14 @@
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+.homepage {
+    background-image: url("https://wallpapercave.com/wp/wp2227193.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.home-page-logo{
+    width: 1300px;
+}

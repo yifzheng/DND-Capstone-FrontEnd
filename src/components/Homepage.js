@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getAllClasses } from '../redux/reducers'
 
-import "./homepage.css";
+import "../css/homepage.css";
 class Homepage extends Component {
   async componentDidMount() {
     await this.props.getAllClasses()
@@ -11,7 +11,9 @@ class Homepage extends Component {
     console.log('classes', this.props.classes)
     return (
       <div className = "homepage">
-        <h1>Homepage Component</h1>
+        <img className = "home-page-logo" src = "https://dragonfirethegame.com/wp-content/uploads/2017/04/logo-dnd.png"></img>
+        <button className = "login-btn">Login To Create Character</button>
+        <button className = "signup-btn">Sign Up To Create Account</button>
       </div>
     )
   }
