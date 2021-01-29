@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+.root-monster-container {
+  background-color: #ecf0f1;
+}
+
+.monsters-title {
+  background-image: url('../components/monsters/monsters.jpg');
+
+  height: 1100px;
+
+  margin-bottom: 30px;
+}
+
+.monsters-title h1 {
+  font-family: 'Creepster', cursive;
+  color: #ecf0f1;
+  font-size: 150px;
+  text-align: center;
+  line-height: 500px;
+}
+
+.monsters-title p {
+  margin: 0;
+  padding: 0;
+  font-family: 'Creepster', cursive;
+  color: #ecf0f1;
+  font-size: 75px;
+  text-align: center;
+  position: relative;
+  bottom: 160px;
+}
+
+.monster-preview-container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.monster-preview {
+  display: inline-block;
+}
+
+.monster-preview a {
+  text-decoration: none;
+  display: block;
+
+  font-family: fantasy;
+  font-size: 20px;
+
+  color: #f39c12;
+  background-color: #111111;
+
+  /* width: 300px; */
+  width: 250px;
+  margin: 10px 25px;
+  height: 80px;
+  line-height: 80px;
+
+  border-radius: 8px;
+}
