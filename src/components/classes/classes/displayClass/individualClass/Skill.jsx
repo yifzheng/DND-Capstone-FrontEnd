@@ -35,7 +35,7 @@ class Skill extends React.Component {
                 }
                 <h2>Ability Score:</h2>
                 {this.state.skills.ability_score &&
-                    <h3>Name : <Link to = {`/bonus/${this.state.skills.ability_score.index}`}>{this.state.skills.ability_score.name }</Link></h3>
+                    <h3>Name : <Link to = {`/bonus/${this.state.skills.ability_score.index}`}style={{ textDecoration: 'none' }}>{this.state.skills.ability_score.name }</Link></h3>
                 }
             </div>
         )

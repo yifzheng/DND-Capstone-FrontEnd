@@ -50,7 +50,7 @@ class DisplayEquipment extends Component {
                         <h2>Contents:</h2>
                         { this.state.equipment.contents.map( ( item, index ) => {
                             return (
-                                <h3 key={ index }>Item Name: <Link to={ `/equipment/${item.item.index}` }>{ item.item.name }</Link> | Quanitity : {item.quantity }</h3>
+                                <h3 key={ index }>Item Name: <Link to={ `/equipment/${item.item.index}` }style={{ textDecoration: 'none' }}>{ item.item.name }</Link> | Quanitity : {item.quantity }</h3>
                             )
                         } ) }
                     </div> }

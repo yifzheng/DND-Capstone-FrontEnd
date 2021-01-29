@@ -1,0 +1,18 @@
+#back{
+    margin-left: 2%;
+}
+#equipmentclass{
+    text-align: center;
+    font-size: 46px;
+    font-family: fantasy;
+    font-weight: 100;
+    color: rgb(209, 178, 178);
+}
+#individual-equipment-container{
+    margin-top: 5%;
+    border: 3px solid #8b0000;
+    width: 95vw;
+    text-align: center;
+    font-size: 1.7em;
+    margin-left: 2.3%;
+}

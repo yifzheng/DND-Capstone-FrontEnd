@@ -30,7 +30,7 @@ class ClassSpells extends React.Component {
                     <div>
                         {this.state.spells.results.map( (item, index) => {
                             return(
-                                <h3 key = {index}>Spell: <Link to = {`/spells/${item.index}`}>{item.name}</Link></h3>
+                                <h3 key = {index}>Spell: <Link to = {`/spells/${item.index}`}style={{ textDecoration: 'none' }}>{item.name}</Link></h3>
                             )
                         })}
                     </div>

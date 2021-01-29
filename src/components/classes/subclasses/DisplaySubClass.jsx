@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const DisplaySubClass = ({ name, index }) => {
     console.log(`Display class index ${index}`);
     return(
-        <div>
-            <Link to = {`/subclass/${index}`}><h3>{name}</h3></Link>
+        <div id = "subclasses">
+            <Link to = {`/subclass/${index}`}style={{ textDecoration: 'none' }}><h3>{name}</h3></Link>
         </div>
     )
 }

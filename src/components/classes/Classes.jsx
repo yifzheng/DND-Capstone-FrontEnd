@@ -5,7 +5,7 @@ import Class from './classes/Classes'
 import SubClass from './subclasses/SubClass'
 import Feature from './features/Feature'
 import StartingEquipment from './startingEquipment/StartingEquipment'
-
+import "../../css/equipment.css"
 
 const Classes = () => {
     return (
@@ -14,7 +14,7 @@ const Classes = () => {
             <SubClass />
             <Feature />
             <StartingEquipment />
-            <Link to = "/allequipment"><h1>Equipments</h1></Link>
+            <div id = "equipment"><Link to = "/allequipment" style={{ textDecoration: 'none' }}><h1>Equipments</h1></Link></div>
         </div>
     )
 }

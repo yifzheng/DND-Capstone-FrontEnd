@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 import DisplaySubClass from "./DisplaySubClass"
-
+import "../../../css/subclass.css"
 class SubClasses extends Component {
     constructor ( props ) {
         super( props );
@@ -22,18 +22,20 @@ class SubClasses extends Component {
     }
 
     render () {
-        {console.log("About to go to displaysubclass")}
+        { console.log( "About to go to displaysubclass" ) }
         return (
             <div className="subclass-container">
                 <h1>SubClasses</h1>
-                
-                {
-                    this.state.classes.map( ( item, ind ) => {
-                        return (
-                            <DisplaySubClass key = {ind} name={ item.name } index={ item.index } />
-                        )
-                    } )
-                }
+                <div className="subclass-cards">
+                    {
+                        this.state.classes.map( ( item, ind ) => {
+                            return (
+                                <DisplaySubClass key={ ind } name={ item.name } index={ item.index } />
+                            )
+                        } )
+                    }
+                </div>
+
             </div>
         )
     }

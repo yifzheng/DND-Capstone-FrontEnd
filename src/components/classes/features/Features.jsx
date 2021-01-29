@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 import DisplayFeatures from "./DisplayFeatures"
+import "../../../css/feature.css"
 
 class Features extends Component {
     constructor ( props ) {
@@ -24,18 +25,20 @@ class Features extends Component {
     render () {
         console.log( `this is the rendering for the features` )
         console.log( this.props )
-        console.log(this.state.features)
-        {console.log("About to go to displayfeature")}
+        console.log( this.state.features )
+        { console.log( "About to go to displayfeature" ) }
         return (
-            <div className="class-container">
+            <div className="features-container">
                 <h1>Features</h1>
-                {
-                    this.state.features.map( ( item, ind ) => {
-                        return (
-                            <DisplayFeatures key = {ind} name={ item.name } index={ item.index } />
-                        )
-                    } )
-                }
+                <div className="feature-card">
+                    {
+                        this.state.features.map( ( item, ind ) => {
+                            return (
+                                <DisplayFeatures key={ ind } name={ item.name } index={ item.index } />
+                            )
+                        } )
+                    }
+                </div>
             </div>
         )
     }

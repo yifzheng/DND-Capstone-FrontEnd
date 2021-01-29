@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios"
 import { connect } from "react-redux";
 import { getApiData } from "../../../../../redux/reducers";
-
+import "../../../../../css/displayproficiencies.css"
 class DisplayProficiencies extends React.Component {
     constructor ( props ) {
         super( props )
@@ -21,17 +21,18 @@ class DisplayProficiencies extends React.Component {
             return <h1>Loading</h1>
         }
         return (
-            <div>
-                <h2>{ this.props.prof.name }</h2>
+            <div id = "prof-container">
+                <h1>{ this.props.prof.name }</h1>
                 <div className="prof-classes">
-                    <h2>Classes</h2>
-                    { this.props.prof.classes ?
-                        <div>
+                    <h2>--Classes--</h2>
+                    <div >
+                       { this.props.prof.classes ?
+                        <div id = "pof-classes">
 
                             {
                                 this.props.prof.classes.map( ( item, index ) => {
                                     return (
-                                        <Link to={ `/class/${item.index}` }><p>{ item.name }</p></Link>
+                                        <Link to={ `/class/${item.index}` }style={{ textDecoration: 'none' }}><p>{ item.name }</p></Link>
                                     )
 
                                 } )
@@ -41,16 +42,17 @@ class DisplayProficiencies extends React.Component {
                         :
                         <div>
                             <h3>This Skill Is Not Tied To Any Class</h3>
-                        </div> }
+                        </div> } 
+                    </div>
                 </div>
                 <div className="prof-races">
-                    <h2>Races</h2>
-                    { this.props.prof.races ?
-                        <div>
+                    <h2>--Races--</h2>
+                    { this.props.prof.races !== undefined ?
+                        <div id = "pof-races">
                             {
                                 this.props.prof.races.map( ( item, index ) => {
                                     return (
-                                        <Link to={ `/race/${item.index}` }><p>{ item.name }</p></Link>
+                                        <Link to={ `/race/${item.index}` }style={{ textDecoration: 'none' }}><p>{ item.name }</p></Link>
                                     )
                                 } )
                             }
@@ -63,12 +65,14 @@ class DisplayProficiencies extends React.Component {
                 </div>
                 {
                     this.props.prof.references !== undefined && 
-                    <div>
-                        <h2>References</h2>
+                    <div id = 'references'>
+                        <h2>--References--</h2>
                         {this.props.prof.references.map( (item, index) => {
-                            <Link to = {`/equipment/${item.index}`}><p>{item.name}</p></Link>
+                            return(
+                                <Link to = {`/equipment/${item.index}`}style={{ textDecoration: 'none' }} ><p key = {index}>{item.name}</p></Link>
+                            )
                         })}
-                        </div>
+                    </div>
                 }
             </div>
 
