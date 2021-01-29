@@ -1,0 +1,64 @@
+#userprofile-container {
+	background: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700865053.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	height: calc(100% - 72px);
+}
+#user-info-container{
+    border: 3px solid 540600;
+	width: 70vw;
+    height: 30vh;
+    display: inline-flex;
+	color: #f1dede;
+    background-color: #8b0000;
+    opacity: 85%;
+	border-radius: 30px;
+	padding: 50px;
+	margin-left: 12vw;
+	margin-top: 5vh; 
+}
+#profile-image img{
+    width: 300px;
+}
+#user-info{
+    margin-top: 50px;
+    margin-left: 30px;
+}
+#user-info h2{
+    color: #f1dede;
+    font-size: 45px;
+}
+#user-character-container{
+    border: 3px solid 540600;
+	width: 70vw;
+    height: 30vh;
+    color: #f1dede;
+    background-color: #8b0000;
+    opacity: 80%;
+	border-radius: 30px;
+	padding: 50px;
+	margin-left: 12vw;
+    margin-top: 5vh; 
+    overflow: hidden;
+    position: relative;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+#user-character-container h1{
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#usercharacter{
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 30px;
+}
+#character-name{
+    color: #f1dede;
+    font-size: 30px;
+}

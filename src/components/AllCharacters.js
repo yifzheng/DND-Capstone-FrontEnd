@@ -10,7 +10,6 @@ class AllCharacters extends Component {
 
   fetchAllCharacters = async () => {
     await this.props.getAllCharacters()
-    console.log('all characters:', this.props.characters)
   }
 
   render() {

@@ -22,7 +22,7 @@ class Classes extends Component {
     }
 
     render () {
-        {console.log("About to go to displayclass")}
+
         return (
             <div className="class-container">
                 <h1 id = "classes">Classes</h1>

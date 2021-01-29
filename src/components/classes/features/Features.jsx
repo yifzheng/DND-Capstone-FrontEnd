@@ -23,10 +23,6 @@ class Features extends Component {
     }
 
     render () {
-        console.log( `this is the rendering for the features` )
-        console.log( this.props )
-        console.log( this.state.features )
-        { console.log( "About to go to displayfeature" ) }
         return (
             <div className="features-container">
                 <h1>Features</h1>

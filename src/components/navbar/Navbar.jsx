@@ -6,7 +6,6 @@ import '../../css/Navbar.css'
 class Navbar extends React.Component {
   render() {
     let bool = false
-    console.log('current useer', this.props.currentUser)
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">

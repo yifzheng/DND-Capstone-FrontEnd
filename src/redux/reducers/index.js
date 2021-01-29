@@ -47,7 +47,6 @@ export const getAllCharacters = () => {
       const response = await axios.get(
         'https://dnd-capstone-backend.herokuapp.com/api/characters'
       )
-      console.log('getAllCharacters axios response:', response)
       dispatch(gotAllCharacters(response.data))
     } catch (error) {
       console.error(error)
@@ -69,7 +68,6 @@ export const getAllUserCharacters = (userId) => {
       const response = await axios.get(
         `https://dnd-capstone-backend.herokuapp.com/api/characters/user/${userId}`
       )
-      console.log('getAllCharacters axios response:', response)
       dispatch(gotAllUserCharacters(response.data))
     } catch (error) {
       console.error(error)
@@ -91,7 +89,6 @@ export const getSingleCharacter = (id) => {
       const response = await axios.get(
         `https://dnd-capstone-backend.herokuapp.com/api/characters/${id}`
       )
-      console.log('getAllCharacters axios response:', response)
       dispatch(gotSingleCharacter(response.data))
     } catch (error) {
       console.error(error)
@@ -113,7 +110,6 @@ export const getAllUsers = () => {
       const response = await axios.get(
         'https://dnd-capstone-backend.herokuapp.com/api/users'
       )
-      console.log('getAllUsers axios response:', response)
       dispatch(gotAllUsers(response.data))
     } catch (error) {
       console.error(error)
@@ -132,7 +128,6 @@ const loggedInUser = (data) => {
 export const loginUser = (loginInfo) => {
   return async (dispatch) => {
     try {
-      console.log('LOGIN INFO IN REDUX:', loginInfo)
       const response = await axios.post(
         'https://dnd-capstone-backend.herokuapp.com/user/login',
         {
@@ -141,7 +136,6 @@ export const loginUser = (loginInfo) => {
           email: loginInfo.email,
         }
       )
-      console.log('loginUser axios response:', response.data)
       dispatch(loggedInUser(response.data))
     } catch (error) {
       console.error(error)
@@ -165,7 +159,6 @@ export const logoutUser = () => {
 }
 // Dynamic API calls
 const gotApiData = (data) => {
-  console.log(`API DATA ACTION CREATOR`)
   return {
     type: GOT_API_DATA,
     data,
@@ -173,13 +166,11 @@ const gotApiData = (data) => {
 }
 
 export const getApiData = (searchApi) => {
-  console.log(`API DATA ACTION THUNK`)
   return async (dispatch) => {
     try {
       const response = await axios.get(
         `https://dnd-capstone-backend.herokuapp.com/api/dndapi/${searchApi}`
       )
-      console.log('getApiData axios response:', response.data.response) // returns raw data from api
       dispatch(gotApiData(response.data.response))
     } catch (error) {
       console.error(error)
@@ -201,7 +192,6 @@ export const getAllClasses = () => {
       const response = await axios.get(
         `https://dnd-capstone-backend.herokuapp.com/api/dndapi/classes`
       )
-      console.log('getAllClasses axios response:', response.data.response)
       dispatch(gotAllClasses(response.data.response.results))
     } catch (error) {
       console.error(error)
@@ -223,7 +213,6 @@ export const getAllRaces = () => {
       const response = await axios.get(
         'https://dnd-capstone-backend.herokuapp.com/api/dndapi/races'
       )
-      console.log('getAllRaces axios response:', response.data.response)
       dispatch(gotAllRaces(response.data.response.results))
     } catch (error) {
       console.error(error)
@@ -245,7 +234,6 @@ export const getAllSkills = () => {
       const response = await axios.get(
         'https://dnd-capstone-backend.herokuapp.com/api/dndapi/skills'
       )
-      console.log('getAllSkills axios response:', response.data.response)
       dispatch(gotAllSkills(response.data.response.results))
     } catch (error) {
       console.error(error)
@@ -264,7 +252,6 @@ const createdCharacter = (data) => {
 export const createCharacter = (characterInfo, userToken) => {
   return async (dispatch) => {
     try {
-      console.log('user token:', userToken)
       // cannot pass array as data type while keeping sanity
       const skill1 = characterInfo.skills[0]
       const skill2 = characterInfo.skills[1]
@@ -294,7 +281,6 @@ export const createCharacter = (characterInfo, userToken) => {
         },
         { headers: { Authorization: `Bearer ${userToken}` } }
       )
-      console.log('createCharacter axios post response:', response)
       dispatch(createdCharacter(response.data))
     } catch (error) {
       console.error(error)
@@ -322,7 +308,6 @@ export const createUser = (userInfo) => {
           password: userInfo.password,
         }
       )
-      console.log('createUser axios post response:', response)
       dispatch(createdUser(response.data))
     } catch (error) {
       console.error(error)
@@ -331,7 +316,6 @@ export const createUser = (userInfo) => {
 }
 
 const rootReducer = (state = initialState, action) => {
-  console.log('action in rootReducer:', action)
   switch (action.type) {
     case GOT_ALL_CHARACTERS:
       return {

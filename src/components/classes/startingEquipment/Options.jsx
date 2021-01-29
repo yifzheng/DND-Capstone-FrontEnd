@@ -3,7 +3,6 @@
 
 
 const Options = ( { arr } ) => {
-    console.log( arr[ 0 ] );
     return (
         <div>
             {

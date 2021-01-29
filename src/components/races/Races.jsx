@@ -12,10 +12,6 @@ class races extends Component {
 
   fetchRaces = async (searchApi) => {
     await this.props.getApiData(searchApi)
-
-    setTimeout(() => {
-      console.log('RACES PROP', this.props.races)
-    }, 200)
   }
 
   render() {

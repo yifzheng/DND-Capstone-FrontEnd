@@ -19,10 +19,6 @@ class IndividualRace extends Component {
   componentDidMount = () => {
     const race = 'races/' + this.props.match.params.race
     this.props.getApiData(race)
-
-    setTimeout(() => {
-      console.log('race prop:', this.props.race)
-    }, 300)
   }
 
   render() {

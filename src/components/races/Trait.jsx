@@ -16,13 +16,9 @@ class Trait extends Component {
     const trait = 'traits/' + this.props.match.params.trait
     await this.props.getApiData(trait)
 
-    setTimeout(() => {
-      console.log('trait:', this.props.trait)
-    }, 800)
   }
 
   render() {
-    console.log('url param:', this.props.match.params.trait)
     return (
       <div>
         <div className="click-away-container">

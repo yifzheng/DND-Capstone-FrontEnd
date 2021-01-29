@@ -16,11 +16,10 @@ class ClassLevels extends Component {
 
   async componentDidMount() {
     try {
-      console.log('component did mount ' + this.props)
+      
       let url = `classes/${this.props.match.params.index}/levels`
       await this.props.getApiData(url)
       /* const { data } = await axios.get( `https://www.dnd5eapi.co/api/${url}` )
-            console.log( data );
             this.setState( {
                 array: data
             } ) */
@@ -30,8 +29,6 @@ class ClassLevels extends Component {
   }
 
   render() {
-    console.log(`this is the rendering for the individual class`)
-    console.log(this.props.class)
 
     if (!this.props.class.length) {
       return <h1>Loading</h1>
@@ -134,14 +131,14 @@ class ClassLevels extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(`Map state to props for individual class ${state.dndData}`)
+ 
   return {
     class: state.dndData,
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  console.log(`Map dispatch to props for individiual class`)
+  
   return {
     getApiData: (url) => dispatch(getApiData(url)),
   }

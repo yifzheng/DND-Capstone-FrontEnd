@@ -9,7 +9,6 @@ class Homepage extends Component {
     await this.props.getAllClasses()
   }
   render() {
-    console.log('classes', this.props.classes)
     return (
       <div className="homepage">
         {/* <div className="pls-work-img">

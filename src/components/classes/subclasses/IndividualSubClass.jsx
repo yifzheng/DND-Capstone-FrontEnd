@@ -15,7 +15,7 @@ class IndividualSubClass extends Component {
 
     async componentDidMount () {
         try {
-            console.log( "component did mount " + this.props )
+
             let url = `subclasses/${this.props.match.params.index}`;
             await this.props.getApiData( url );
         } catch ( error ) {
@@ -25,8 +25,7 @@ class IndividualSubClass extends Component {
     }
 
     render () {
-        console.log( `this is the rendering for the individual class` )
-        console.log( this.props )
+ 
         if ( !this.props.class.class ) {
             return <h1>Loading</h1>
         }
@@ -72,14 +71,14 @@ class IndividualSubClass extends Component {
 }
 
 const mapStateToProps = ( state ) => {
-    console.log( `Map state to props for individual sub class ${state.dndData}` )
+    
     return {
         class: state.dndData,
     }
 }
 
 const mapDispatchToProps = ( dispatch ) => {
-    console.log( `Map dispatch to props for individiual sub class` );
+    
     return {
         getApiData: ( url ) => dispatch( getApiData( url ) ),
     }

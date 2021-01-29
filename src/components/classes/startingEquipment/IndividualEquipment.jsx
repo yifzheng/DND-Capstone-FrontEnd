@@ -14,7 +14,6 @@ class IndividualEquipment extends Component {
 
     async componentDidMount () {
         try {
-            console.log( "component did mount " + this.props )
             let url = `starting-equipment/${this.props.match.params.index}`;
             await this.props.getApiData( url );
         } catch ( error ) {
@@ -24,7 +23,6 @@ class IndividualEquipment extends Component {
     }
 
     render () {
-        console.log( `this is the rendering for the individual class` )
         if ( !this.props.equipment.class ) {
             return <h1>Loading</h1>
         }
@@ -74,14 +72,14 @@ class IndividualEquipment extends Component {
 }
 
 const mapStateToProps = ( state ) => {
-    console.log( `Map state to props for individual sub class ${state.dndData}` )
+    
     return {
         equipment: state.dndData,
     }
 }
 
 const mapDispatchToProps = ( dispatch ) => {
-    console.log( `Map dispatch to props for individiual sub class` );
+   
     return {
         getApiData: ( url ) => dispatch( getApiData( url ) ),
     }

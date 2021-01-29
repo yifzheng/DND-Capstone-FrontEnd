@@ -8,21 +8,20 @@ class ClassSpells extends React.Component {
   }
   async componentDidMount() {
     try {
-      console.log('About to fetch data from api')
+    
       const data = await axios.get(
         `https://www.dnd5eapi.co/api/classes/${this.props.match.params.index}/spells`
       )
-      console.log('got data from api', data)
+      
       this.setState({
         spells: data.data,
       })
-      setTimeout(console.log(this.state.spells), 2000)
     } catch (error) {
       console.log(error)
     }
   }
   render() {
-    console.log(this.state.spells)
+   
     return (
       <div>
         <h1 className="fix-h1-h2-h3-h4">

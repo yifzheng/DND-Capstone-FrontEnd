@@ -10,10 +10,6 @@ import '../../css/monsters.css'
 class Monsters extends Component {
   componentDidMount = () => {
     this.props.getApiData('monsters')
-
-    setTimeout(() => {
-      console.log('monsters:', this.props.monsters.results)
-    }, 800)
   }
 
   render() {

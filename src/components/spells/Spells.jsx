@@ -35,15 +35,11 @@ class Spells extends Component {
             spell: this.props.spell.results
         })
     }, 200)
-
-    setTimeout(() => {
-        console.log('SPELL STATE', this.state.spell)
-      }, 400)
     }
             
         
     render() {
-        console.log(this.state.spell)
+        
         return (
           <div>
             <h1>Spells</h1>

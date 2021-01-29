@@ -14,9 +14,6 @@ class ConditionImmunity extends Component {
     const condition = 'conditions/' + this.props.match.params.condition
     this.props.getApiData(condition)
 
-    setTimeout(() => {
-      console.log('condition', this.props.condition)
-    }, 800)
   }
   render() {
     return (
