@@ -1,0 +1,113 @@
+.click-away-container {
+  background-color: #ecf0f1;
+  height: 100vh;
+
+  line-height: 1rem; /* fixes weird space between divs issues, ty stack overflow*/
+
+  overflow: hidden;
+}
+
+/* .click-away-container a {
+  text-decoration: none;
+} */
+
+.back-to {
+  border-top: 8px solid #8b0000; /*border is here and not w title b/c title overlaps this*/
+
+  background-color: #111111;
+  text-align: left;
+  /* height: 60px; old height */
+  height: 105px; /* also the bkg for title, title's position of relative and bottom value pushes it into the space of this div's bkg*/
+  line-height: 105px; /* <- saved my sanity */
+}
+
+#back-to-link {
+  text-decoration: none;
+  font-family: fantasy;
+  color: #ecf0f1;
+  background-color: #f39c12;
+  padding: 12px 24px;
+  border-radius: 4px;
+
+  margin-left: 113px;
+
+  /* these 2 lines below let the link show over the title div that normally hides it, thanks mdn page on z-index*/
+  position: relative;
+  z-index: 1;
+}
+
+#back-to-link:hover {
+  color: #f39c12;
+  background-color: #ecf0f1;
+}
+
+.click-away-title h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.click-away-title {
+  color: #f39c12;
+  font-family: fantasy;
+  font-size: 38px;
+  /* background-color: #111111; COLORS OVER BACK TO LINK, MUST SET BKG COLOR USING LINK'S STYLE */
+
+  position: relative;
+  /* bottom: 105px; OLD VALUE */
+  bottom: 62px;
+}
+
+.click-away-info-container {
+  width: 60%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.click-away-info-title h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.click-away-info-title {
+  font-family: fantasy;
+  font-size: 30px;
+
+  color: #ecf0f1;
+  background-color: #c0392b;
+
+  text-align: right;
+  padding: 20px 5rem;
+
+  width: 50%;
+  margin-left: auto;
+  border-radius: 7px;
+
+  margin-right: 7rem;
+}
+
+.click-away-info {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+
+  line-height: 4rem;
+
+  color: #2c3e50;
+}
+
+.click-away-info-bits {
+  font-family: fantasy;
+  font-size: 25px;
+
+  text-align: center;
+
+  color: #333333;
+}
+
+.click-away-info-bits a {
+  text-decoration: none;
+  color: #f39c12;
+}
+
+.click-away-info a:visited {
+  color: #f39c12;
+}
