@@ -1,0 +1,113 @@
+.single-monster-root-container {
+  background-color: #ecf0f1;
+}
+
+.single-monster-title {
+  font-family: fantasy;
+  font-size: 40px;
+
+  text-align: center;
+
+  color: #f39c12;
+  background-color: #111111;
+
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.single-monster-info-container {
+  width: 60%;
+  margin: auto;
+}
+
+.monster-info-title {
+  font-family: fantasy;
+  font-size: 30px;
+
+  color: #ecf0f1;
+  background-color: #27ae60;
+
+  width: 40%;
+  padding: 3px 5rem;
+
+  margin-left: 7rem;
+  border-radius: 7px;
+}
+
+.monster-info-subtitle {
+  color: #27ae60;
+}
+
+.monster-info {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+
+  line-height: 4rem;
+
+  color: #2c3e50;
+}
+
+.monster-info-bits-master-container {
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.monster-info-bits-container {
+  display: inline;
+}
+
+.monster-info-bits-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+
+  color: #27ae60;
+
+  /* width: 40%;
+  padding: 3px 5rem; */
+
+  /* margin-left: 7rem; */
+  /* border-radius: 7px; */
+
+  display: inline;
+
+  margin-right: 1rem;
+}
+
+.monster-info-bits-title h3 {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+.monster-info-bits {
+  font-family: fantasy;
+  font-size: 25px;
+
+  color: #2c3e50;
+
+  /* text-align: center; */
+
+  display: inline;
+
+  margin-right: 2rem;
+}
+
+.monster-info-condition-immunities a {
+  text-decoration: none;
+
+  font-family: fantasy;
+  font-size: 25px;
+
+  color: #f39c12;
+
+  text-align: center;
+}
+
+.monster-info-bits-non {
+  text-align: center;
+
+  font-family: fantasy;
+  font-size: 25px;
+
+  color: #2c3e50;
+}

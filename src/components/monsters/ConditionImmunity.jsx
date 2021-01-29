@@ -21,24 +21,40 @@ class ConditionImmunity extends Component {
   render() {
     return (
       <div>
-        {/* If page refreshes, then monster that called this is undefined b/c its overwritten, thus it shows nothing */}
-        {this.state.monsterThatCalled.index !== undefined ? (
-          <Link to={`/monsters/${this.state.monsterThatCalled.index}`}>
-            <p>Back to {this.state.monsterThatCalled.name} information</p>
-          </Link>
-        ) : (
-          <span />
-        )}
-
-        <h1>Condition: {this.props.condition.name}</h1>
-
-        {this.props.condition.desc !== undefined ? (
-          this.props.condition.desc
-        ) : (
-          <div>
-            <p>Loading</p>
+        <div className="click-away-container">
+          <div className="back-to">
+            {/* If page refreshes, then monster that called this is undefined b/c its overwritten, thus it shows nothing */}
+            {this.state.monsterThatCalled.index !== undefined ? (
+              <Link
+                id="back-to-link"
+                to={`/monsters/${this.state.monsterThatCalled.index}`}
+              >
+                Back to {this.state.monsterThatCalled.name} information
+              </Link>
+            ) : (
+              <span />
+            )}
           </div>
-        )}
+
+          <div className="click-away-title">
+            <h1>Condition: {this.props.condition.name}</h1>
+          </div>
+
+          <div className="click-away-info-container">
+            <div className="click-away-info-title">
+              <h1>Description</h1>
+            </div>
+            <div className="click-away-info">
+              {this.props.condition.desc !== undefined ? (
+                this.props.condition.desc
+              ) : (
+                <div>
+                  <p>Loading</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
