@@ -12,6 +12,14 @@ class Homepage extends Component {
     console.log('classes', this.props.classes)
     return (
       <div className="homepage">
+        {/* <div className="pls-work-img">
+          <img
+            src="https://wallpapercave.com/wp/wp2227193.jpg"
+            alt="main-img"
+            width="100%"
+            z-index="-1"
+          />
+        </div> */}
         <img
           className="home-page-logo"
           src="https://dragonfirethegame.com/wp-content/uploads/2017/04/logo-dnd.png"
@@ -24,7 +32,7 @@ class Homepage extends Component {
             </Link>
           </div>
         ) : (
-          <div>
+          <div className="maybe-fix-2">
             <Link to="/login">
               <button className="login-btn">Login To Create Character</button>
             </Link>

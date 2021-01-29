@@ -30,11 +30,13 @@
   padding: 4px;
   font-family: fantasy;
   font-size: 20px;
-  width: 100vw;
+  /* width: 100vw; THIS BREAKS THINGS, DONT DO THIS! SPENT AN HOUR FINDING THIS*/
+  /* height: 9vh; */
 }
 
 .navbar a {
-  padding: 10px 70px;
+  /* padding: 10px 70px; */
+  padding: 10px 30px;
   text-decoration: none;
 }
 
@@ -85,8 +87,9 @@
 }
 
 .dropdown {
-  position: relative;
+  position: absolute;
   display: inline-block;
+  left: 86%;
 }
 
 .dropdown-content {
@@ -96,7 +99,7 @@
   color: #8b0000;
   min-width: 130px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 .dropdown-content a {
@@ -109,5 +112,5 @@
 .navbar li {
   list-style: none;
   display: inline;
-  margin-right: 2vw;
+  margin-right: 1vw;
 }

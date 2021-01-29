@@ -1,14 +1,32 @@
+/* ultra debug mode css */
+/* * {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+} */
+
 html,
 body {
   margin: 0;
   padding: 0;
 }
+
+/* BELOW CODE FIXES DIVS NOT BEING 100% OF THE HEIGHT OF THE SCREEN WITHOUT NEEDING TO USE HEIGHT: 100vh AS THIS BREAKS THINGS*/
+html,
+body,
+#root,
+.App {
+  height: 100%;
+}
+
 .homepage {
+  margin: 0;
+  padding: 0;
   background: url('https://wallpapercave.com/wp/wp2227193.jpg');
-  height: 91vh;
-  width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
+  height: 92.2%;
 }
 .home-page-logo {
   width: 1300px;
@@ -27,4 +45,9 @@ body {
   margin-left: 5vw;
   outline: none;
   cursor: pointer;
+}
+
+.maybe-fix-2 {
+  /* height: 700px; */
+  /* height: 100%; */
 }
