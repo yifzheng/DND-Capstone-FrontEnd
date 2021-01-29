@@ -95,10 +95,14 @@
 }
 
 .click-away-info-bits {
+  margin-top: 2rem;
+
   font-family: fantasy;
   font-size: 25px;
 
   text-align: center;
+
+  line-height: 1.6rem;
 
   color: #333333;
 }
@@ -110,4 +114,17 @@
 
 .click-away-info a:visited {
   color: #f39c12;
+}
+
+/* Becuase the bonus page doesn't use back to link, need's special style */
+#special-case-click-away-title {
+  border-top: 8px solid #8b0000;
+
+  padding: 3.2rem 5rem;
+
+  font-family: fantasy;
+  font-size: 40px;
+
+  color: #f39c12;
+  background-color: #111111;
 }

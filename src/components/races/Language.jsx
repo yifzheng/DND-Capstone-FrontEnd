@@ -23,25 +23,40 @@ class Language extends Component {
     console.log('url param:', this.props.match.params.language)
     return (
       <div>
-        {/* If page refreshes, then race that called this is undefined b/c its overwritten, thus it shows nothing */}
-        {this.state.raceThatCalled.index !== undefined ? (
-          <Link to={`/races/${this.state.raceThatCalled.index}`}>
-            <p>Back to {this.state.raceThatCalled.name} information</p>
-          </Link>
-        ) : (
-          <span />
-        )}
-
-        <h1>Language: {this.props.language.name}</h1>
-
-        <h3>Description</h3>
-        {this.props.language.desc !== undefined ? (
-          this.props.language.desc
-        ) : (
-          <div>
-            <p>This language does not have a description.</p>
+        <div className="click-away-container">
+          <div className="back-to">
+            {/* If page refreshes, then race that called this is undefined b/c its overwritten, thus it shows nothing */}
+            {this.state.raceThatCalled.index !== undefined ? (
+              <Link
+                id="back-to-link"
+                to={`/races/${this.state.raceThatCalled.index}`}
+              >
+                Back to {this.state.raceThatCalled.name} information
+              </Link>
+            ) : (
+              <span />
+            )}
           </div>
-        )}
+
+          <div className="click-away-title">
+            <h1>Language: {this.props.language.name}</h1>
+          </div>
+
+          <div className="click-away-info-container">
+            <div className="click-away-info-title">
+              <h3>Description</h3>
+            </div>
+            <div className="click-away-info">
+              {this.props.language.desc !== undefined ? (
+                this.props.language.desc
+              ) : (
+                <div>
+                  <p>This language does not have a description.</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
