@@ -11,6 +11,8 @@
 #back {
   margin-left: 2vw;
 }
+
+/* OLD GLOBAL STYLES. DO NOT USE! */
 /* #class-info h1,
 h2,
 h3,
@@ -20,6 +22,14 @@ p {
   font-family: fantasy;
   font-weight: 90;
 } */
+
+/* FIX GLOBAL H TAG STYLES */
+.fix-h1-h2-h3-h4 {
+  color: rgb(209, 178, 178);
+  font-family: fantasy;
+  font-weight: 90;
+}
+
 #class-name {
   text-align: center;
   font-size: 4em;
