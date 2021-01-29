@@ -4,9 +4,9 @@ import { connect } from 'react-redux'
 import { logoutUser } from '../../redux/reducers'
 import '../../css/Navbar.css'
 class Navbar extends React.Component {
-  render () {
+  render() {
     let bool = false
-    console.log( 'current useer', this.props.currentUser )
+    console.log('current useer', this.props.currentUser)
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
@@ -31,34 +31,46 @@ class Navbar extends React.Component {
                 <Link to="/builds">Characters</Link>
               </li>
 
-              { this.props.currentUser !== undefined ? (
+              {this.props.currentUser !== undefined ? (
                 this.props.currentUser.token !== undefined ? (
                   <li className="nav-item">
                     <Link to="/createCharacter">Create Character</Link>
                   </li>
                 ) : (
-                    <span />
-                  )
-              ) : (
                   <span />
-                ) }
-              <div id = "dropdown" className="dropdown">
+                )
+              ) : (
+                <span />
+              )}
+
+              <div id="dropdown" className="dropdown">
                 <li className="dropbtn">Profile</li>
                 <div className="dropdown-content">
-                  <Link to="/userprofile">User Profile</Link>
-                  <Link to="/signup">Sign Up</Link>
-                  <Link to="/login">Login</Link>
-                  { this.props.currentUser !== undefined ? (
+                  {this.props.currentUser ? (
+                    <span>
+                      <Link to="/userprofile">User Profile</Link>
+                      <Link to="/" onClick={(e) => this.props.logoutUser()}>
+                        Logout
+                      </Link>
+                    </span>
+                  ) : (
+                    <span>
+                      <Link to="/signup">Sign Up</Link>
+                      <Link to="/login">Login</Link>
+                    </span>
+                  )}
+
+                  {/* {this.props.currentUser !== undefined ? (
                     this.props.currentUser.token !== undefined ? (
-                      <Link to="/" onClick={ ( e ) => this.props.logoutUser() }>
+                      <Link to="/" onClick={(e) => this.props.logoutUser()}>
                         Logout
                       </Link>
                     ) : (
-                        <span />
-                      )
-                  ) : (
                       <span />
-                    ) }
+                    )
+                  ) : (
+                    <span />
+                  )} */}
                 </div>
               </div>
             </ul>
@@ -69,15 +81,15 @@ class Navbar extends React.Component {
   }
 }
 
-const mapStateToProps = ( state ) => {
+const mapStateToProps = (state) => {
   return {
     currentUser: state.currentLoggedInUserInfo,
   }
 }
-const mapDispatchToProps = ( dispatch ) => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    logoutUser: () => dispatch( logoutUser() ),
+    logoutUser: () => dispatch(logoutUser()),
   }
 }
 
-export default connect( mapStateToProps, mapDispatchToProps )( Navbar )
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar)

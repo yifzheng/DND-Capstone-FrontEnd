@@ -44,7 +44,9 @@ const gotAllCharacters = (data) => {
 export const getAllCharacters = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get('https://dnd-capstone-backend.herokuapp.com/api/characters')
+      const response = await axios.get(
+        'https://dnd-capstone-backend.herokuapp.com/api/characters'
+      )
       console.log('getAllCharacters axios response:', response)
       dispatch(gotAllCharacters(response.data))
     } catch (error) {
@@ -108,7 +110,9 @@ const gotAllUsers = (data) => {
 export const getAllUsers = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get('https://dnd-capstone-backend.herokuapp.com/api/users')
+      const response = await axios.get(
+        'https://dnd-capstone-backend.herokuapp.com/api/users'
+      )
       console.log('getAllUsers axios response:', response)
       dispatch(gotAllUsers(response.data))
     } catch (error) {
@@ -129,11 +133,14 @@ export const loginUser = (loginInfo) => {
   return async (dispatch) => {
     try {
       console.log('LOGIN INFO IN REDUX:', loginInfo)
-      const response = await axios.post('https://dnd-capstone-backend.herokuapp.com/user/login', {
-        username: loginInfo.username,
-        password: loginInfo.password,
-        email: loginInfo.email,
-      })
+      const response = await axios.post(
+        'https://dnd-capstone-backend.herokuapp.com/user/login',
+        {
+          username: loginInfo.username,
+          password: loginInfo.password,
+          email: loginInfo.email,
+        }
+      )
       console.log('loginUser axios response:', response.data)
       dispatch(loggedInUser(response.data))
     } catch (error) {
@@ -143,7 +150,7 @@ export const loginUser = (loginInfo) => {
 }
 // log out user
 const loggedOutUser = () => {
-  return{
+  return {
     type: LOGGED_OUT_USER,
   }
 }
@@ -213,7 +220,9 @@ const gotAllRaces = (data) => {
 export const getAllRaces = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get('https://dnd-capstone-backend.herokuapp.com/api/dndapi/races')
+      const response = await axios.get(
+        'https://dnd-capstone-backend.herokuapp.com/api/dndapi/races'
+      )
       console.log('getAllRaces axios response:', response.data.response)
       dispatch(gotAllRaces(response.data.response.results))
     } catch (error) {
@@ -380,10 +389,10 @@ const rootReducer = (state = initialState, action) => {
         currentLoggedInUserInfo: action.data,
       }
     case LOGGED_OUT_USER:
-      return{
+      return {
         ...state,
         currentLoggedInUserInfo: '',
-        characters : [],
+        characters: [],
       }
     default:
       return state
