@@ -10,21 +10,21 @@ class Skill extends React.Component {
   }
   async componentDidMount() {
     try {
-      console.log('About to fetch data from api')
+   
       const data = await axios.get(
         `https://www.dnd5eapi.co/api/skills/${this.props.index}`
       )
-      console.log('got data from api', data)
+      
       this.setState({
         skills: data.data,
       })
-      setTimeout(console.log(this.state.skills), 2000)
+
     } catch (error) {
       console.log(error)
     }
   }
   render() {
-    console.log(this.state.skills)
+   
     return (
       <div>
         <h2 className="fix-h1-h2-h3-h4">Description</h2>

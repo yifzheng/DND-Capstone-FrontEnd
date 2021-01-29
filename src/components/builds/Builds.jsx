@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 import { getAllCharacters } from "../../redux/reducers";
 
 import { Link } from 'react-router-dom'
+
+import "../../css/builds.css"
+
 class Builds extends Component {
     constructor ( props ) {
         super( props )
@@ -10,7 +13,7 @@ class Builds extends Component {
     }
 
     async componentDidMount () {
-        console.log( "Build component Mounted" )
+       
         try {
             await this.props.getAllCharacters();
 
@@ -19,19 +22,19 @@ class Builds extends Component {
         }
     }
     render () {
-        console.log( this.props.characters )
+        
         return (
-            <div>
-                <h1>Characters</h1>
-                { this.props.characters !== undefined ?
-                    this.props.characters.map( ( item, index ) => {
-                        return (
-                            <div id={ item.id }>
-                                <Link to={ `/character/${item.id}` }><h3 key={ index }>{ item.name }</h3></Link>
-                            </div>
-                        )
-                    } ) : <h1>Loading</h1>
-                }
+            <div id="builds-container">
+                <div id="builds-container-h1"><h1>Characters</h1></div>
+                <div id="build-character-name">
+                    { this.props.characters !== undefined ?
+                        this.props.characters.map( ( item, index ) => {
+                            return (
+                                <Link to={ `/character/${item.id}` } style={{ textDecoration: 'none' }}><h3 id = "public-characters" key={ index }>{ item.name }</h3></Link>
+                            )
+                        } ) : <h1>Loading</h1>
+                    }
+                </div>
             </div>
         )
     }

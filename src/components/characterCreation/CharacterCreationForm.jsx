@@ -114,7 +114,7 @@ class CharacterCreationForm extends React.Component {
       '+' + modifier
 
     if ( e.target.name === 'dex' ) {
-      console.log( 'dex modifier:', modifier )
+     
       this.setState( {
         characterInfo: {
           ...this.state.characterInfo,
@@ -145,10 +145,6 @@ class CharacterCreationForm extends React.Component {
     this.setState( {
       public: e.target.value,
     } )
-
-    setTimeout( () => {
-      console.log( 'public state:', this.state.public )
-    }, 800 )
   }
 
   handleFormSubmit = ( e ) => {
@@ -170,7 +166,6 @@ class CharacterCreationForm extends React.Component {
       }
 
       setTimeout( () => {
-        console.log( 'token sent to create chara:', this.props.currentUser.token )
         this.props.createCharacter(
           this.state.characterInfo,
           this.props.currentUser.token
@@ -190,10 +185,7 @@ class CharacterCreationForm extends React.Component {
   }
 
   render () {
-    // console.log('all classes:', this.props.allClasses)
-    // console.log('all races:', this.props.allRaces)
-    // console.log('all skills:', this.props.allSkills)
-    console.log( 'characterInfo:', this.state.characterInfo )
+    
     return (
       <div className="creation-form">
         <header>DUNGEONS { '&' } DRAGONS CHARACTER CREATION FORM</header>

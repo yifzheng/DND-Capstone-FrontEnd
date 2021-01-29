@@ -13,14 +13,9 @@ class Proficiency extends Component {
   componentDidMount = async () => {
     const proficiency = 'proficiencies/' + this.props.match.params.proficiency
     await this.props.getApiData(proficiency)
-
-    setTimeout(() => {
-      console.log('proficiency:', this.props.proficiency)
-    }, 800)
   }
 
   render() {
-    console.log('url param:', this.props.match.params.proficiency)
     return (
       <div>
         <div className="click-away-container">

@@ -22,7 +22,7 @@ class SubClasses extends Component {
     }
 
     render () {
-        { console.log( "About to go to displaysubclass" ) }
+       
         return (
             <div className="subclass-container">
                 <h1>SubClasses</h1>

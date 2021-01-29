@@ -9,28 +9,26 @@ class DisplayUserCharacters extends Component {
     }
 
     async componentDidMount () {
-        console.log( "Build component Mounted", this.props.id )
         try {
-            await this.props.getAllUserCharacters(this.props.id);
+            await this.props.getAllUserCharacters( this.props.id );
 
         } catch ( error ) {
             console.log( error )
         }
     }
     render () {
-        console.log("user characters", this.props.characters )
         return (
-            <div>
+            <div id="user-character-container">
                 <h1>Characters</h1>
-                { this.props.characters !== undefined ?
-                    this.props.characters.map( ( item, index ) => {
-                        return (
-                            <div id={ item.id }>
-                                <Link to={ `/character/${item.id}` }><h3 key={ index }>{ item.name }</h3></Link>
-                            </div>
-                        )
-                    } ) : <h1>Loading</h1>
-                }
+                <div id="usercharacter">
+                    { this.props.characters !== undefined ?
+                        this.props.characters.map( ( item, index ) => {
+                            return (
+                                <Link to={ `/character/${item.id}` } style={{ textDecoration: 'none' }}><h3 id = "character-name" key={ index }>{ item.name }</h3></Link>
+                            )
+                        } ) : <h1>Loading</h1>
+                    }
+                </div>
             </div>
         )
     }
@@ -44,7 +42,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getAllUserCharacters: (id) => dispatch( getAllUserCharacters(id) ),
+        getAllUserCharacters: ( id ) => dispatch( getAllUserCharacters( id ) ),
     }
 }
 

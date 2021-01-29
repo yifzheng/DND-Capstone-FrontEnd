@@ -14,13 +14,9 @@ class Language extends Component {
     const language = 'languages/' + this.props.match.params.language
     await this.props.getApiData(language)
 
-    setTimeout(() => {
-      console.log('language:', this.props.language)
-    }, 800)
   }
 
   render() {
-    console.log('url param:', this.props.match.params.language)
     return (
       <div>
         <div className="click-away-container">

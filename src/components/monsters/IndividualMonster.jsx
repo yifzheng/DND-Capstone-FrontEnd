@@ -10,9 +10,6 @@ class IndividualMonster extends Component {
     const monster = 'monsters/' + this.props.match.params.monster
     await this.props.getApiData(monster)
 
-    setTimeout(() => {
-      console.log('monster:', this.props.monster)
-    }, 800)
   }
 
   render() {

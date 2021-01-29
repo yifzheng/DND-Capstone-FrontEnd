@@ -8,15 +8,9 @@ class IndividualSpell extends Component {
 	componentDidMount = () => {
 		let spellName = "spells/" + this.props.match.params.spell;
 		this.props.getApiData(spellName);
-
-		setTimeout(() => {
-			console.log("spell prop", this.props.spellName);
-		}, 800);
-		console.log("component mounted");
 	};
 
 	render() {
-		console.log(this.props.spellName);
 		return (
 			// <h1>helllo</h1>
 			<div>
@@ -56,7 +50,7 @@ class IndividualSpell extends Component {
 				{/* <h3>component</h3>
                 {this.props.spellName.components !== undefined ? (
                     this.props.spellName.components.map((element, index) => {
-                        console.log('element',element)
+                    
                         return(
                             <div key={index}>
                             <Link to {`/component/${element.components.index}`}>

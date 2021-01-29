@@ -17,7 +17,6 @@ class DisplayEquipment extends Component {
         }
     }
     render () {
-        console.log(this.state.equipment)
         if ( this.state.equipment === undefined ) {
             return ( <h1>Loading</h1> )
         }

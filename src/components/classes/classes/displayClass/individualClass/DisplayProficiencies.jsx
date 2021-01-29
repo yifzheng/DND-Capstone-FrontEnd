@@ -10,13 +10,13 @@ class DisplayProficiencies extends React.Component {
   }
 
   async componentDidMount() {
-    console.log('component did mount ' + this.props)
+    
     let url = `/proficiencies/${this.props.match.params.index}`
     await this.props.getApiData(url)
     //const {data} = await axios.get(`https://www.dnd5eapi.co/api/equipment/${this.props.prof.references.index}`)
   }
   render() {
-    console.log(this.props)
+    
     if (!this.props.prof.name) {
       return <h1 id="disp-h1">Loading</h1>
     }
@@ -91,14 +91,14 @@ class DisplayProficiencies extends React.Component {
   }
 }
 const mapStateToProps = (state) => {
-  console.log(`Map state to props for individual sub class ${state.dndData}`)
+  
   return {
     prof: state.dndData,
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  console.log(`Map dispatch to props for individiual sub class`)
+  
   return {
     getApiData: (url) => dispatch(getApiData(url)),
   }
