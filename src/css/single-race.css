@@ -30,6 +30,8 @@ h4 {
 }
 
 .single-race-title {
+  border-top: 8px solid #8b0000;
+
   padding-top: 10px;
   padding-bottom: 12px;
 
