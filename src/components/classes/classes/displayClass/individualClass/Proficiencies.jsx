@@ -13,12 +13,11 @@ class Proficiencies extends React.Component {
           to={`/proficiencies/${this.props.classIndex}`}
           style={{ textDecoration: 'none' }}
         >
-          <h4 className="fix-h1-h2-h3-h4">
-            {' '}
-            {' | '}
+          <h4 className="fix-h1-h2-h3-h4-name">
+            
             {this.props.name}
           </h4>
-        </Link>{' '}
+        </Link>
       </div>
     )
   }

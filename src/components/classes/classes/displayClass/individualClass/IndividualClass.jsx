@@ -79,8 +79,8 @@ class IndividualClass extends Component {
               style={{ textDecoration: 'none' }}
             >
               <h2 className="fix-h1-h2-h3-h4">
-                {this.props.class.name}
-                {'--> '} Class Spells{' <--'}
+                {'--> '}{this.props.class.name}
+                 Class Spells{' <--'}
               </h2>
             </Link>
           )}

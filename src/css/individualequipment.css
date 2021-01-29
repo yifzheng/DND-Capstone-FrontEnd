@@ -11,8 +11,14 @@
 #individual-equipment-container{
     margin-top: 5%;
     border: 3px solid #8b0000;
-    width: 95vw;
+    width: 92vw;
+    color: rgb(209, 178, 178);
+    text-decoration: none;
     text-align: center;
     font-size: 1.7em;
     margin-left: 2.3%;
+    padding: 30px;
+}
+#start-equip-name{
+    color: rgb(209, 178, 178);
 }

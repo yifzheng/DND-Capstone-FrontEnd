@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { getApiData } from "../../../redux/reducers/index"
 
 import SubClassSpells from "./SubClassSpells";
-
+import "../../../css/individualsubclass.css"
 
 class IndividualSubClass extends Component {
     constructor ( props ) {
@@ -27,38 +27,43 @@ class IndividualSubClass extends Component {
     render () {
         console.log( `this is the rendering for the individual class` )
         console.log( this.props )
-        if (!this.props.class.class){
+        if ( !this.props.class.class ) {
             return <h1>Loading</h1>
         }
         return (
             <div>
-                <Link to={ `/class/${this.props.class.class.index}` }style={{ textDecoration: 'none' }}><h4>Back to { this.props.class.class.name } Information</h4></Link>
-                <h1>{ this.props.class.name }</h1>
-                <h2>Class: {this.props.class.class.name}</h2>
-                <h2>Sub Class Flavor: { this.props.class.subclass_flavor }</h2>
+                <Link to={ `/class/${this.props.class.class.index}` } style={ { textDecoration: 'none' } }><h3 id = "back">Back to { this.props.class.class.name } Information</h3></Link>
+                <div id = "indiviudal-subclass-container">
+                <h1 id="subclasses-name">{ this.props.class.name }</h1>
+                <h2 id="subclass-class-name">Class: { this.props.class.class.name }</h2>
+                <h2 id="subclass-falvor">Sub Class Flavor: { this.props.class.subclass_flavor }</h2>
                 <div className="subclass-desc">
-                    <h2>Sub Class Desciption</h2>
-                    { this.props.class.desc.map( ( item ) => {
-                        return (
-                            <p>{ item }</p>
-                        )
-                    } ) }
+                    <h2>--Sub Class Desciption--</h2>
+                    <div id = "subclass-description">
+                        { this.props.class.desc.map( ( item ) => {
+                            return (
+                                <p>{ item }</p>
+                            )
+                        } ) }
+                    </div>
+
                 </div>
-                <div>
-                    <h2>Spells</h2>
+                <div className = "subclass-spells">
+                    <h2>--Spells--</h2>
                     { this.props.class.spells ?
-                        <div>
-                            {this.props.class.spells.map( (item, index) => {
-                                return(
-                                    <SubClassSpells key = {index} prerequisites = {item.prerequisites} spell = {item.spell} />
+                        <div id = "subclass-spells">
+                            { this.props.class.spells.map( ( item, index ) => {
+                                return (
+                                    <SubClassSpells key={ index } prerequisites={ item.prerequisites } spell={ item.spell } />
                                 )
-                            })}
+                            } ) }
                         </div>
                         :
-                        <div>
+                        <div id = "subclass-spells">
                             <h3>There are no spells for this subclass</h3>
                         </div>
                     }
+                </div>
                 </div>
             </div>
         )

@@ -1,6 +1,7 @@
 #startingEquipment{
     border: 4px solid #8b0000;
     width: 40vw;
+    border-radius: 20px;
     float:left;
     margin: 4vw;
     text-align: center;
@@ -18,16 +19,17 @@
     background-color:  #252424;
 }
 .equipment-container h1{
-   font-size: 50px;
+    margin-top: 2%;
+   font-size: 60px;
    color:rgb(209, 178, 178);
    font-family: fantasy;
    font-weight: 100;
    text-align: center;
 }
 .equipment-card{
+    margin-top: 4%;
     width: 100vw;
     height: 100%;
-    border: 4px solid #8b0000;
     background-color:  #252424;
     display: inline-flex;
     font-size: 40px;
@@ -40,12 +42,12 @@
     padding: 60px 0;
 	width: 255px;
     margin: 2%;
+    border-radius: 20px;
 	background-color: #8b0000;
 	text-align: center; 
 }
-#equipment h3{
-    text-decoration: none;
+#equipments-name{
     color: rgb(209, 178, 178);
-    text-underline-position: unset;
+    text-decoration: none;
     font-family: fantasy;
 }
