@@ -34,13 +34,13 @@ class IndividualEquipment extends Component {
                 <div id = "individual-equipment-container">
                     <h1 id = "equipmentclass">Class : { this.props.equipment.class.name }</h1>
                     <div className="starting-equip">
-                        <h2>Sarting Equipment</h2>
+                        <h2>--Sarting Equipment--</h2>
                         { this.props.equipment.starting_equipment !== undefined ?
                             this.props.equipment.starting_equipment.map( ( item, index ) => {
                                 return (
                                     <div>
                                         <h3>Quantity: { item.quantity }</h3>
-                                        <Link to={ `/equipment/${item.equipment.index}` } style={ { textDecoration: 'none' } }><h3>{ item.equipment.name }</h3></Link>
+                                        <Link to={ `/equipment/${item.equipment.index}` } style={ { textDecoration: 'none' } }><h3 id = "start-equip-name">{ item.equipment.name }</h3></Link>
                                     </div>
                                 )
                             } ) :

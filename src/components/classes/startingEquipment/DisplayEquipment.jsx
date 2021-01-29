@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom"
 import axios from "axios";
-
+import "../../../css/displayequipment.css"
 class DisplayEquipment extends Component {
     state = {
         equipment: []
@@ -22,7 +22,7 @@ class DisplayEquipment extends Component {
             return ( <h1>Loading</h1> )
         }
         return (
-            <div>
+            <div id = "indiv-equip-cont">
                 <h1>{ this.state.equipment.name }</h1>
                 {this.state.equipment.desc !== undefined && <div> <h2>Description:</h2>{
                     this.state.equipment.desc.map( ( item, index ) => {
@@ -72,7 +72,6 @@ class DisplayEquipment extends Component {
                 {this.state.equipment.str_minimum !== undefined && <h2>Strength Minimum : {this.state.equipment.str_minimum}</h2>}
                 {this.state.equipment.stealth_advantage !== undefined && <h2>Stealth Advantage : {this.state.equipment.stealth_advantage === true ? "True" : "False"}</h2>}
                 {this.state.equipment.stealth_disadvantage !== undefined && <h2>Stealth Disadvantage : {this.state.equipment.stealth_disadvantage === true ? "True" : "False"}</h2>}
-                <footer>If page didn't load refresh the page</footer>
             </div>
         )
     }
