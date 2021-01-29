@@ -1,122 +1,126 @@
-#class-info div{ 
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    column-gap: 10px;
-    text-align: center;
+#class-info div {
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  column-gap: 10px;
+  text-align: center;
 }
-#class-info Link{
-    color: rgb(209, 178, 178);
+#class-info Link {
+  color: rgb(209, 178, 178);
 }
-#back{
-    margin-left: 2vw;
+#back {
+  margin-left: 2vw;
 }
-#class-info h1, h2, h3, h4, p{
-    color: rgb(209, 178, 178);
-    font-family:fantasy;
-    font-weight: 90;
+/* #class-info h1,
+h2,
+h3,
+h4,
+p {
+  color: rgb(209, 178, 178);
+  font-family: fantasy;
+  font-weight: 90;
+} */
+#class-name {
+  text-align: center;
+  font-size: 4em;
+  margin: 0;
+  font-weight: 90;
 }
-#class-name{
-    text-align: center;
-    font-size: 4em;
-    margin: 0;
-    font-weight: 90;
+#hit-die {
+  text-align: center;
+  font-size: 2em;
+  color: rgb(209, 178, 178);
+  text-decoration: none;
+  margin: 0;
+  font-weight: 90;
 }
-#hit-die{
-    text-align: center;
-    font-size: 2em;
-    color: rgb(209, 178, 178);
-    text-decoration: none;
-    margin: 0;
-    font-weight: 90;
-}
-#class-etc{
-    text-align: center;
-    font-size: 1em;
-    color: rgb(209, 178, 178);
-    text-decoration: none;
-    display:inline-flex;
-    margin-left: 37vw;
-    font-weight: 90;
+#class-etc {
+  text-align: center;
+  font-size: 1em;
+  color: rgb(209, 178, 178);
+  text-decoration: none;
+  display: inline-flex;
+  margin-left: 37vw;
+  font-weight: 90;
 }
 
-.p_choices{
-    float: left;
-    border: 3px solid #8b0000;
-    width: 95vw;
-    margin-right: 10px;
-    text-align: center;
-    margin: 1%;
-    padding: 1%;
-    font-size: 1.3em;
-    font-weight: 90;
+.p_choices {
+  float: left;
+  border: 3px solid #8b0000;
+  width: 95vw;
+  margin-right: 10px;
+  text-align: center;
+  margin: 1%;
+  padding: 1%;
+  font-size: 1.3em;
+  font-weight: 90;
 }
-#p-choices{
-    display: inline-flex;
-    margin: 0;
-    font-weight: 90;
+#p-choices {
+  display: inline-flex;
+  margin: 0;
+  font-weight: 90;
 }
 /* .all-p-choices{
     display: inline-flex;
 } */
-.proficiencies{
-    float: left;
-    border: 3px solid #8b0000;
-    width: 95vw;
-    text-align: center;
-    margin: 1%;
-    padding: 1%;
-    font-size: 1.3em;
-    font-weight: 90;
+.proficiencies {
+  float: left;
+  border: 3px solid #8b0000;
+  width: 95vw;
+  text-align: center;
+  margin: 1%;
+  padding: 1%;
+  font-size: 1.3em;
+  font-weight: 90;
 }
-#profs{
-    display: inline-flex;
-    font-weight: 90;
+#profs {
+  display: inline-flex;
+  font-weight: 90;
 }
-.saving-throws{
-    float: left;
-    border: 3px solid #8b0000;
-    width: 95vw;
-    text-align: center;
-    margin: 1%;
-    padding: 1%;
-    font-size: 1.3em;
-    font-weight: 90;
+.saving-throws {
+  float: left;
+  border: 3px solid #8b0000;
+  width: 95vw;
+  text-align: center;
+  margin: 1%;
+  padding: 1%;
+  font-size: 1.3em;
+  font-weight: 90;
 }
-#saving-throws-container{
-    display: inline-flex;
-    column-gap: 50px;
-    font-weight: 90;
+#saving-throws-container {
+  display: inline-flex;
+  column-gap: 50px;
+  font-weight: 90;
 }
-.subclasses{
-    float: left;
-    border: 3px solid #8b0000;
-    width: 95vw;
-    text-align: center;
-    margin: 1%;
-    padding: 1%;
-    font-size: 1.3em;
-    font-weight: 90;
+.subclasses {
+  float: left;
+  border: 3px solid #8b0000;
+  width: 95vw;
+  text-align: center;
+  margin: 1%;
+  padding: 1%;
+  font-size: 1.3em;
+  font-weight: 90;
 }
-.spellcasting{
-    float: left;
-    border: 3px solid #8b0000;
-    width: 95vw;
-    text-align: center;
-    font-weight: 90;
-    margin: 1%;
-    padding: 1%;
-    color: rgb(209, 178, 178);
+.spellcasting {
+  float: left;
+  border: 3px solid #8b0000;
+  width: 95vw;
+  text-align: center;
+  font-weight: 90;
+  margin: 1%;
+  padding: 1%;
+  color: rgb(209, 178, 178);
 }
-.spellcasting h2{
-    font-size: 2em;
-    font-weight: 90;
+.spellcasting h2 {
+  font-size: 2em;
+  font-weight: 90;
 }
-#spell-cast h3{
-    font-size: 1.6em;
-    font-weight: 90;
+#spell-cast h3 {
+  font-size: 1.6em;
+  font-weight: 90;
 }
-#spell-cast p{
-    font-size: 1.3em;
-    font-weight: 90;
+#spell-cast p {
+  font-size: 1.3em;
+  font-weight: 90;
 }

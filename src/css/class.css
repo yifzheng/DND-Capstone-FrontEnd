@@ -1,23 +1,22 @@
-.class-container{
-    width: 100vw;
-    height: 100%;
-    border: 4px solid #8b0000;
-    background-color:  #252424;
+.class-container {
+  width: 100vw;
+  height: 100%;
+  border: 4px solid #8b0000;
+  background-color: #252424;
 }
-.class-cards{
-    width: 100vw;
-    height: 100%;
-    border: 4px solid #8b0000;
-    background-color:  #252424;
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-    flex-wrap: wrap;
+.class-cards {
+  width: 100vw;
+  height: 100%;
+  border: 4px solid #8b0000;
+  background-color: #252424;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  flex-wrap: wrap;
 }
-#classes{
-    text-align: center;
-    font-family: fantasy;
-    font-size: 60px;
-    color: rgb(209, 178, 178);
+#classes {
+  text-align: center;
+  font-family: fantasy;
+  font-size: 60px;
+  color: rgb(209, 178, 178);
 }
-

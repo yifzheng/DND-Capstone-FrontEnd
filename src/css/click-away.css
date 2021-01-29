@@ -55,6 +55,8 @@
   position: relative;
   /* bottom: 105px; OLD VALUE */
   bottom: 62px;
+
+  text-align: center;
 }
 
 .click-away-info-container {
@@ -127,4 +129,6 @@
 
   color: #f39c12;
   background-color: #111111;
+
+  text-align: center;
 }
