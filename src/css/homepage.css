@@ -20,13 +20,13 @@ body,
 }
 
 .homepage {
-  margin: 0;
-  padding: 0;
   background: url('https://wallpapercave.com/wp/wp2227193.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
-  height: 92.2%;
+  height: calc(
+    100% - 72px
+  ); /* navbar is 72px in height, this makes div 100% height w/ navbar */
 }
 .home-page-logo {
   width: 1300px;
