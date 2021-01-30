@@ -7,7 +7,8 @@
     text-align: center;
     font-family: fantasy;
     font-size: 25px;
-    background-color:  #252424;
+    background-color:  #8b0000;
+    opacity: 80%;
 }
 #startingEquipment h1{
     text-decoration: none;
@@ -16,12 +17,18 @@
 .equipment-container{
     width: 100vw;
     height: 100%;
-    background-color:  #252424;
+    background-image: url("https://i.pinimg.com/originals/0c/cd/f7/0ccdf7e67134c92eedaaf82662cb9f87.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: scroll;
+	height: calc(100% - 72px);
 }
 .equipment-container h1{
     margin-top: 2%;
    font-size: 60px;
    color:rgb(209, 178, 178);
+   background-color:  #8b0000;
+    opacity: 80%;
    font-family: fantasy;
    font-weight: 100;
    text-align: center;
@@ -29,9 +36,9 @@
 .equipment-card{
     margin-top: 4%;
     width: 100vw;
-    height: 100%;
-    background-color:  #252424;
+    height: 400px;
     display: inline-flex;
+    
     font-size: 40px;
     flex-direction: row;
     flex-grow: 1;
@@ -43,7 +50,8 @@
 	width: 255px;
     margin: 2%;
     border-radius: 20px;
-	background-color: #8b0000;
+    background-color: #8b0000;
+    opacity: 80%;
 	text-align: center; 
 }
 #equipments-name{

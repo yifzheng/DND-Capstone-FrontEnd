@@ -27,7 +27,7 @@ class IndividualEquipment extends Component {
             return <h1>Loading</h1>
         }
         return (
-            <div>
+            <div id = "idiv-equip-contain">
                 <Link to={ `/class/${this.props.match.params.index}` } style={ { textDecoration: 'none' } }><h3 id = "back">Back to { this.props.equipment.class.name } Information</h3></Link>
                 <div id = "individual-equipment-container">
                     <h1 id = "equipmentclass">Class : { this.props.equipment.class.name }</h1>

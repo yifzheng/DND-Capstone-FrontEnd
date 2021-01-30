@@ -1,15 +1,16 @@
 #class {
-  padding: 20px 0;
+  padding: 100px 0;
   width: 255px;
   margin: 2%;
   border-radius: 20px;
-  background-color: #8b0000;
+  background-color:  #8b0000;
+    opacity: 80%;
   text-align: center;
 }
 #class h3 {
   text-decoration: none;
   color: rgb(209, 178, 178);
   text-underline-position: unset;
-  font-size: 36px;
+  font-size: 50px;
   font-family: fantasy;
 }

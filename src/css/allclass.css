@@ -1,0 +1,7 @@
+#all-class-info-container{
+    background-image: url("https://wallpaperaccess.com/full/117906.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+	overflow:scroll;
+    height: calc(100% - 72px);
+}
