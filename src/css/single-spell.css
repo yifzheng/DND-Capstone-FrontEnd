@@ -1,0 +1,75 @@
+.single-spell-container {
+  background-color: #ecf0f1;
+  margin-bottom: 3rem;
+}
+
+.single-spell-title {
+  font-family: fantasy;
+  font-size: 40px;
+  text-align: center;
+  /* color: #030202; */
+  color: #dfc7ec;
+  text-shadow: 1px 1px 2px black;
+
+  background-image: url('../components/spells/single-spell-image.jpg');
+
+  /* height: 500px; */
+  height: 500px;
+
+  margin-bottom: 3rem;
+}
+
+.single-spell-info-container {
+  width: 60%;
+  margin: auto;
+
+  /* background-color: #f8efba;
+  border-radius: 50px; */
+}
+
+.single-spell-info-title {
+  font-family: fantasy;
+  font-size: 30px;
+
+  color: #ecf0f1;
+  background-color: #b763e4;
+
+  width: 30%;
+  padding: 3px 7rem;
+
+  margin-left: 7rem;
+
+  border-radius: 8px;
+
+  margin-bottom: 2rem;
+}
+
+.single-spell-info {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+
+  line-height: 4rem;
+
+  color: #2c3e50;
+}
+
+.single-spell-info-bits {
+  font-family: fantasy;
+  font-size: 25px;
+
+  /* text-align: center; */
+  margin-left: 17rem;
+
+  color: #2c3e50;
+
+  line-height: 4rem;
+}
+
+.single-spell-info-bits a {
+  text-decoration: none;
+
+  font-family: fantasy;
+  font-size: 25px;
+
+  color: #b763e4;
+}
