@@ -1,110 +1,213 @@
 #character-container {
-  background-image: url('https://cdna.artstation.com/p/assets/images/images/011/507/760/large/nicholas-jiang-battle-of-dragons-4k.jpg?1529947182');
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: scroll;
-  height: calc(100% - 72px);
+	background-image: url("https://cdna.artstation.com/p/assets/images/images/011/507/760/large/nicholas-jiang-battle-of-dragons-4k.jpg?1529947182");
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: scroll;
+	height: calc(100% - 72px);
 }
 #character-info-container {
-  border: 3px solid #2b516e;
-  width: 50vw;
-  border-radius: 20px;
-  opacity: 0.85;
-  margin-left: 24vw;
-  margin-top: 100px;
-  background-color: #618b8e;
-  font-family: fantasy;
-  font-weight: 100;
-  margin-bottom: 100px;
+	border: 3px solid #2b516e;
+	width: 50vw;
+	border-radius: 20px;
+	opacity: 0.85;
+	margin-left: 24vw;
+	margin-top: 100px;
+	background-color: #618b8e;
+	font-family: fantasy;
+	font-weight: 100;
+	margin-bottom: 100px;
 }
 #character-race-image {
-  padding: 30px;
+	padding: 30px;
 }
 #character-image-info {
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
 .character-info {
-  font-size: 1.2em;
-  margin-top: 50px;
-  color: #163266;
-  margin-left: 40px;
+	font-size: 1.2em;
+	margin-top: 50px;
+	color: #163266;
+	margin-left: 40px;
 }
 #general-info h3 {
-  padding: 10px 0px;
+	padding: 10px 0px;
 }
 
 #attributes {
-  border: 2px solid #2b516e;
-  background-color: #80b6ba;
-  margin-top: 1vh;
-  margin-left: 6%;
-  border-radius: 10px;
-  display: inline-flex;
-  padding: 15px;
-  gap: 1vw;
-  font-size: 18px;
-  color: #163266;
-  font-weight: 100;
-  text-align: center;
+	border: 2px solid #2b516e;
+	background-color: #80b6ba;
+	margin-top: 1vh;
+	margin-left: 6%;
+	border-radius: 10px;
+	display: inline-flex;
+	padding: 15px;
+	gap: 1vw;
+	font-size: 18px;
+	color: #163266;
+	font-weight: 100;
+	text-align: center;
 }
 
 #further-info {
-/*   background-color: #111111; */
-  /* border: 3px solid #8b0000; */
-  border-radius: 20px;
-  color: #163266;
-  /* text-shadow: 1px 1px 4px black; */
-  font-family: fantasy;
-  font-weight: 100;
-  display: flex;
-  justify-content: space-evenly;
-  margin: 0 -10px;
-  margin-top: 1rem;
-  text-align: center;
-  padding: 30px;
-  margin-bottom: 30px;
+	/*   background-color: #111111; */
+	/* border: 3px solid #8b0000; */
+	border-radius: 20px;
+	color: #163266;
+	/* text-shadow: 1px 1px 4px black; */
+	font-family: fantasy;
+	font-weight: 100;
+	display: flex;
+	justify-content: space-evenly;
+	margin: 0 -10px;
+	margin-top: 1rem;
+	text-align: center;
+	padding: 30px;
 }
 
 #further-info div {
-  min-width: 300px;
-  margin: 0 10px;
+	min-width: 200px;
+	margin: 0 10px;
 }
 /* #further-info h3{
   text-align: center;
 } */
 #further-info p {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
-#further-info-personality-traits{
-  border: 2px solid #2b516e;
-  background-color: #80b6ba;
-  border-radius: 10px;
-  padding: 5px;
+#further-info-personality-traits {
+	border: 2px solid #2b516e;
+	background-color: #80b6ba;
+	border-radius: 10px;
+	padding: 5px;
 }
-#further-info-personality-traits-h3{
-  margin-right: 70px;
-  font-size: 19px;
+#further-info-personality-traits-h3 {
+	padding-bottom: 10px;
+	font-size: 19px;
 }
-#further-info-flaws{
-  border: 2px solid #2b516e;
-  background-color: #80b6ba;
-  border-radius: 10px;
-  padding: 5px;
+#further-info-flaws {
+	border: 2px solid #2b516e;
+	background-color: #80b6ba;
+	border-radius: 10px;
+	padding: 5px;
 }
-#further-info-flaws-h3{
-  margin-right: 120px;
-  font-size: 19px;
+#further-info-flaws-h3 {
+	padding-bottom: 10px;
+	font-size: 19px;
 }
-#further-info-ideals{
-  border: 2px solid #2b516e;
-  background-color: #80b6ba;
-  border-radius: 10px;
-  padding: 5px;
+#further-info-ideals {
+	border: 2px solid #2b516e;
+	background-color: #80b6ba;
+	border-radius: 10px;
+	padding: 5px;
 }
-#further-info-ideals-h3{
-  margin-right: 120px;
-  font-size: 19px;
+#further-info-ideals-h3 {
+	padding-bottom: 10px;
+	font-size: 19px;
+}
+#further-info-bonds {
+	border: 2px solid #2b516e;
+	background-color: #80b6ba;
+	border-radius: 10px;
+	padding: 5px;
+}
+#further-info-bonds-h3 {
+	padding-bottom: 10px;
+	font-size: 19px;
+}
+#further-info2 {
+	/*   background-color: #111111; */
+	/* border: 3px solid #8b0000; */
+	border-radius: 20px;
+	color: #163266;
+	/* text-shadow: 1px 1px 4px black; */
+	font-family: fantasy;
+	font-weight: 100;
+	display: flex;
+	justify-content: space-evenly;
+	margin: 0 -10px;
+	margin-top: 1rem;
+	text-align: center;
+	padding: 30px;
+	margin-bottom: 30px;
+}
+
+#further-info2 div {
+	min-width: 200px;
+	margin: 0 10px;
+}
+/* #further-info2 h3{
+    text-align: center;
+  } */
+#further-info2 p {
+	margin: 0;
+	padding: 0;
+}
+#further-info2-attacksAndSpellcasting {
+	border: 2px solid #2b516e;
+	background-color: #80b6ba;
+	border-radius: 10px;
+	padding: 5px;
+}
+#further-info2-attacksAndSpellcasting-h3 {
+	padding-bottom: 10px;
+	font-size: 19px;
+}
+#further-info2-featuresAndTraits {
+	border: 2px solid #2b516e;
+	background-color: #80b6ba;
+	border-radius: 10px;
+	padding: 5px;
+}
+#further-info2-featuresAndTraits-h3 {
+	padding-bottom: 10px;
+	font-size: 19px;
+}
+#further-info2-equipment {
+	border: 2px solid #2b516e;
+	background-color: #80b6ba;
+	border-radius: 10px;
+	padding: 5px;
+}
+#further-info2-equipment-h3 {
+	padding-bottom: 10px;
+	font-size: 19px;
+}
+#further-info2-profAndLang {
+	border: 2px solid #2b516e;
+	background-color: #80b6ba;
+	border-radius: 10px;
+	padding: 5px;
+}
+#further-info2-profAndLang-h3 {
+	padding-bottom: 10px;
+	font-size: 19px;
+}
+#edit-character-btn {
+	border: 2px solid #2b516e;
+	background-color: #80b6ba;
+	color: #163266;
+	border-radius: 10px;
+	width: 200px;
+	height: 40px;
+	font-family: fantasy;
+	font-weight: 100;
+	font-size: 20px;
+	margin-bottom: 40px;
+	margin-left: 10vw;
+}
+#delete-character-btn {
+	border: 2px solid #2b516e;
+	background-color: #80b6ba;
+	color: #163266;
+	border-radius: 10px;
+	width: 200px;
+	height: 40px;
+	font-family: fantasy;
+	font-weight: 100;
+	font-size: 20px;
+	margin-bottom: 40px;
+	margin-left: 150px;
 }

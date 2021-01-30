@@ -204,8 +204,32 @@ class DisplayCharacter extends Component {
                     <h3 id="further-info-ideals-h3">Ideals</h3>{' '}
                     <p>{this.props.character.ideals}</p>
                   </div>
+                  <div id="further-info-bonds">
+                    <h3 id="further-info-bonds-h3">Bonds</h3>{' '}
+                    <p>{this.props.character.bonds}</p>
+                  </div>
                 </div>
-                {/* this.props.currentUser.userId === this.props.character.userId ? <Link to = {`/editCharacter/${this.props.match.params.id}`}><button id = "edit-character-btn">Edit</button></Link> : <span/> */}
+                <div id="further-info2">
+                  <div id="further-info2-attacksAndSpellcasting">
+                    <h3 id="further-info2-attacksAndSpellcasting-h3">
+                      Attacks {"&"} Spellcasting
+                    </h3>
+                    <p>{this.props.character.attacksAnfSpellcasting}</p>
+                  </div>
+                  <div id="further-info2-featuresAndTraits">
+                    <h3 id="further-info2-featuresAndTraits-h3">Features {"&"} Traits</h3>{' '}
+                    <p>{this.props.character.featuresAndTraits}</p>
+                  </div>
+                  <div id="further-info2-equipment">
+                    <h3 id="further-info2-equipment-h3">Equipment</h3>{' '}
+                    <p>{this.props.character.equipment}</p>
+                  </div>
+                  <div id="further-info2-profAndLang">
+                    <h3 id="further-info2-profAndLang-h3">Proficiencies {"&"} Languages</h3>{' '}
+                    <p>{this.props.character.profAndLang}</p>
+                  </div>
+                </div>
+                { /* this.props.currentUser.userId === this.props.character.userId ? <Link to = {`/editCharacter/${this.props.match.params.id}`}><button id = "edit-character-btn">Edit</button></Link> : <span/> */ }
               </div>
 
               {/* Can only see these buttons if this character has a userId (i.e. it's private). */}
@@ -220,10 +244,8 @@ class DisplayCharacter extends Component {
                         oldCharacterInfo: this.props.character,
                       },
                     }}
-                  >
-                    Edit Character
-                  </Link>
-                  <button onClick={() => this.handleDelete()}>
+                  ><button id = "edit-character-btn">Edit Character</button></Link>
+                  <button id = "delete-character-btn" onClick={() => this.handleDelete()}>
                     Delete Character
                   </button>
                 </div>
