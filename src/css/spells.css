@@ -10,21 +10,20 @@
   /* position: fixed;
   left: 920px; */
 
-  font-family: fantasy;
-  color: #0652dd;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #f5f6fa;
 
   font-size: 30px;
   /* text-align: center; */
 
   margin-top: 1.2rem;
 
-  background-color: #ecf0f1;
+  /* background-color: #ecf0f1; */
   padding: 10px 20px;
 
   width: 170px;
   margin: auto;
 
-  opacity: 78%;
   border-radius: 14px;
 
   margin-top: 1rem;
@@ -46,7 +45,7 @@
 
   display: inline-block;
 
-  color: #f7f1e3;
+  color: #44bd32;
   background-color: #111111;
 
   font-family: fantasy;
