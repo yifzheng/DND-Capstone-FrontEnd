@@ -14,27 +14,27 @@ class Monsters extends Component {
 
   render() {
     return (
-      <div>
-        <div className="root-monster-container">
-          <div className="monsters-title">
-            <h1>Monsters</h1>
-            <p>Slay or be slain</p>
-          </div>
-
-          {this.props.monsters.results !== undefined ? (
-            <div className="monster-preview-container">
-              {this.props.monsters.results.map((monster, index) => (
-                <DisplayMonster
-                  key={index}
-                  index={monster.index}
-                  name={monster.name}
-                />
-              ))}
-            </div>
-          ) : (
-            <span />
-          )}
+      <div className="root-root-monster-container">
+        {/* <div className="root-monster-container"> */}
+        <div className="monsters-title">
+          <h1>Monsters</h1>
+          <p>Slay or be slain</p>
         </div>
+
+        {this.props.monsters.results !== undefined ? (
+          <div className="monster-preview-container">
+            {this.props.monsters.results.map((monster, index) => (
+              <DisplayMonster
+                key={index}
+                index={monster.index}
+                name={monster.name}
+              />
+            ))}
+          </div>
+        ) : (
+          <span />
+        )}
+        {/* </div> */}
       </div>
     )
   }

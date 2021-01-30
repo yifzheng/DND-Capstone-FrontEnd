@@ -11,7 +11,6 @@ class IndividualMonster extends Component {
   componentDidMount = async () => {
     const monster = 'monsters/' + this.props.match.params.monster
     await this.props.getApiData(monster)
-
   }
 
   render() {
@@ -82,7 +81,7 @@ class IndividualMonster extends Component {
                   }
                 )
               ) : (
-                <div>None</div>
+                <div className="monster-info">None</div>
               )
             ) : (
               <span />
