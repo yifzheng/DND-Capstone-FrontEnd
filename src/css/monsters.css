@@ -1,15 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
 
-.root-monster-container {
-  background-color: #444444;
+.root-root-monster-container {
+  height: calc(100% - 72px);
+  background-image: url('../components/monsters/monsters.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: scroll;
 }
 
+/* .root-monster-container {
+} */
+
 .monsters-title {
-  background-image: url('../components/monsters/monsters.jpg');
+  /* background-image: url('../components/monsters/monsters.jpg'); */
 
-  height: 1100px;
+  /* height: 1100px; */
+  /* height: 100%; */
 
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 
 .monsters-title h1 {
@@ -50,6 +58,7 @@
 
   color: #f39c12;
   background-color: #111111;
+  opacity: 70%;
 
   /* width: 300px; */
   width: 250px;
