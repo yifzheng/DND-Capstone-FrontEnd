@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getSingleCharacter } from '../../redux/reducers'
-import { Link } from 'react-router-dom'
+import { deleteCharacter, getSingleCharacter } from '../../redux/reducers'
+import { Link, Redirect } from 'react-router-dom'
 import dragonborn from '../races/dnd race images/dragonborn.png'
 import dwarf from '../races/dnd race images/dwarf.png'
 import elf from '../races/dnd race images/elf.png'
@@ -17,6 +17,10 @@ import '../../css/characterdisplay.css'
 class DisplayCharacter extends Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      redirect: false,
+    }
   }
 
   async componentDidMount() {
@@ -27,7 +31,18 @@ class DisplayCharacter extends Component {
     }
   }
 
+  handleDelete = () => {
+    this.props.deleteCharacter(this.props.character.id).then(() => {
+      this.setState({
+        redirect: true,
+      })
+    })
+  }
+
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/userprofile" />
+    }
     return (
       <div id="character-container">
         <div id="character-info-container">
@@ -200,7 +215,9 @@ class DisplayCharacter extends Component {
                   >
                     Edit Character
                   </Link>
-                  <button>Delete Character</button>
+                  <button onClick={() => this.handleDelete()}>
+                    Delete Character
+                  </button>
                 </div>
               ) : (
                 <span />
@@ -233,6 +250,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getSingleCharacter: (id) => dispatch(getSingleCharacter(id)),
+    deleteCharacter: (deleteCharacterId) =>
+      dispatch(deleteCharacter(deleteCharacterId)),
   }
 }
 

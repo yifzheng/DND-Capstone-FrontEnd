@@ -17,3 +17,6 @@ export const LOGGED_OUT_USER = 'LOGGED_OUT_USER'
 
 // PUT -> Update
 export const UPDATED_CHARACTER = 'UPDATED_CHARACTER'
+
+// DELETE -> Delete
+export const DELETED_CHARACTER = 'DELETED_CHARACTER'

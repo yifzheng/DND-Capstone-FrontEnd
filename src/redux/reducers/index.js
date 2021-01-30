@@ -13,6 +13,7 @@ import {
   LOGGED_IN_USER,
   LOGGED_OUT_USER,
   UPDATED_CHARACTER,
+  DELETED_CHARACTER,
 } from './actionTypes'
 
 const initialState = {
@@ -369,6 +370,26 @@ export const updateCharacter = (characterInfo, updatingCharacterId) => {
   }
 }
 
+// DELETE -> Delete character
+const deletedCharacter = () => {
+  return {
+    type: DELETED_CHARACTER,
+  }
+}
+
+export const deleteCharacter = (deleteCharacterId) => {
+  return async (dispatch) => {
+    try {
+      await axios.delete(
+        `https://dnd-capstone-backend.herokuapp.com/api/characters/${deleteCharacterId}`
+      )
+      dispatch(deletedCharacter())
+    } catch (error) {
+      console.error(error)
+    }
+  }
+}
+
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case GOT_ALL_CHARACTERS:
@@ -436,6 +457,10 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         currentUpdatedCharacter: action.data,
+      }
+    case DELETED_CHARACTER:
+      return {
+        ...state,
       }
     default:
       return state
