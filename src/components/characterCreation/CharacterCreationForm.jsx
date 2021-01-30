@@ -7,6 +7,7 @@ import {
   getAllRaces,
   getAllSkills,
   createCharacter,
+  updateCharacter,
 } from '../../redux/reducers'
 import '../../css/charactercreation.css'
 class CharacterCreationForm extends React.Component {
@@ -35,6 +36,12 @@ class CharacterCreationForm extends React.Component {
         userId: '',
       },
       public: true,
+      editing: this.props.location.state
+        ? this.props.location.state.editing
+        : false, // using a Link we can pass a location.state, if this component is not linked to, this local state is false
+      updatingCharacterId: this.props.location.state
+        ? this.props.location.state.updatingCharacterId
+        : null, // id of character being updated, if editing is true, this value MUST be true, as in it has a valid id.
     }
   }
 
@@ -176,14 +183,32 @@ class CharacterCreationForm extends React.Component {
       delete this.state.characterInfo.userId
     }
 
+    // setTimeout(() => {
+    //   this.props.createCharacter(
+    //     this.state.characterInfo,
+    //     this.props.currentUser.token
+    //   )
+    // }, 1200)
+
     setTimeout(() => {
-      this.props.createCharacter(
-        this.state.characterInfo,
-        this.props.currentUser.token
-      )
+      if (this.state.editing) {
+        this.props.updateCharacter(
+          this.state.characterInfo,
+          this.state.updatingCharacterId
+        )
+      } else {
+        this.props.createCharacter(
+          this.state.characterInfo,
+          this.props.currentUser.token
+        )
+      }
     }, 1200)
+
     setTimeout(() => {
-      if (this.props.newCharacter !== undefined) {
+      if (
+        this.props.newCharacter !== undefined ||
+        this.props.currentUpdatedCharacter !== undefined
+      ) {
         if (this.state.public === 'true') {
           this.props.history.push('/builds')
         } else {
@@ -195,10 +220,20 @@ class CharacterCreationForm extends React.Component {
   }
 
   render() {
+    console.log('this.state.editing:', this.state.editing)
+    console.log(
+      'this.state.updatingCharacterId:',
+      this.state.updatingCharacterId
+    )
+
     console.log('chara info test:', this.state.characterInfo)
     return (
       <div className="creation-form">
-        <header>DUNGEONS {'&'} DRAGONS CHARACTER CREATION FORM</header>
+        {this.state.editing ? (
+          <header>DUNGEONS {'&'} DRAGONS CHARACTER EDIT FORM</header>
+        ) : (
+          <header>DUNGEONS {'&'} DRAGONS CHARACTER CREATION FORM</header>
+        )}
 
         <div id="character-creation-form">
           {/* Main Character Creation Form */}
@@ -562,11 +597,20 @@ class CharacterCreationForm extends React.Component {
             </div>
             {/* END Display Status: public or private */}
 
-            <input
-              id="create-btn"
-              type="submit"
-              value="Create Your Character"
-            ></input>
+            {this.state.editing ? (
+              <input
+                id="create-btn"
+                type="submit"
+                value="Update Your Character"
+              ></input>
+            ) : (
+              <input
+                id="create-btn"
+                type="submit"
+                value="Create Your Character"
+              ></input>
+            )}
+
             {/* <input type="reset" value="Reset"></input> Does not work with modifiers */}
             <Link to="/">
               <input id="cancel-btn" type="button" value="Cancel"></input>
@@ -585,6 +629,7 @@ const mapStateToProps = (state) => {
     allSkills: state.allSkills,
     newCharacter: state.newCharacter,
     currentUser: state.currentLoggedInUserInfo,
+    currentUpdatedCharacter: state.currentUpdatedCharacter,
   }
 }
 
@@ -595,6 +640,8 @@ const mapDispatchToProps = (dispatch) => {
     getAllSkills: () => dispatch(getAllSkills()),
     createCharacter: (characterInfo, userToken) =>
       dispatch(createCharacter(characterInfo, userToken)),
+    updateCharacter: (characterInfo, updatingCharacterId) =>
+      dispatch(updateCharacter(characterInfo, updatingCharacterId)),
   }
 }
 

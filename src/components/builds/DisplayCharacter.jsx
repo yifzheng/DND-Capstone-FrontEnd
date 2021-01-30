@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getSingleCharacter } from '../../redux/reducers'
+import { Link } from 'react-router-dom'
 import dragonborn from '../races/dnd race images/dragonborn.png'
 import dwarf from '../races/dnd race images/dwarf.png'
 import elf from '../races/dnd race images/elf.png'
@@ -184,6 +185,26 @@ class DisplayCharacter extends Component {
                   <h3>Ideals</h3> <p>{this.props.character.ideals}</p>
                 </div>
               </div>
+
+              {/* Can only see these buttons if this character has a userId (i.e. it's private). */}
+              {this.props.character.userId ? (
+                <div>
+                  <Link
+                    to={{
+                      pathname: '/CharacterCreation',
+                      state: {
+                        editing: true,
+                        updatingCharacterId: this.props.character.id,
+                      },
+                    }}
+                  >
+                    Edit Character
+                  </Link>
+                  <button>Delete Character</button>
+                </div>
+              ) : (
+                <span />
+              )}
             </div>
           ) : (
             <h1>Loading</h1>
