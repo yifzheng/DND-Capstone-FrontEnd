@@ -277,6 +277,9 @@ export const createCharacter = (characterInfo, userToken) => {
           int: characterInfo.int,
           wis: characterInfo.wis,
           cha: characterInfo.cha,
+          personalityTraits: characterInfo.personalityTraits,
+          flaws: characterInfo.flaws,
+          ideals: characterInfo.ideals,
           userId: characterInfo.userId,
         },
         { headers: { Authorization: `Bearer ${userToken}` } }
