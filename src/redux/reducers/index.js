@@ -12,6 +12,8 @@ import {
   CREATED_USER,
   LOGGED_IN_USER,
   LOGGED_OUT_USER,
+  UPDATED_CHARACTER,
+  DELETED_CHARACTER,
 } from './actionTypes'
 
 const initialState = {
@@ -31,6 +33,7 @@ const initialState = {
   newCharacter: '',
   newUser: '',
   currentLoggedInUserInfo: '',
+  currentUpdatedCharacter: '',
 }
 
 // GET -> Read all characters
@@ -318,6 +321,75 @@ export const createUser = (userInfo) => {
   }
 }
 
+// PUT -> Update Character
+const updatedCharacter = (data) => {
+  return {
+    type: UPDATED_CHARACTER,
+    data,
+  }
+}
+
+export const updateCharacter = (characterInfo, updatingCharacterId) => {
+  return async (dispatch) => {
+    try {
+      // cannot pass array as data type while keeping sanity
+      const skill1 = characterInfo.skills[0]
+      const skill2 = characterInfo.skills[1]
+      const skill3 = characterInfo.skills[2]
+      const skill4 = characterInfo.skills[3]
+
+      const response = await axios.put(
+        `https://dnd-capstone-backend.herokuapp.com/api/characters/${updatingCharacterId}`,
+        {
+          name: characterInfo.characterName,
+          class: characterInfo.class,
+          race: characterInfo.race,
+          gender: characterInfo.gender,
+          armorClass: characterInfo.armorClass,
+          speed: characterInfo.speed,
+          skill1: skill1,
+          skill2: skill2,
+          skill3: skill3,
+          skill4: skill4,
+          str: characterInfo.str,
+          dex: characterInfo.dex,
+          con: characterInfo.con,
+          int: characterInfo.int,
+          wis: characterInfo.wis,
+          cha: characterInfo.cha,
+          personalityTraits: characterInfo.personalityTraits,
+          flaws: characterInfo.flaws,
+          ideals: characterInfo.ideals,
+          userId: characterInfo.userId,
+        }
+      )
+      dispatch(updatedCharacter(response.data))
+    } catch (error) {
+      console.error(error)
+    }
+  }
+}
+
+// DELETE -> Delete character
+const deletedCharacter = () => {
+  return {
+    type: DELETED_CHARACTER,
+  }
+}
+
+export const deleteCharacter = (deleteCharacterId) => {
+  return async (dispatch) => {
+    try {
+      await axios.delete(
+        `https://dnd-capstone-backend.herokuapp.com/api/characters/${deleteCharacterId}`
+      )
+      dispatch(deletedCharacter())
+    } catch (error) {
+      console.error(error)
+    }
+  }
+}
+
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case GOT_ALL_CHARACTERS:
@@ -380,6 +452,15 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         currentLoggedInUserInfo: '',
         characters: [],
+      }
+    case UPDATED_CHARACTER:
+      return {
+        ...state,
+        currentUpdatedCharacter: action.data,
+      }
+    case DELETED_CHARACTER:
+      return {
+        ...state,
       }
     default:
       return state

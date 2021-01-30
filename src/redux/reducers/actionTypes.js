@@ -7,8 +7,16 @@ export const GOT_ALL_CLASSES = 'GOT_ALL_CLASSES'
 export const GOT_ALL_RACES = 'GOT_ALL_RACES'
 export const GOT_ALL_SKILLS = 'GOT_ALL_SKILLS'
 export const GOT_ALL_USERS = 'GOT_ALL_USERS'
-export const LOGGED_IN_USER = 'LOGGED_IN_USER'
-export const LOGGED_OUT_USER = 'LOGGED_OUT_USER'
+
 // POST -> Create
 export const CREATED_CHARACTER = 'CREATED_CHARACTER'
 export const CREATED_USER = 'CREATED_USER'
+export const LOGGED_IN_USER = 'LOGGED_IN_USER'
+
+export const LOGGED_OUT_USER = 'LOGGED_OUT_USER'
+
+// PUT -> Update
+export const UPDATED_CHARACTER = 'UPDATED_CHARACTER'
+
+// DELETE -> Delete
+export const DELETED_CHARACTER = 'DELETED_CHARACTER'
