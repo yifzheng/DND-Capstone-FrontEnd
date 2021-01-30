@@ -1,51 +1,81 @@
 #character-container {
-	background-image: url("https://cdna.artstation.com/p/assets/images/images/011/507/760/large/nicholas-jiang-battle-of-dragons-4k.jpg?1529947182");
-	background-size: cover;
-	background-repeat: no-repeat;
-	overflow: hidden;
-	height: calc(100% - 72px);
+  background-image: url('https://cdna.artstation.com/p/assets/images/images/011/507/760/large/nicholas-jiang-battle-of-dragons-4k.jpg?1529947182');
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: scroll;
+  height: calc(100% - 72px);
 }
 #character-info-container {
-	border: 3px solid #2b516e;
-	width: 50vw;
-	height: 65vh;
-	border-radius: 20px;
-    opacity: .85;
-    margin-left: 24vw;
-    margin-top: 100px;
-    background-color: #618b8e;
-    font-family: fantasy;
-    font-weight: 100;
+  border: 3px solid #2b516e;
+  width: 50vw;
+  height: 65vh;
+  border-radius: 20px;
+  opacity: 0.85;
+  margin-left: 24vw;
+  margin-top: 100px;
+  background-color: #618b8e;
+  font-family: fantasy;
+  font-weight: 100;
 }
-#character-race-image{
-   padding: 30px;
+#character-race-image {
+  padding: 30px;
 }
 #display-character-info {
-	display: inline-flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-.character-info{
-    font-size: 1.2em;
-    margin-top: 50px;
-    color: #163266;
-    margin-left: 40px;
+.character-info {
+  font-size: 1.2em;
+  margin-top: 50px;
+  color: #163266;
+  margin-left: 40px;
 }
-#general-info h3{
-    padding: 10px 0px;
+#general-info h3 {
+  padding: 10px 0px;
 }
 
-#attributes{
-    border:  2px solid #2b516e; 
-    background-color: #80B6BA;
-    margin-top: 1vh;
-    margin-left: 6%;
-    border-radius: 10px;;
-    display: inline-flex;
-    padding: 15px;
-    gap: 1vw;
-    font-size: 18px;
-    color: #163266;
-    font-weight: 100;
-    text-align: center;
+#attributes {
+  border: 2px solid #2b516e;
+  background-color: #80b6ba;
+  margin-top: 1vh;
+  margin-left: 6%;
+  border-radius: 10px;
+  display: inline-flex;
+  padding: 15px;
+  gap: 1vw;
+  font-size: 18px;
+  color: #163266;
+  font-weight: 100;
+  text-align: center;
+}
+
+#further-info {
+  background-color: #111111;
+
+  border: 3px solid #8b0000;
+  border-radius: 20px;
+
+  color: #ecf0f1;
+  text-shadow: 1px 1px 4px black;
+
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 -10px;
+  margin-top: 1rem;
+
+  text-align: center;
+
+  padding: 30px;
+}
+
+#further-info div {
+  min-width: 300px;
+  margin: 0 10px;
+}
+
+#further-info p {
+  margin: 0;
+  padding: 0;
 }
