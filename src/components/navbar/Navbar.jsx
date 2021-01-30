@@ -33,7 +33,7 @@ class Navbar extends React.Component {
               {this.props.currentUser !== undefined ? (
                 this.props.currentUser.token !== undefined ? (
                   <li className="nav-item">
-                    <Link to="/createCharacter">Create Character</Link>
+                    <Link to="/CharacterCreation">Create Character</Link>
                   </li>
                 ) : (
                   <span />

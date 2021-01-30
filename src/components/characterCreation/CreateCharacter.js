@@ -1,5 +1,7 @@
-import React, { Component } from 'react'
+/* import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+
+import "../../css/charactercreation.css"
 class CreateCharacter extends Component {
   render() {
     return (
@@ -13,3 +15,4 @@ class CreateCharacter extends Component {
 }
 
 export default CreateCharacter
+ */

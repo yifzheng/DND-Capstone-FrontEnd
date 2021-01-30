@@ -8,7 +8,7 @@ import {
   getAllSkills,
   createCharacter,
 } from '../../redux/reducers'
-
+import "../../css/charactercreation.css"
 class CharacterCreationForm extends React.Component {
   constructor ( props ) {
     super( props )
@@ -114,7 +114,7 @@ class CharacterCreationForm extends React.Component {
       '+' + modifier
 
     if ( e.target.name === 'dex' ) {
-     
+
       this.setState( {
         characterInfo: {
           ...this.state.characterInfo,
@@ -149,191 +149,200 @@ class CharacterCreationForm extends React.Component {
 
   handleFormSubmit = ( e ) => {
     e.preventDefault()
-   /*  const { str, dex, con, wis, int, cha } = this.state
-    if ( ( str || dex || con || wis || int || cha ) > 30 || ( str || dex || con || wis || int || cha ) < 0 ) {
-      alert( "Characters Attritbutes Are Maxed at 30" )
+    /*  const { str, dex, con, wis, int, cha } = this.state
+     if ( ( str || dex || con || wis || int || cha ) > 30 || ( str || dex || con || wis || int || cha ) < 0 ) {
+       alert( "Characters Attritbutes Are Maxed at 30" )
+     }
+     else { */
+    if ( this.state.public === 'false' ) {
+      this.setState( {
+        characterInfo: {
+          ...this.state.characterInfo,
+          userId: this.props.currentUser.userId,
+        },
+      } )
+    } else {
+      delete this.state.characterInfo.userId
     }
-    else { */
-      if ( this.state.public === 'false' ) {
-        this.setState( {
-          characterInfo: {
-            ...this.state.characterInfo,
-            userId: this.props.currentUser.userId,
-          },
-        } )
-      } else {
-        delete this.state.characterInfo.userId
-      }
 
-      setTimeout( () => {
-        this.props.createCharacter(
-          this.state.characterInfo,
-          this.props.currentUser.token
-        )
-      }, 1200 )
-      setTimeout( () => {
-        if ( this.props.newCharacter !== undefined ) {
-          if ( this.state.public ) {
-            this.props.history.push( "/builds" )
-          }
-          else {
-            this.props.history.push( "/userprofile" )
-          }
+    setTimeout( () => {
+      this.props.createCharacter(
+        this.state.characterInfo,
+        this.props.currentUser.token
+      )
+    }, 1200 )
+    setTimeout( () => {
+      if ( this.props.newCharacter !== undefined ) {
+        if ( this.state.public === 'true') {
+          this.props.history.push( "/builds" )
         }
-      }, 2000 )
+        else {
+          this.props.history.push( "/userprofile" )
+        }
+      }
+    }, 2000 )
     /* } */
   }
 
   render () {
-    
+
     return (
       <div className="creation-form">
         <header>DUNGEONS { '&' } DRAGONS CHARACTER CREATION FORM</header>
 
-        {/* Main Character Creation Form */ }
-        <form onSubmit={ ( e ) => this.handleFormSubmit( e ) }>
-          {/* Character Name */ }
-          <label>
-            Character Name:<br></br>
-            <input
-              type="text"
-              name="characterName"
-              placeholder="Raffaela Ciccone"
-              onChange={ ( e ) =>
-                this.setState( {
-                  characterInfo: {
-                    ...this.state.characterInfo,
-                    characterName: e.target.value,
-                  },
-                } )
-              }
-              required
-            ></input>
-          </label>
-          <br></br>
-          {/* End Character Name */ }
-
-          {/* Class Select */ }
-          <label>
-            Select Your Classes<br></br>
-            <select
-              name="classSelect"
-              onChange={ ( e ) => this.handleClassSelectChange( e ) }
-              required
-            >
-              <option value="">--Choose Your Class--</option>
-              { this.props.allClasses !== undefined ? (
-                this.props.allClasses.map( ( element, index ) => {
-                  return (
-                    <option key={ index } value={ element.index }>
-                      {element.name }
-                    </option>
-                  )
-                } )
-              ) : (
-                  <span />
-                ) }
-            </select>
-          </label>
-          {/* End Class Select */ }
-
-          <br></br>
-          {/* Race Select */ }
-          <label>
-            Select Your Race
+        <div id="character-creation-form">
+          {/* Main Character Creation Form */ }
+          <form onSubmit={ ( e ) => this.handleFormSubmit( e ) }>
+            {/* Character Name */ }
+            <div id="character-creation-name">
+              <label>
+                Character Name:<br></br>
+                <input
+                  type="text"
+                  name="characterName"
+                  placeholder="Raffaela Ciccone"
+                  onChange={ ( e ) =>
+                    this.setState( {
+                      characterInfo: {
+                        ...this.state.characterInfo,
+                        characterName: e.target.value,
+                      },
+                    } )
+                  }
+                  required
+                ></input>
+              </label>
+            </div>
             <br></br>
-            <select
-              name="raceSelect"
-              onChange={ ( e ) => this.handleRaceSelectChange( e ) }
-              required
-            >
-              <option value="">--Choose Your Race--</option>
-              { this.props.allRaces !== undefined ? (
-                this.props.allRaces.map( ( element, index ) => {
-                  return (
-                    <option key={ index } value={ element.index }>
-                      {element.name }
-                    </option>
-                  )
-                } )
-              ) : (
-                  <span />
-                ) }
-            </select>
-          </label>
-          {/* End Race Select */ }
+            {/* End Character Name */ }
 
-          <br></br>
-          {/* Gender Select */ }
-          <div>
-            <input
-              type="radio"
-              id="male"
-              name="gender"
-              value="male"
-              onChange={ ( e ) => this.handleGenderSelectChange( e ) }
-            ></input>
-            <label htmlFor="male">Male</label>
+            {/* Class Select */ }
+            <div id="class-select">
+              <label>
+                Select Your Classes<br></br>
+                <select
+                  name="classSelect"
+                  onChange={ ( e ) => this.handleClassSelectChange( e ) }
+                  required
+                >
+                  <option value="">--Choose Your Class--</option>
+                  { this.props.allClasses !== undefined ? (
+                    this.props.allClasses.map( ( element, index ) => {
+                      return (
+                        <option key={ index } value={ element.index }>
+                          {element.name }
+                        </option>
+                      )
+                    } )
+                  ) : (
+                      <span />
+                    ) }
+                </select>
+              </label>
+            </div>
+            {/* End Class Select */ }
 
             <br></br>
-            <input
-              type="radio"
-              id="female"
-              name="gender"
-              value="female"
-              onChange={ ( e ) => this.handleGenderSelectChange( e ) }
-            ></input>
-            <label htmlFor="female">Female</label>
+            {/* Race Select */ }
+            <div id="race-select">
+              <label>
+                Select Your Race
+            <br></br>
+                <select
+                  name="raceSelect"
+                  onChange={ ( e ) => this.handleRaceSelectChange( e ) }
+                  required
+                >
+                  <option value="">--Choose Your Race--</option>
+                  { this.props.allRaces !== undefined ? (
+                    this.props.allRaces.map( ( element, index ) => {
+                      return (
+                        <option key={ index } value={ element.index }>
+                          {element.name }
+                        </option>
+                      )
+                    } )
+                  ) : (
+                      <span />
+                    ) }
+                </select>
+              </label>
+            </div>
+            {/* End Race Select */ }
 
             <br></br>
-            <input
-              type="radio"
-              id="other"
-              name="gender"
-              value="other"
-              onChange={ ( e ) => this.handleGenderSelectChange( e ) }
-            ></input>
-            <label htmlFor="other">Other</label>
-          </div>
+            {/* Gender Select */ }
+            <div id="gender-choices">
+              <div className="gender-male">
+                <input
+                  type="radio"
+                  id="male"
+                  name="gender"
+                  value="male"
+                  onChange={ ( e ) => this.handleGenderSelectChange( e ) }
+                ></input>
+                <label htmlFor="male">Male</label>
+              </div>
+              <div className="gender-female">
+                <input
+                  type="radio"
+                  id="female"
+                  name="gender"
+                  value="female"
+                  onChange={ ( e ) => this.handleGenderSelectChange( e ) }
+                ></input>
+                <label htmlFor="female">Female</label>
+              </div>
+              <div className="gender-other">
+                <input
+                  type="radio"
+                  id="other"
+                  name="gender"
+                  value="other"
+                  onChange={ ( e ) => this.handleGenderSelectChange( e ) }
+                ></input>
+                <label htmlFor="other">Other</label>
+              </div>
+            </div>
 
-          {/* End Gender Select  */ }
+            {/* End Gender Select  */ }
 
-          <br></br>
-          {/* Main Stats */ }
-          <label>
-            Proficiency Bonus (+2 For Lvl.1) :
+            {/* Main Stats */ }
+            <div id="character-prof-bonus">
+              <label>
+                Proficiency Bonus (+2 For Lvl.1) :
             <span
-              id="proficiencyBonus-display"
-              // type="number"
-              name="proficiencyBonus"
-              // placeholder={Math.floor(Math.random() * 6)}
-              // defaultValue={Math.floor(Math.random() * 6)}
-              value="2"
-              onChange={ ( e ) =>
-                alert( 'A lvl.1 character has +2 proficieny bonus!' )
-              }
-              required
-            >
-              { ' ' }
-              { this.state.characterInfo.proficiencyBonus }
-            </span>
-          </label>
-
-          <br></br>
-          <label>
-            Armor Class :
+                  id="proficiencyBonus-display"
+                  // type="number"
+                  name="proficiencyBonus"
+                  // placeholder={Math.floor(Math.random() * 6)}
+                  // defaultValue={Math.floor(Math.random() * 6)}
+                  value="2"
+                  onChange={ ( e ) =>
+                    alert( 'A lvl.1 character has +2 proficieny bonus!' )
+                  }
+                  required
+                >
+                  { ' ' }
+                  { this.state.characterInfo.proficiencyBonus }
+                </span>
+              </label>
+            </div>
+            <div id="other-main-stats">
+              <label>
+                Armor Class :
             <span
-              id="armorClass-display"
-              type="number"
-              name="armorClass"
-              required
-            >
-              { ' ' }
-              { this.state.characterInfo.armorClass }
-            </span>
-          </label>
+                  id="armorClass-display"
+                  type="number"
+                  name="armorClass"
+                  required
+                >
+                  { ' ' }
+                  { this.state.characterInfo.armorClass }
+                </span>
+              </label>
 
-          {/* <br></br>
+              {/* <br></br>
           <label>
             Initiative
             <br></br>
@@ -347,173 +356,180 @@ class CharacterCreationForm extends React.Component {
             ></input>
           </label> */}
 
-          <br></br>
-          <label>
-            Speed :
+              <br></br>
+              <label>
+                Speed :
             <span
-              id="speed-display"
-              type="number"
-              name="speed"
-              value={ this.state.characterInfo.speed }
-              required
-            >
-              { ' ' }
-              { this.state.characterInfo.speed }
-            </span>
-          </label>
-          <br></br>
-          {/* End Main Stats */ }
+                  id="speed-display"
+                  type="number"
+                  name="speed"
+                  value={ this.state.characterInfo.speed }
+                  required
+                >
+                  { ' ' }
+                  { this.state.characterInfo.speed }
+                </span>
+              </label>
+              <br></br>
+            </div>
+            {/* End Main Stats */ }
 
-          {/* Skill Select */ }
-          <label>
-            Select Your Skills (Choose up to 4)
+            {/* Skill Select */ }
+            <div id="select-character-skill">
+              <label>
+                Select Your Skills (Choose up to 4)
             <br></br>
-            <select
-              name="skillsSelect"
-              onChange={ ( e ) => this.handleSkillsSelectChange( e ) }
-              required
-            >
-              <option value="">--Choose Your Skills--</option>
-              { this.props.allSkills !== undefined ? (
-                this.props.allSkills.map( ( element, index ) => {
-                  return (
-                    <option key={ index } value={ element.index }>
-                      {element.name }
-                    </option>
-                  )
-                } )
-              ) : (
-                  <span />
-                ) }
-            </select>
-          </label>
-          {/* End Skill Select */ }
+                <select
+                  name="skillsSelect"
+                  onChange={ ( e ) => this.handleSkillsSelectChange( e ) }
+                  required
+                >
+                  <option value="">--Choose Your Skills--</option>
+                  { this.props.allSkills !== undefined ? (
+                    this.props.allSkills.map( ( element, index ) => {
+                      return (
+                        <option key={ index } value={ element.index }>
+                          {element.name }
+                        </option>
+                      )
+                    } )
+                  ) : (
+                      <span />
+                    ) }
+                </select>
+              </label>
+            </div>
+            {/* End Skill Select */ }
 
-          <br></br>
-          {/* Ability Scores */ }
-          <label>
-            Strength
             <br></br>
-            <input
-              type="number"
-              name="str"
-              defaultValue={ this.state.characterInfo.str }
-              onChange={ ( e ) => this.handleAbilityScoreChange( e ) }
-              min="0"
-              max="30"
-              required
-            ></input>
-            <span id="str-modifier"></span>
-          </label>
-
-          <br></br>
-          <label>
-            Dexterity
+            {/* Ability Scores */ }
+            <div id="character-attributes">
+              <div id="str">
+                <label>
+                  Strength
             <br></br>
-            <input
-              type="number"
-              name="dex"
-              defaultValue={ this.state.characterInfo.dex }
-              onChange={ ( e ) => this.handleAbilityScoreChange( e ) }
-              min="0"
-              max="30"
-              required
-            ></input>
-            <span id="dex-modifier"></span>
-          </label>
-
-          <br></br>
-          <label>
-            Constitution
+                  <input
+                    type="number"
+                    name="str"
+                    defaultValue={ this.state.characterInfo.str }
+                    onChange={ ( e ) => this.handleAbilityScoreChange( e ) }
+                    min="0"
+                    max="30"
+                    required
+                  ></input>
+                  <span id="str-modifier"></span>
+                </label>
+              </div>
+              <div id="dex">
+                <label>
+                  Dexterity
             <br></br>
-            <input
-              type="number"
-              name="con"
-              defaultValue={ this.state.characterInfo.con }
-              onChange={ ( e ) => this.handleAbilityScoreChange( e ) }
-              min="0"
-              max="30"
-              required
-            ></input>
-            <span id="con-modifier"></span>
-          </label>
-
-          <br></br>
-          <label>
-            Intelligence
+                  <input
+                    type="number"
+                    name="dex"
+                    defaultValue={ this.state.characterInfo.dex }
+                    onChange={ ( e ) => this.handleAbilityScoreChange( e ) }
+                    min="0"
+                    max="30"
+                    required
+                  ></input>
+                  <span id="dex-modifier"></span>
+                </label>
+              </div>
+              <div id="con">
+                <label>
+                  Constitution
             <br></br>
-            <input
-              type="number"
-              name="int"
-              defaultValue={ this.state.characterInfo.int }
-              onChange={ ( e ) => this.handleAbilityScoreChange( e ) }
-              min="0"
-              max="30"
-              required
-            ></input>
-            <span id="int-modifier"></span>
-          </label>
-
-          <br></br>
-          <label>
-            Wisdom
+                  <input
+                    type="number"
+                    name="con"
+                    defaultValue={ this.state.characterInfo.con }
+                    onChange={ ( e ) => this.handleAbilityScoreChange( e ) }
+                    min="0"
+                    max="30"
+                    required
+                  ></input>
+                  <span id="con-modifier"></span>
+                </label>
+              </div>
+              <div id="int">
+                <label>
+                  Intelligence
             <br></br>
-            <input
-              type="number"
-              name="wis"
-              defaultValue={ this.state.characterInfo.wis }
-              onChange={ ( e ) => this.handleAbilityScoreChange( e ) }
-              min="0"
-              max="30"
-              required
-            ></input>
-            <span id="wis-modifier"></span>
-          </label>
-
-          <br></br>
-          <label>
-            Charisma
+                  <input
+                    type="number"
+                    name="int"
+                    defaultValue={ this.state.characterInfo.int }
+                    onChange={ ( e ) => this.handleAbilityScoreChange( e ) }
+                    min="0"
+                    max="30"
+                    required
+                  ></input>
+                  <span id="int-modifier"></span>
+                </label>
+              </div>
+              <div id="wis">
+                <label>
+                  Wisdom
             <br></br>
-            <input
-              type="number"
-              name="cha"
-              defaultValue={ this.state.characterInfo.cha }
-              onChange={ ( e ) => this.handleAbilityScoreChange( e ) }
-              min="0"
-              max="30"
-              required
-            ></input>
-            <span id="cha-modifier"></span>
-          </label>
+                  <input
+                    type="number"
+                    name="wis"
+                    defaultValue={ this.state.characterInfo.wis }
+                    onChange={ ( e ) => this.handleAbilityScoreChange( e ) }
+                    min="0"
+                    max="30"
+                    required
+                  ></input>
+                  <span id="wis-modifier"></span>
+                </label>
+              </div>
+              <div id="cha">
+                <label>
+                  Charisma
+            <br></br>
+                  <input
+                    type="number"
+                    name="cha"
+                    defaultValue={ this.state.characterInfo.cha }
+                    onChange={ ( e ) => this.handleAbilityScoreChange( e ) }
+                    min="0"
+                    max="30"
+                    required
+                  ></input>
+                  <span id="cha-modifier"></span>
+                </label>
+              </div>
 
-          <br />
-          <br />
-          {/* Display Status: public or private */ }
-          <input
-            type="radio"
-            name="public" // this is a state, not value
-            value="true"
-            onChange={ ( e ) => this.handleDisplayStatusChange( e ) }
-          />
-          <label>Public</label>
+              
+            </div>
+            {/* Display Status: public or private */ }
+              <div id="public-private">
+                <input
+                  type="radio"
+                  name="public" // this is a state, not value
+                  value="true"
+                  onChange={ ( e ) => this.handleDisplayStatusChange( e ) }
+                />
+                <label>Public</label>
 
-          <input
-            type="radio"
-            name="public" // this is a state, not value
-            value="false"
-            onChange={ ( e ) => this.handleDisplayStatusChange( e ) }
-          />
-          <label>Private</label>
-          <br />
-          {/* END Display Status: public or private */ }
-
-          <br></br>
-          <input type="submit" value="Create Your Character"></input>
-          {/* <input type="reset" value="Reset"></input> Does not work with modifiers */ }
-          <Link to="/createCharacter">
-            <input type="button" value="Cancel"></input>
-          </Link>
-        </form>
+                <input
+                  type="radio"
+                  name="public" // this is a state, not value
+                  value="false"
+                  onChange={ ( e ) => this.handleDisplayStatusChange( e ) }
+                />
+                <label>Private</label>
+              </div>
+           
+            {/* END Display Status: public or private */ }
+            <input id="create-btn" type="submit" value="Create Your Character"></input>
+            {/* <input type="reset" value="Reset"></input> Does not work with modifiers */ }
+            <Link to="/createCharacter">
+              <input id="cancel-btn" type="button" value="Cancel"></input>
+            </Link>
+          </form>
+        </div>
       </div>
     )
   }

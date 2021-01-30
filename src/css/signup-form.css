@@ -14,6 +14,7 @@
     opacity: 75%;
 	border-radius: 30px;
 	padding: 50px;
+	outline: none;
 	margin-left: 32.3vw;
 	margin-top: 10vh; 
 }
