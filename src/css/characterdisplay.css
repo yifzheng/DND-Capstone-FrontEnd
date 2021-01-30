@@ -78,33 +78,33 @@
   margin: 0;
   padding: 0;
 }
-#personality-traits{
+#further-info-personality-traits{
   border: 2px solid #2b516e;
   background-color: #80b6ba;
   border-radius: 10px;
   padding: 5px;
 }
-#personality-traits-h3{
+#further-info-personality-traits-h3{
   margin-right: 70px;
   font-size: 19px;
 }
-#flaws{
+#further-info-flaws{
   border: 2px solid #2b516e;
   background-color: #80b6ba;
   border-radius: 10px;
   padding: 5px;
 }
-#flaws-h3{
+#further-info-flaws-h3{
   margin-right: 120px;
   font-size: 19px;
 }
-#ideals{
+#further-info-ideals{
   border: 2px solid #2b516e;
   background-color: #80b6ba;
   border-radius: 10px;
   padding: 5px;
 }
-#ideals-h3{
+#further-info-ideals-h3{
   margin-right: 120px;
   font-size: 19px;
 }

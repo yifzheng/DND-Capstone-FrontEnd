@@ -174,18 +174,18 @@ class DisplayCharacter extends Component {
                   <h3>Charisma : { this.props.character.cha }</h3>
                 </div>
                 <div id="further-info">
-                  < div id = "personality-traits">
-                    <h3 id =  "personality-traits-h3">Personality Traits</h3>
+                  < div id = "further-info-personality-traits">
+                    <h3 id =  "further-info-personality-traits-h3">Personality Traits</h3>
                     <p>{ this.props.character.personalityTraits }</p>
                   </div>
-                  <div id = "flaws">
-                    <h3 id = "flaws-h3">Flaws</h3> <p>{ this.props.character.flaws }</p>
+                  <div id = "further-info-flaws">
+                    <h3 id = "further-info-flaws-h3">Flaws</h3> <p>{ this.props.character.flaws }</p>
                   </div>
-                  <div id = "ideals">
-                    <h3 id = "ideals-h3">Ideals</h3> <p>{ this.props.character.ideals }</p>
+                  <div id = "further-info-ideals">
+                    <h3 id = "further-info-ideals-h3">Ideals</h3> <p>{ this.props.character.ideals }</p>
                   </div>
                 </div>
-                {this.props.currentUser.userId === this.props.match.params.id && <button id = "edit-character-btn">Edit</button>}
+                {/* this.props.currentUser.userId === this.props.character.userId ? <Link to = {`/editCharacter/${this.props.match.params.id}`}><button id = "edit-character-btn">Edit</button></Link> : <span/> */}
               </div>
             </div>
           ) : (
