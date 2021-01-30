@@ -21,10 +21,11 @@ class DisplayProficiencies extends React.Component {
       return <h1 id="disp-h1">Loading</h1>
     }
     return (
-      <div id="prof-container">
+      <div id = "prof-container-container">
+        <div id="prof-container">
         <h1 id="disp-h1">{this.props.prof.name}</h1>
         <div className="prof-classes">
-          <h2 className="fix-h1-h2-h3-h4">--Classes--</h2>
+          <h2 className="prof-classes">--Classes--</h2>
           <div>
             {this.props.prof.classes ? (
               <div id="pof-classes">
@@ -34,14 +35,14 @@ class DisplayProficiencies extends React.Component {
                       to={`/class/${item.index}`}
                       style={{ textDecoration: 'none' }}
                     >
-                      <p>{item.name}</p>
+                      <p id = "prof-class-name">{item.name}</p>
                     </Link>
                   )
                 })}
               </div>
             ) : (
               <div>
-                <h3 className="fix-h1-h2-h3-h4">
+                <h3 className="prof-classes">
                   This Skill Is Not Tied To Any Class
                 </h3>
               </div>
@@ -49,7 +50,7 @@ class DisplayProficiencies extends React.Component {
           </div>
         </div>
         <div className="prof-races">
-          <h2 className="fix-h1-h2-h3-h4">--Races--</h2>
+          <h2 className="prof-races">--Races--</h2>
           {this.props.prof.races !== undefined ? (
             <div id="pof-races">
               {this.props.prof.races.map((item, index) => {
@@ -58,7 +59,7 @@ class DisplayProficiencies extends React.Component {
                     to={`/race/${item.index}`}
                     style={{ textDecoration: 'none' }}
                   >
-                    <p>{item.name}</p>
+                    <p id = "prof-race-name">{item.name}</p>
                   </Link>
                 )
               })}
@@ -71,21 +72,17 @@ class DisplayProficiencies extends React.Component {
             </div>
           )}
         </div>
-        {this.props.prof.references !== undefined && (
+        {/* {this.props.prof.references !== undefined && (
           <div id="references">
             <h2 className="fix-h1-h2-h3-h4">--References--</h2>
             {this.props.prof.references.map((item, index) => {
               return (
-                <Link
-                  to={`/equipment/${item.index}`}
-                  style={{ textDecoration: 'none' }}
-                >
-                  <p key={index}>{item.name}</p>
-                </Link>
+                  <p id = "prof-reference-p" key={index}>{item.name}</p>
               )
             })}
           </div>
-        )}
+        )} */}
+      </div>
       </div>
     )
   }

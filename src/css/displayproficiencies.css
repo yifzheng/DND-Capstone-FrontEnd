@@ -1,37 +1,69 @@
 #prof-container {
   margin-top: 8%;
+  background-color: #587e80;
+    opacity: 80%;
+  width: 90vw;
+  margin-left: 5vw;
+}
+#prof-container-container{
+  background-image: url("https://wallpaper.dog/large/20467459.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: scroll;
+	height: calc(100% - 72px);
 }
 #disp-h1 {
   text-align: center;
   font-size: 46px;
   font-family: fantasy;
   font-weight: 100;
-  color: rgb(209, 178, 178);
+  color: #8b0000;
 }
 .prof-classes {
   text-align: center;
   font-size: 1.6em;
+  font-family: fantasy;
+  font-weight: 100;
+  color: #8b0000;
 }
 #pof-classes {
   display: inline-flex;
   flex-direction: row;
   flex-grow: 1;
+  font-family: fantasy;
+  font-weight: 100;
   font-size: 1.1em;
   flex-wrap: wrap;
   gap: 50px;
+  color: #8b0000;
+}
+#prof-class-name{
+  color: #8b0000;
+  font-family: fantasy;
+  font-weight: 100;
 }
 #pof-races {
   display: inline-flex;
   flex-direction: row;
   flex-grow: 1;
+  font-family: fantasy;
+  font-weight: 100;
   font-size: 1.1em;
   flex-wrap: wrap;
   gap: 50px;
+  color: #8b0000;
 }
-
+#prof-race-name{
+  color: #8b0000;
+  font-family: fantasy;
+  font-weight: 100;
+}
 .prof-races {
   text-align: center;
   font-size: 1.6em;
+  font-family: fantasy;
+  font-weight: 100;
+  color: #8b0000;
 }
 #references {
   text-align: center;

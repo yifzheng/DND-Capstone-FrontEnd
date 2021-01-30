@@ -1,22 +1,31 @@
-#back{
-    margin-top: 1%;
-    margin-left: 2%;
-    color: rgb(209, 178, 178);
+#back {
+	margin-top: 1%;
+	margin-left: 2%;
+	color: rgb(209, 178, 178);
 }
-#feature-name{
-    text-align: center;
-    font-size: 46px;
-    font-family: fantasy;
-    font-weight: 100;
-    color: rgb(209, 178, 178);
+#indiv-feature-container {
+	background-image: url("https://wallpaper.dog/large/10751561.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: scroll;
+	height: calc(100% - 72px);
 }
-#individual-feature{
-    padding: 10px;
-    margin-top: 3%;
-    border: 3px solid #8b0000;
-    color: rgb(209, 178, 178);
-    width: 95vw;
-    text-align: center;
-    font-size: 1.7em;
-    margin-left: 1.8%;
+#feature-name {
+	text-align: center;
+	font-size: 46px;
+	font-family: fantasy;
+	font-weight: 100;
+	color: #8b0000;
+}
+#individual-feature {
+	padding: 10px;
+	margin-top: 3%;
+    background-color: #BDA678;
+    border-radius: 30px;
+    opacity: 90%;
+	color: #8b0000;
+	width: 95vw;
+	text-align: center;
+	font-size: 1.7em;
+	margin-left: 1.8%;
 }

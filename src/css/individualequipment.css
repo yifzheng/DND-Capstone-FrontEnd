@@ -1,3 +1,10 @@
+#idiv-equip-contain{
+    background-image: url("https://images.wallpapersden.com/image/download/giant-mountain-monster-in-forest_a2VpbGyUmZqaraWkpJRnamhmrWZrZWU.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: scroll;
+	height: calc(100% - 72px);
+}
 #back{
     margin-left: 2%;
 }
@@ -6,19 +13,21 @@
     font-size: 46px;
     font-family: fantasy;
     font-weight: 100;
-    color: rgb(209, 178, 178);
+    color:  rgb(224, 171, 55);
 }
 #individual-equipment-container{
     margin-top: 5%;
-    border: 3px solid #8b0000;
-    width: 92vw;
-    color: rgb(209, 178, 178);
+    background-color: #215C2A;
+    opacity: 80%;
+    width: 50vw;
+    color: rgb(224, 171, 55);
     text-decoration: none;
+    border-radius: 30px;
     text-align: center;
     font-size: 1.7em;
-    margin-left: 2.3%;
+    margin-left: 25vw;
     padding: 30px;
 }
 #start-equip-name{
-    color: rgb(209, 178, 178);
+    color: rgb(224, 171, 55);
 }

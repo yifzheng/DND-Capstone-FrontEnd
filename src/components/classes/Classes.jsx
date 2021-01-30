@@ -6,10 +6,10 @@ import SubClass from './subclasses/SubClass'
 import Feature from './features/Feature'
 import StartingEquipment from './startingEquipment/StartingEquipment'
 import "../../css/equipment.css"
-
+import "../../css/allclass.css"
 const Classes = () => {
     return (
-        <div>
+        <div id = "all-class-info-container">
             <Class />
             <SubClass />
             <Feature />

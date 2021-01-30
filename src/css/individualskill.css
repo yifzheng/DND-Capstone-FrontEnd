@@ -1,0 +1,26 @@
+#indiv-skill-container {
+	background-color: #548060;
+    opacity: 80%;
+	width: 70vw;
+	margin-left: 15vw;
+	margin-top: 15vh;
+	padding: 20px;
+	text-align: center;
+	color: #8B0000;
+	font-size: 1.5em;
+	font-family: fantasy;
+    font-weight: 100;
+}
+#characyer-skill-contain {
+	background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2d9b8eb1-88ab-4fc1-89b4-a87471054ab4/d7jlys8-0d24489a-8287-445e-b120-635f672d458f.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvMmQ5YjhlYjEtODhhYi00ZmMxLTg5YjQtYTg3NDcxMDU0YWI0XC9kN2pseXM4LTBkMjQ0ODlhLTgyODctNDQ1ZS1iMTIwLTYzNWY2NzJkNDU4Zi5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.wvUKaDaVVVWam9t8IYondcLcNHXwKWvJWkjVuTG7E7A");
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: scroll;
+	height: calc(100% - 72px);
+}
+.skill-description-101{
+    color: #8B0000;
+}
+.ability-score-101{
+    color: #8B0000;
+}

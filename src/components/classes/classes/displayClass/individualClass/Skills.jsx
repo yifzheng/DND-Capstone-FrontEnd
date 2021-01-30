@@ -3,7 +3,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { getApiData } from '../../../../../redux/reducers'
 import Skill from './Skill'
-
+import "../../../../../css/individualskill.css"
 class Skills extends React.Component {
   state = {
     skills: {},
@@ -30,12 +30,14 @@ class Skills extends React.Component {
             )
         } */
     return (
-      <div>
-        <h1 className="fix-h1-h2-h3-h4">{this.state.skills.name}</h1>
+      <div id = "characyer-skill-contain">
+        <div id = "indiv-skill-container">
+        <h1 className="indiv-skill-name">{this.state.skills.name}</h1>
         {this.state.skills.references !== undefined &&
           this.state.skills.references.map((item, index) => {
             return <Skill key={index} index={item.index} />
           })}
+      </div>
       </div>
     )
   }

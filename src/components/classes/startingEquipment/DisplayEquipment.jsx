@@ -21,6 +21,7 @@ class DisplayEquipment extends Component {
             return ( <h1>Loading</h1> )
         }
         return (
+            <div id = "all-equipment-info-container">
             <div id = "indiv-equip-cont">
                 <h1>{ this.state.equipment.name }</h1>
                 {this.state.equipment.desc !== undefined && <div> <h2>Description:</h2>{
@@ -72,6 +73,7 @@ class DisplayEquipment extends Component {
                 {this.state.equipment.stealth_advantage !== undefined && <h2>Stealth Advantage : {this.state.equipment.stealth_advantage === true ? "True" : "False"}</h2>}
                 {this.state.equipment.stealth_disadvantage !== undefined && <h2>Stealth Disadvantage : {this.state.equipment.stealth_disadvantage === true ? "True" : "False"}</h2>}
             </div>
+        </div>
         )
     }
 }

@@ -28,7 +28,7 @@ class IndividualFeature extends Component {
             return <h1>Loading</h1>
         }
         return (
-            <div >
+            <div id = "indiv-feature-container">
                 <Link to={ `/class/${this.props.feature.class.name.toLowerCase()}` } style={ { textDecoration: 'none' } }><h3 id="back">Back to { this.props.feature.class.name.toLowerCase() } Information</h3></Link>
                 <div id="individual-feature">
                     <h1 id="feature-name">{ this.props.feature.name }</h1>

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { getApiData } from '../../../../../redux/reducers'
-
+import "../../../../../css/individualskill.css"
 class Skill extends React.Component {
   state = {
     skills: {},
@@ -27,14 +27,14 @@ class Skill extends React.Component {
    
     return (
       <div>
-        <h2 className="fix-h1-h2-h3-h4">Description</h2>
+        <h2 className="skill-description-101">Description</h2>
         {this.state.skills.desc &&
           this.state.skills.desc.map((item, index) => {
             return <p key={index}> {item}</p>
           })}
-        <h2 className="fix-h1-h2-h3-h4">Ability Score:</h2>
+        <h2 className="ability-score-101">Ability Score:</h2>
         {this.state.skills.ability_score && (
-          <h3 className="fix-h1-h2-h3-h4">
+          <h3 className="ability-score-101">
             Name :{' '}
             <Link
               to={`/bonus/${this.state.skills.ability_score.index}`}
