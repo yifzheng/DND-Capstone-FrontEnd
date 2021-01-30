@@ -1,0 +1,63 @@
+.spells-container {
+  background-image: url('../components/spells/magic.jpg');
+  height: calc(100% - 72px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: scroll;
+}
+
+.spells-title {
+  /* position: fixed;
+  left: 920px; */
+
+  font-family: fantasy;
+  color: #0652dd;
+
+  font-size: 30px;
+  /* text-align: center; */
+
+  margin-top: 1.2rem;
+
+  background-color: #ecf0f1;
+  padding: 10px 20px;
+
+  width: 170px;
+  margin: auto;
+
+  opacity: 78%;
+  border-radius: 14px;
+
+  margin-top: 1rem;
+}
+
+.spells-preview-container {
+  width: 80%;
+  margin: auto;
+  margin-top: 30rem;
+  text-align: center;
+}
+
+.spells-preview {
+  display: inline-block;
+}
+
+.spells-preview a {
+  text-decoration: none;
+
+  display: inline-block;
+
+  color: #f7f1e3;
+  background-color: #111111;
+
+  font-family: fantasy;
+  font-size: 20px;
+
+  width: 250px;
+  margin: 10px 25px;
+  height: 80px;
+  line-height: 80px;
+
+  border-radius: 8px;
+
+  opacity: 78%;
+}
