@@ -12,19 +12,19 @@ class Navbar extends React.Component {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link to="/">Home</Link>
+                <Link to="/" style={{ textDecoration: 'none' }}>Home</Link>
               </li>
               <li className="nav-item">
-                <Link to="/classes">Classes</Link>
+                <Link to="/classes" style={{ textDecoration: 'none' }}>Classes</Link>
               </li>
               <li className="nav-item">
-                <Link to="/races">Races</Link>
+                <Link to="/races" style={{ textDecoration: 'none' }}>Races</Link>
               </li>
               <li className="nav-item">
-                <Link to="/spells">Spells</Link>
+                <Link to="/spells" style={{ textDecoration: 'none' }}>Spells</Link>
               </li>
               <li className="nav-item">
-                <Link to="/monsters">Monsters</Link>
+                <Link to="/monsters" style={{ textDecoration: 'none' }}>Monsters</Link>
               </li>
               <li className="nav-item">
                 <Link to="/builds">Characters</Link>
@@ -33,7 +33,7 @@ class Navbar extends React.Component {
               {this.props.currentUser !== undefined ? (
                 this.props.currentUser.token !== undefined ? (
                   <li className="nav-item">
-                    <Link to="/CharacterCreation">Create Character</Link>
+                    <Link to="/CharacterCreation" style={{ textDecoration: 'none' }}>Create Character</Link>
                   </li>
                 ) : (
                   <span />
@@ -47,15 +47,15 @@ class Navbar extends React.Component {
                 <div className="dropdown-content">
                   {this.props.currentUser ? (
                     <span>
-                      <Link to="/userprofile">User Profile</Link>
-                      <Link to="/" onClick={(e) => this.props.logoutUser()}>
+                      <Link to="/userprofile" style={{ textDecoration: 'none' }}>User Profile</Link>
+                      <Link to="/" onClick={(e) => this.props.logoutUser()} style={{ textDecoration: 'none' }}>
                         Logout
                       </Link>
                     </span>
                   ) : (
                     <span>
-                      <Link to="/signup">Sign Up</Link>
-                      <Link to="/login">Login</Link>
+                      <Link to="/signup" style={{ textDecoration: 'none' }}>Sign Up</Link>
+                      <Link to="/login" style={{ textDecoration: 'none' }}>Login</Link>
                     </span>
                   )}
 

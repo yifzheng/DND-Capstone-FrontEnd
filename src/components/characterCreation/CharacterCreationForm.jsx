@@ -525,7 +525,7 @@ class CharacterCreationForm extends React.Component {
             {/* END Display Status: public or private */ }
             <input id="create-btn" type="submit" value="Create Your Character"></input>
             {/* <input type="reset" value="Reset"></input> Does not work with modifiers */ }
-            <Link to="/createCharacter">
+            <Link to="/">
               <input id="cancel-btn" type="button" value="Cancel"></input>
             </Link>
           </form>
