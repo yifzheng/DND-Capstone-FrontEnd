@@ -42,7 +42,7 @@ p {
 	text-align: center;
 	font-size: 4em;
 	background-color: #587e80;
-	opacity: 90%;
+	opacity: .9;
 	margin: 0;
 	font-weight: 90;
 }
@@ -51,7 +51,7 @@ p {
 	font-size: 2em;
 	color: rgb(209, 178, 178);
 	background-color: #587e80;
-	opacity: 90%;
+	opacity: .9;
 	text-decoration: none;
 	margin-top: 30px;
 	margin: 0;
@@ -62,7 +62,7 @@ p {
 	font-size: 1em;
 	color: #8b0000;
 	/* background-color: #587e80;
-	opacity: 90%; */
+	opacity: .9; */
 	text-decoration: none;
 	display: inline-flex;
 	margin-left: 32vw;
@@ -73,7 +73,7 @@ p {
 	float: left;
   background-color: #587e80;
   border-radius: 30px;
-	opacity: 90%;
+	opacity: .9;
 	width: 95vw;
 	margin-right: 10px;
 	text-align: center;
@@ -95,7 +95,7 @@ p {
 	float: left;
   background-color: #587e80;
   border-radius: 30px;
-	opacity: 90%;
+	opacity: .9;
 	width: 95vw;
 	text-align: center;
 	margin: 1%;
@@ -111,7 +111,7 @@ p {
 	float: left;
   background-color: #587e80;
   border-radius: 30px;
-	opacity: 90%;
+	opacity: .9;
 	width: 95vw;
 	text-align: center;
 	margin: 1%;
@@ -128,7 +128,7 @@ p {
 	float: left;
   background-color: #587e80;
   border-radius: 30px;
-	opacity: 90%;
+	opacity: .9;
 	width: 95vw;
 	text-align: center;
 	margin: 1%;
@@ -140,7 +140,7 @@ p {
 	float: left;
   background-color: #587e80;
   border-radius: 30px;
-	opacity: 90%;
+	opacity: .9;
 	width: 95vw;
 	text-align: center;
 	font-weight: 90;

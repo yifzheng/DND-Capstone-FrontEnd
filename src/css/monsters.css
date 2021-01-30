@@ -11,14 +11,14 @@
 /* .root-monster-container {
 } */
 
-.monsters-title {
+/* .monsters-title { */
   /* background-image: url('../components/monsters/monsters.jpg'); */
 
   /* height: 1100px; */
   /* height: 100%; */
 
   /* margin-bottom: 30px; */
-}
+/* } */
 
 .monsters-title h1 {
   font-family: 'Creepster', cursive;
@@ -58,7 +58,7 @@
 
   color: #f39c12;
   background-color: #111111;
-  opacity: 70%;
+  opacity: .70;
 
   /* width: 300px; */
   width: 250px;

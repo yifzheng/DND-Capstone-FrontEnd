@@ -9,7 +9,7 @@
 	font-family: fantasy;
 	font-size: 25px;
 	background-color: #8b0000;
-	opacity: 80%;
+	opacity: .8;
 }
 #feature h1 {
 	text-decoration: none;
@@ -29,7 +29,7 @@
 	margin-top: 2%;
 	color: rgb(209, 178, 178);
 	background-color: #8b0000;
-	opacity: 80%;
+	opacity: .8;
 	font-family: fantasy;
 	font-weight: 100;
 	text-align: center;
@@ -50,7 +50,7 @@
 	width: 255px;
 	margin: 1.9%;
 	border-radius: 20px;
-	opacity: 80%;
+	opacity: .8;
 	background-color: #8b0000;
 	text-align: center;
 }

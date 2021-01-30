@@ -8,7 +8,7 @@
 	font-family: fantasy;
 	font-size: 25px;
 	background-color: #8b0000;
-	opacity: 80%;
+	opacity: .8;
 }
 #subclass h1 {
 	text-decoration: none;
@@ -28,7 +28,7 @@
 	color: rgb(209, 178, 178);
   font-family: fantasy;
   background-color: #8b0000;
-	opacity: 80%;
+	opacity: .8;
 	font-weight: 100;
 	text-align: center;
 }
@@ -54,7 +54,7 @@
 	margin: 2%;
 	border-radius: 20px;
 	background-color: #8b0000;
-	opacity: 80%;
+	opacity: .8;
 	text-align: center;
 }
 #subclass h3 {

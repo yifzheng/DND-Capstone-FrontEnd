@@ -8,7 +8,7 @@
 	font-family: fantasy;
 	font-size: 25px;
 	background-color: #8b0000;
-	opacity: 80%;
+	opacity: .8;
 }
 #equipment h1 {
 	text-decoration: none;
@@ -31,7 +31,7 @@ body {
 	font-size: 60px;
 	color: #8b0000;
 	background-color: #587e80;
-	opacity: 80%;
+	opacity: .8;
 	font-family: fantasy;
 	font-weight: 100;
 	text-align: center;
@@ -53,7 +53,7 @@ body {
 	margin: 2%;
 	border-radius: 20px;
 	background-color: #587e80;
-	opacity: 80%;
+	opacity: .8;
 	text-align: center;
 }
 #all-equipment h3 {

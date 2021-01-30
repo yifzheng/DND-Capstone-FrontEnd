@@ -11,7 +11,7 @@
 	height: 50vh;
 	color: rgb(209, 178, 178);
     background-color: #8b0000;
-    opacity: 75%;
+    opacity: .75;
 	border-radius: 30px;
 	padding: 50px;
 	outline: none;

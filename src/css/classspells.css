@@ -16,7 +16,7 @@
 	text-align: center;
 	color: #8b0000;
 	background-color: #548060;
-    opacity: 80%;
+    opacity: .80;
     margin-top: 30px;
 	font-family: fantasy;
 	font-weight: 100;
@@ -38,7 +38,7 @@
     font-weight: 100;
     text-decoration: none;
 	padding: 20px;
-	opacity: 80%;
+	opacity: .80;
 	border-radius: 30px;
 	background-color: #548060;
 }
