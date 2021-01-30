@@ -217,6 +217,7 @@ class DisplayCharacter extends Component {
                       state: {
                         editing: true,
                         updatingCharacterId: this.props.character.id,
+                        oldCharacterInfo: this.props.character,
                       },
                     }}
                   >

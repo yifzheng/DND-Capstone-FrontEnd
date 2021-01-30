@@ -42,6 +42,9 @@ class CharacterCreationForm extends React.Component {
       updatingCharacterId: this.props.location.state
         ? this.props.location.state.updatingCharacterId
         : null, // id of character being updated, if editing is true, this value MUST be true, as in it has a valid id.
+      oldCharacterInfo: this.props.location.state
+        ? this.props.location.state.oldCharacterInfo
+        : null,
     }
   }
 
@@ -49,6 +52,52 @@ class CharacterCreationForm extends React.Component {
     await this.props.getAllClasses()
     await this.props.getAllRaces()
     await this.props.getAllSkills()
+    if (this.state.oldCharacterInfo) {
+      const {
+        name,
+        race,
+        gender,
+        armorClass,
+        speed,
+        skill1,
+        skill2,
+        skill3,
+        skill4,
+        str,
+        dex,
+        con,
+        int,
+        wis,
+        cha,
+        personalityTraits,
+        flaws,
+        ideals,
+      } = this.state.oldCharacterInfo
+      const charaClass = this.state.oldCharacterInfo.class
+      this.setState({
+        characterInfo: {
+          characterName: name,
+          class: charaClass,
+          race: race,
+          gender: gender,
+          proficiencyBonus: '2',
+          armorClass: armorClass,
+          initiative: 0,
+          speed: speed,
+          skills: [skill1, skill2, skill3, skill4],
+          str: str,
+          dex: dex,
+          con: con,
+          int: int,
+          wis: wis,
+          cha: cha,
+          personalityTraits: personalityTraits,
+          flaws: flaws,
+          ideals: ideals,
+          userId: '',
+        },
+      })
+    }
   }
 
   handleClassSelectChange = (e) => {
@@ -225,6 +274,7 @@ class CharacterCreationForm extends React.Component {
       'this.state.updatingCharacterId:',
       this.state.updatingCharacterId
     )
+    console.log('old chara info:', this.state.oldCharacterInfo)
 
     console.log('chara info test:', this.state.characterInfo)
     return (
@@ -245,7 +295,8 @@ class CharacterCreationForm extends React.Component {
                 <input
                   type="text"
                   name="characterName"
-                  placeholder="Raffaela Ciccone"
+                  // placeholder="Raffaela Ciccone"
+                  value={this.state.characterInfo.characterName}
                   onChange={(e) =>
                     this.setState({
                       characterInfo: {
@@ -273,11 +324,23 @@ class CharacterCreationForm extends React.Component {
                   <option value="">--Choose Your Class--</option>
                   {this.props.allClasses !== undefined ? (
                     this.props.allClasses.map((element, index) => {
-                      return (
-                        <option key={index} value={element.index}>
-                          {element.name}
-                        </option>
-                      )
+                      if (element.index === this.state.characterInfo.class) {
+                        return (
+                          <option
+                            selected="selected"
+                            key={index}
+                            value={element.index}
+                          >
+                            {element.name}
+                          </option>
+                        )
+                      } else {
+                        return (
+                          <option key={index} value={element.index}>
+                            {element.name}
+                          </option>
+                        )
+                      }
                     })
                   ) : (
                     <span />
@@ -301,11 +364,23 @@ class CharacterCreationForm extends React.Component {
                   <option value="">--Choose Your Race--</option>
                   {this.props.allRaces !== undefined ? (
                     this.props.allRaces.map((element, index) => {
-                      return (
-                        <option key={index} value={element.index}>
-                          {element.name}
-                        </option>
-                      )
+                      if (element.index === this.state.characterInfo.race) {
+                        return (
+                          <option
+                            selected="selected"
+                            key={index}
+                            value={element.index}
+                          >
+                            {element.name}
+                          </option>
+                        )
+                      } else {
+                        return (
+                          <option key={index} value={element.index}>
+                            {element.name}
+                          </option>
+                        )
+                      }
                     })
                   ) : (
                     <span />
@@ -318,36 +393,79 @@ class CharacterCreationForm extends React.Component {
             <br></br>
             {/* Gender Select */}
             <div id="gender-choices">
-              <div className="gender-male">
-                <input
-                  type="radio"
-                  id="male"
-                  name="gender"
-                  value="male"
-                  onChange={(e) => this.handleGenderSelectChange(e)}
-                ></input>
-                <label htmlFor="male">Male</label>
-              </div>
-              <div className="gender-female">
-                <input
-                  type="radio"
-                  id="female"
-                  name="gender"
-                  value="female"
-                  onChange={(e) => this.handleGenderSelectChange(e)}
-                ></input>
-                <label htmlFor="female">Female</label>
-              </div>
-              <div className="gender-other">
-                <input
-                  type="radio"
-                  id="other"
-                  name="gender"
-                  value="other"
-                  onChange={(e) => this.handleGenderSelectChange(e)}
-                ></input>
-                <label htmlFor="other">Other</label>
-              </div>
+              {this.state.characterInfo.gender === 'male' ? (
+                <div className="gender-male">
+                  <input
+                    type="radio"
+                    checked="checked"
+                    id="male"
+                    name="gender"
+                    value="male"
+                    onChange={(e) => this.handleGenderSelectChange(e)}
+                  ></input>
+                  <label htmlFor="male">Male</label>
+                </div>
+              ) : (
+                <div className="gender-male">
+                  <input
+                    type="radio"
+                    id="male"
+                    name="gender"
+                    value="male"
+                    onChange={(e) => this.handleGenderSelectChange(e)}
+                  ></input>
+                  <label htmlFor="male">Male</label>
+                </div>
+              )}
+              {this.state.characterInfo.gender === 'female' ? (
+                <div className="gender-female">
+                  <input
+                    type="radio"
+                    checked="checked"
+                    id="female"
+                    name="gender"
+                    value="female"
+                    onChange={(e) => this.handleGenderSelectChange(e)}
+                  ></input>
+                  <label htmlFor="female">Female</label>
+                </div>
+              ) : (
+                <div className="gender-female">
+                  <input
+                    type="radio"
+                    id="female"
+                    name="gender"
+                    value="female"
+                    onChange={(e) => this.handleGenderSelectChange(e)}
+                  ></input>
+                  <label htmlFor="female">Female</label>
+                </div>
+              )}
+
+              {this.state.characterInfo.gender === 'other' ? (
+                <div className="gender-other">
+                  <input
+                    type="radio"
+                    checked="checked"
+                    id="other"
+                    name="gender"
+                    value="other"
+                    onChange={(e) => this.handleGenderSelectChange(e)}
+                  ></input>
+                  <label htmlFor="other">Other</label>
+                </div>
+              ) : (
+                <div className="gender-other">
+                  <input
+                    type="radio"
+                    id="other"
+                    name="gender"
+                    value="other"
+                    onChange={(e) => this.handleGenderSelectChange(e)}
+                  ></input>
+                  <label htmlFor="other">Other</label>
+                </div>
+              )}
             </div>
 
             {/* End Gender Select  */}
@@ -456,7 +574,7 @@ class CharacterCreationForm extends React.Component {
                   <input
                     type="number"
                     name="str"
-                    defaultValue={this.state.characterInfo.str}
+                    value={this.state.characterInfo.str}
                     onChange={(e) => this.handleAbilityScoreChange(e)}
                     min="0"
                     max="30"
@@ -472,7 +590,7 @@ class CharacterCreationForm extends React.Component {
                   <input
                     type="number"
                     name="dex"
-                    defaultValue={this.state.characterInfo.dex}
+                    value={this.state.characterInfo.dex}
                     onChange={(e) => this.handleAbilityScoreChange(e)}
                     min="0"
                     max="30"
@@ -488,7 +606,7 @@ class CharacterCreationForm extends React.Component {
                   <input
                     type="number"
                     name="con"
-                    defaultValue={this.state.characterInfo.con}
+                    value={this.state.characterInfo.con}
                     onChange={(e) => this.handleAbilityScoreChange(e)}
                     min="0"
                     max="30"
@@ -504,7 +622,7 @@ class CharacterCreationForm extends React.Component {
                   <input
                     type="number"
                     name="int"
-                    defaultValue={this.state.characterInfo.int}
+                    value={this.state.characterInfo.int}
                     onChange={(e) => this.handleAbilityScoreChange(e)}
                     min="0"
                     max="30"
@@ -520,7 +638,7 @@ class CharacterCreationForm extends React.Component {
                   <input
                     type="number"
                     name="wis"
-                    defaultValue={this.state.characterInfo.wis}
+                    value={this.state.characterInfo.wis}
                     onChange={(e) => this.handleAbilityScoreChange(e)}
                     min="0"
                     max="30"
@@ -536,7 +654,7 @@ class CharacterCreationForm extends React.Component {
                   <input
                     type="number"
                     name="cha"
-                    defaultValue={this.state.characterInfo.cha}
+                    value={this.state.characterInfo.cha}
                     onChange={(e) => this.handleAbilityScoreChange(e)}
                     min="0"
                     max="30"
@@ -553,6 +671,7 @@ class CharacterCreationForm extends React.Component {
                 name="personalityTraits"
                 cols="40"
                 rows="6"
+                value={this.state.characterInfo.personalityTraits}
                 onChange={(e) => this.handleTextareaChange(e)}
               ></textarea>
             </div>
@@ -563,6 +682,7 @@ class CharacterCreationForm extends React.Component {
                 name="flaws"
                 cols="40"
                 rows="6"
+                value={this.state.characterInfo.flaws}
                 onChange={(e) => this.handleTextareaChange(e)}
               ></textarea>
             </div>
@@ -573,6 +693,7 @@ class CharacterCreationForm extends React.Component {
                 name="ideals"
                 cols="40"
                 rows="6"
+                value={this.state.characterInfo.ideals}
                 onChange={(e) => this.handleTextareaChange(e)}
               ></textarea>
             </div>
@@ -589,6 +710,7 @@ class CharacterCreationForm extends React.Component {
 
               <input
                 type="radio"
+                checked="checked"
                 name="public" // this is a state, not value
                 value="false"
                 onChange={(e) => this.handleDisplayStatusChange(e)}
