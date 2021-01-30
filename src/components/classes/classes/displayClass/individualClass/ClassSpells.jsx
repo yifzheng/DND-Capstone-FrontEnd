@@ -33,15 +33,11 @@ class ClassSpells extends React.Component {
           <div id = "class-spells-name-container">
             {this.state.spells.results.map((item, index) => {
               return (
-                <h3 className="class-spells-name-name" key={index}>
-                  Spell:{' '}
-                  <Link
+                <Link
                     to={`/spells/${item.index}`}
                     style={{ textDecoration: 'none' }}
-                  >
-                    {item.name}
-                  </Link>
-                </h3>
+                  ><h3 className="class-spells-name-name" key={index}>
+                  Spell:{' '}{item.name}</h3></Link>
               )
             })}
           </div>

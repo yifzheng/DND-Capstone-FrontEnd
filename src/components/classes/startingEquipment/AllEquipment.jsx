@@ -18,7 +18,7 @@ class AllEquipment extends Component {
     }
     render () {
         if ( this.state.equipment === undefined ) {
-            return ( <h1>Loading</h1> )
+            return ( <h1 id = "loading">Loading</h1> )
         }
         return (
             <div className="all-equipment-container">

@@ -38,14 +38,15 @@ class IndividualClass extends Component {
   }
 
   render() {
-    if (!this.props.class.subclasses) {
+    /* if (!this.props.class.subclasses) {
       return <h1>Loading</h1>
-    }
+    } */
     return (
       <div id="class-info">
-        <Link to={`/classes`} style={{ textDecoration: 'none' }}>
+       {/*  <Link to={`/classes`} style={{ textDecoration: 'none' }}>
           <h3 id="back">Back to Classes Information</h3>
-        </Link>
+        </Link> */}
+        <div id = "individual-class-basic-info">
         <h1 className="fix-h1-h2-h3-h4" id="class-name">
           {this.props.class.name}
         </h1>
@@ -81,6 +82,7 @@ class IndividualClass extends Component {
               </h2>
             </Link>
           )}
+        </div>
         </div>
         <div className="p_choices">
           <h2 className="fix-h1-h2-h3-h4">--Proficiency Choices--</h2>

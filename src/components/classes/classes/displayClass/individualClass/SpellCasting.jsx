@@ -14,7 +14,7 @@ const SpellCasting = ({ info, level, spellcasting_ability }) => {
       <h3 className="fix-h1-h2-h3-h4">
         Spell Casting Ability :{' '}
         <Link
-          to={`/ability-scores/${spellcasting_ability.index}`}
+          to={`/bonus/${spellcasting_ability.index}`}
           style={{ textDecoration: 'none' }}
         >
           {spellcasting_ability.name}

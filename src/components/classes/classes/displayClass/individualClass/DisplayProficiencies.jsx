@@ -17,9 +17,9 @@ class DisplayProficiencies extends React.Component {
   }
   render() {
     
-    if (!this.props.prof.name) {
+    /* if (!this.props.prof.name) {
       return <h1 id="disp-h1">Loading</h1>
-    }
+    } */
     return (
       <div id = "prof-container-container">
         <div id="prof-container">

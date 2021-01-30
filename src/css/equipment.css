@@ -17,6 +17,13 @@
 body {
 	background-color: #252424;
 }
+#loading{
+	text-align: center;
+	font-size: 200px;
+	margin-top: 33vh;
+	font-family: fantasy;
+	color: rgb(209, 178, 178);
+}
 .all-equipment-container {
 	width: 100vw;
 	height: 100%;

@@ -27,11 +27,11 @@ class IndividualSubClass extends Component {
     render () {
  
         if ( !this.props.class.class ) {
-            return <h1>Loading</h1>
+            return <h1 id = "loading">Loading</h1>
         }
         return (
             <div id = "indiv-subclass-container">
-                <Link to={ `/class/${this.props.class.class.index}` } style={ { textDecoration: 'none' } }><h3 id = "back">Back to { this.props.class.class.name } Information</h3></Link>
+                {/* <Link to={ `/class/${this.props.class.class.index}` } style={ { textDecoration: 'none' } }><h3 id = "back">Back to { this.props.class.class.name } Information</h3></Link> */}
                 <div id = "indiviudal-subclass-container">
                 <h1 id="subclasses-name">{ this.props.class.name }</h1>
                 <h2 id="subclass-class-name">Class: { this.props.class.class.name }</h2>

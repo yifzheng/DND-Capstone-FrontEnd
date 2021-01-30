@@ -1,13 +1,14 @@
 #indiv-skill-container {
 	background-color: #548060;
-    opacity: .80;
+	opacity: .9;
+	border-radius: 30px;
 	width: 70vw;
 	margin-left: 15vw;
 	margin-top: 15vh;
 	padding: 20px;
 	text-align: center;
-	color: #8B0000;
-	font-size: 1.5em;
+	color: #440101;
+	font-size: 1.7em;
 	font-family: fantasy;
     font-weight: 100;
 }
@@ -19,8 +20,8 @@
 	height: calc(100% - 72px);
 }
 .skill-description-101{
-    color: #8B0000;
+    color: #440101;
 }
 .ability-score-101{
-    color: #8B0000;
+    color: #440101;
 }

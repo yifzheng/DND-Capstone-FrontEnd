@@ -32,9 +32,9 @@ class ClassLevels extends Component {
   render () {
     console.log(this.state.array)
     console.log(this.props.class)
-    if ( !this.state.array.length ) {
+    /* if ( !this.state.array.length ) {
       return <h1>Loading</h1>
-    }
+    } */
     return (
       <div id="class-level-container">
         <Link

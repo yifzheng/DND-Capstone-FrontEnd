@@ -20,6 +20,7 @@
     margin-top: 30px;
 	font-family: fantasy;
 	font-weight: 100;
+	padding: 10px;
 }
 #class-spells-name-container {
 	display: inline-flex;
@@ -28,20 +29,23 @@
 	text-decoration: none;
 	color: #8b0000;
 	gap: 30px;
-	margin-top: 30px;
+	margin-top: 50px;
 	margin-left: 30px;
 }
 .class-spells-name-name {
 	color: #8b0000;
-	font-size: 25px;
+	font-size: 30px;
 	font-family: fantasy;
     font-weight: 100;
     text-decoration: none;
-	padding: 20px;
+	padding: 30px;
 	opacity: .80;
 	border-radius: 30px;
 	background-color: #548060;
 }
 .class-spells-name-name Link{
+    color: #8b0000;
+}
+.class-spells-name-name h3{
     color: #8b0000;
 }

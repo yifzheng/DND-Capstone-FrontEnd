@@ -24,11 +24,11 @@ class IndividualEquipment extends Component {
 
     render () {
         if ( !this.props.equipment.class ) {
-            return <h1>Loading</h1>
+            return <h1 id = "loading">Loading</h1>
         }
         return (
             <div id = "idiv-equip-contain">
-                <Link to={ `/class/${this.props.match.params.index}` } style={ { textDecoration: 'none' } }><h3 id = "back">Back to { this.props.equipment.class.name } Information</h3></Link>
+                {/* <Link to={ `/class/${this.props.match.params.index}` } style={ { textDecoration: 'none' } }><h3 id = "back">Back to { this.props.equipment.class.name } Information</h3></Link> */}
                 <div id = "individual-equipment-container">
                     <h1 id = "equipmentclass">Class : { this.props.equipment.class.name }</h1>
                     <div className="starting-equip">
