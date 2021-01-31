@@ -12,21 +12,6 @@ import Subclass from './Subclass'
 
 import '../../../../../css/individualclass.css'
 class IndividualClass extends Component {
-  constructor(props) {
-    super(props)
-
-    /* this.state = {
-            name: '',
-            hit_die: '',
-            p_choices: [],
-            proficiencies: [],
-            saving_throws: [],
-            starting_equipment: '',
-            class_levels: '',
-            subclasses: [],
-            spellCasting: {}
-        } */
-  }
 
   async componentDidMount() {
     try {

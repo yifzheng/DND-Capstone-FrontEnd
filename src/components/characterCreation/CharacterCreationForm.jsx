@@ -218,9 +218,13 @@ class CharacterCreationForm extends React.Component {
   }
 
   handleDisplayStatusChange = (e) => {
+
     this.setState({
       public: e.target.value,
     })
+    setTimeout(()=>{
+      console.log("public",this.state.public)
+    }, 2000)
   }
 
   handleTextareaChange = (e) => {
