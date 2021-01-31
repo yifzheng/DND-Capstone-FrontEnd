@@ -32,9 +32,24 @@
 	margin-left: 40px;
 }
 #general-info h3 {
-	padding: 10px 0px;
+	padding: 6.2px 0px;
 }
-
+#initiative-check{
+  display: inline-flex;
+}
+#getInitiative{
+  border: 2px solid #2b516e;
+	background-color: #80b6ba;
+	color: #163266;
+  border-radius: 10px;
+	width: 150px;
+	height: 40px;
+	font-family: fantasy;
+	font-weight: 100;
+  font-size: 20px;
+  margin-left: 130px;
+  outline: none;
+}
 #attributes {
 	border: 2px solid #2b516e;
 	background-color: #80b6ba;
@@ -196,7 +211,8 @@
 	font-weight: 100;
 	font-size: 20px;
 	margin-bottom: 40px;
-	margin-left: 10vw;
+  margin-left: 10vw;
+  outline: none;
 }
 #delete-character-btn {
 	border: 2px solid #2b516e;
@@ -209,5 +225,6 @@
 	font-weight: 100;
 	font-size: 20px;
 	margin-bottom: 40px;
-	margin-left: 150px;
+  margin-left: 150px;
+  outline: none;
 }

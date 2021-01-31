@@ -20,6 +20,7 @@ class DisplayCharacter extends Component {
 
     this.state = {
       redirect: false,
+      initiative: 0,
     }
   }
 
@@ -38,7 +39,13 @@ class DisplayCharacter extends Component {
       })
     })
   }
-
+  getInitiative = () => {
+    let modifier = Math.floor((parseInt(this.props.character.dex) - 10) / 2)
+    let d20 = Math.round(Math.random()*20);
+    this.setState({
+      initiative: modifier + d20
+    })
+  }
   render() {
     if (this.state.redirect) {
       return <Redirect to="/userprofile" />
@@ -177,6 +184,8 @@ class DisplayCharacter extends Component {
                       ) : (
                         <h3>Skill #4 : No Skill Chosen</h3>
                       )}
+                      <h3>Passive Wisdom {"("}Perception{")"}: </h3>
+                      <div id = "initiative-check"><h3 id = "initative-tag">Initiative: {this.state.initiative}</h3> <button id = "getInitiative" onClick = {e => this.getInitiative()}>Get Initative</button></div>
                     </div>
                   </div>
                   <br></br>

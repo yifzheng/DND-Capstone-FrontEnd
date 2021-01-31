@@ -2,8 +2,10 @@
 	background: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700865053.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
-	overflow: hidden;
-	height: calc(100% - 72px);
+	overflow: scroll;
+    height: calc(100% - 72px);
+    font-family: fantasy;
+    font-weight: 100;
 }
 #user-info-container{
     border: 3px solid 540600;
@@ -35,7 +37,7 @@
     height: 30vh;
     color: #f1dede;
     background-color: #8b0000;
-    opacity: .80;
+    opacity: .85;
 	border-radius: 30px;
 	padding: 50px;
 	margin-left: 12vw;
@@ -48,7 +50,7 @@
     background: transparent;  /* Optional: just make scrollbar invisible */
 }
 #user-character-container h1{
-    font-size: 50px;
+    font-size: 70px;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -57,8 +59,12 @@
     flex-wrap: wrap;
     flex-direction: row;
     gap: 30px;
+    color:  #8b0000;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f1dede;
 }
 #character-name{
-    color: #f1dede;
+    color:  #8b0000;
     font-size: 30px;
 }
