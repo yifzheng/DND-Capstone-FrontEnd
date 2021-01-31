@@ -21,6 +21,7 @@ class DisplayCharacter extends Component {
     this.state = {
       redirect: false,
       initiative: 0,
+      level: 1,
     }
   }
 
@@ -45,6 +46,21 @@ class DisplayCharacter extends Component {
     this.setState({
       initiative: modifier + d20
     })
+  }
+  lvlUp = () => {
+    this.setState({
+      level: this.state.level + 1
+    })
+  }
+  lvlDown = () => {
+    if (this.state.level === 1){
+      alert("You can't be lower than lvl. 1");
+    }
+    else{
+      this.setState({
+        level: this.state.level - 1
+      })
+    }
   }
   render() {
     if (this.state.redirect) {
@@ -146,6 +162,11 @@ class DisplayCharacter extends Component {
                   <div className="character-info">
                     <div id="general-info">
                       <h3>Character Name : {this.props.character.name}</h3>
+                      <div id = "character-level-counter">
+                        <h3 id = "current-level">Level: {this.state.level}</h3> 
+                        <button id = "lvl-up" onClick = {() => this.lvlUp()}>Level Up</button> 
+                        <button id = "lvl-down"onClick = {() => this.lvlDown()}>Level Down</button>
+                      </div>
                       <h3>
                         Class :{' '}
                         {this.props.character.class.charAt(0).toUpperCase()}
@@ -250,6 +271,7 @@ class DisplayCharacter extends Component {
                       state: {
                         editing: true,
                         updatingCharacterId: this.props.character.id,
+                        oldCharacterInfo: this.props.character,
                       },
                     }}
                   ><button id = "edit-character-btn">Edit Character</button></Link>

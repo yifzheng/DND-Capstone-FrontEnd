@@ -60,11 +60,12 @@
     flex-direction: row;
     gap: 30px;
     color:  #8b0000;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #f1dede;
+   
 }
 #character-name{
     color:  #8b0000;
+    background-color: #f1dede;
+    padding: 10px;
+    border-radius: 10px;
     font-size: 30px;
 }

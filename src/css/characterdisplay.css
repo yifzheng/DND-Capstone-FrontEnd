@@ -27,28 +27,58 @@
 }
 .character-info {
 	font-size: 1.2em;
-	margin-top: 50px;
+	margin-top: 40px;
 	color: #163266;
 	margin-left: 40px;
 }
 #general-info h3 {
-	padding: 6.2px 0px;
+	padding: 5px 0px;
 }
-#initiative-check{
+#character-level-counter{
   display: inline-flex;
 }
-#getInitiative{
-  border: 2px solid #2b516e;
-	background-color: #80b6ba;
-	color: #163266;
-  border-radius: 10px;
+#initiative-check {
+	display: inline-flex;
+}
+#lvl-up{
+  border: 2px solid #ecf0f1;
+	background-color: #03ad0c;
+	color: #ecf0f1;
+	border-radius: 10px;
 	width: 150px;
 	height: 40px;
 	font-family: fantasy;
 	font-weight: 100;
-  font-size: 20px;
-  margin-left: 130px;
-  outline: none;
+	font-size: 20px;
+	margin-left: 80px;
+	outline: none;
+}
+#lvl-down{
+  border: 2px solid #ecf0f1;
+	background-color: #8b0000;
+	color: #ecf0f1;
+	border-radius: 10px;
+	width: 150px;
+	height: 40px;
+	font-family: fantasy;
+	font-weight: 100;
+	font-size: 20px;
+	margin-left: 20px;
+	outline: none;
+}
+#getInitiative {
+	border: 2px solid #ecf0f1;
+	background-color: #c7a323;
+	color:#ecf0f1;
+	border-radius: 10px;
+	width: 150px;
+	height: 40px;
+	font-family: fantasy;
+	font-weight: 100;
+	font-size: 20px;
+	margin-left: 130px;
+	outline: none;
+/* 	padding: 10px 0px; */
 }
 #attributes {
 	border: 2px solid #2b516e;
@@ -200,7 +230,7 @@
 	padding-bottom: 10px;
 	font-size: 19px;
 }
-#edit-character-btn {
+/* #edit-character-btn {
 	border: 2px solid #2b516e;
 	background-color: #80b6ba;
 	color: #163266;
@@ -227,4 +257,35 @@
 	margin-bottom: 40px;
   margin-left: 150px;
   outline: none;
+} */
+#edit-character-btn {
+	border: 2px solid #ecf0f1;
+	background-color: #03ad0c;
+	color: #ecf0f1;
+	/* text-shadow: 1px 1px 1px black; */
+	border-radius: 10px;
+	width: 200px;
+	height: 40px;
+	font-family: fantasy;
+	font-weight: 100;
+	font-size: 20px;
+	margin-bottom: 40px;
+	margin-left: 10vw;
+
+	cursor: pointer;
+}
+#delete-character-btn {
+	border: 2px solid #ecf0f1;
+	background-color: #8b0000;
+	color: #ecf0f1;
+	border-radius: 10px;
+	width: 200px;
+	height: 40px;
+	font-family: fantasy;
+	font-weight: 100;
+	font-size: 20px;
+	margin-bottom: 40px;
+	margin-left: 150px;
+
+	cursor: pointer;
 }
