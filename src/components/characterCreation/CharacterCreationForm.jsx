@@ -46,10 +46,10 @@ class CharacterCreationForm extends React.Component {
         : false, // using a Link we can pass a location.state, if this component is not linked to, this local state is false
       updatingCharacterId: this.props.location.state
         ? this.props.location.state.updatingCharacterId
-        : null, // id of character being updated, if editing is true, this value MUST be true, as in it has a valid id.
+        : '', // id of character being updated, if editing is true, this value MUST be true, as in it has a valid id.
       oldCharacterInfo: this.props.location.state
         ? this.props.location.state.oldCharacterInfo
-        : null,
+        : '',
     }
   }
 
@@ -84,19 +84,9 @@ class CharacterCreationForm extends React.Component {
         profAndLang,
       } = this.state.oldCharacterInfo
       const charaClass = this.state.oldCharacterInfo.class
-      let arr = []
-      if (skill1 !== null) {
-        arr.push(skill1)
-      }
-      if (skill2 !== null) {
-        arr.push(skill2)
-      }
-      if (skill3 !== null) {
-        arr.push(skill3)
-      }
-      if (skill4 !== null) {
-        arr.push(skill4)
-      }
+
+      console.log('GENDER DESTRUC:', gender)
+
       this.setState({
         characterInfo: {
           characterName: name,
@@ -107,7 +97,7 @@ class CharacterCreationForm extends React.Component {
           armorClass: armorClass,
           initiative: 0,
           speed: speed,
-          skills: arr,
+          skills: [skill1, skill2, skill3, skill4],
           str: str,
           dex: dex,
           con: con,
@@ -248,11 +238,14 @@ class CharacterCreationForm extends React.Component {
 
   handleFormSubmit = (e) => {
     e.preventDefault()
+    // console.log('AAAAAAAAAAAAAAAAAA')
+    // console.log('SUBMIT CHARA INFO:', this.state.characterInfo)
     /*  const { str, dex, con, wis, int, cha } = this.state
      if ( ( str || dex || con || wis || int || cha ) > 30 || ( str || dex || con || wis || int || cha ) < 0 ) {
        alert( "Characters Attritbutes Are Maxed at 30" )
      }
      else { */
+    // console.log('BBBBBBBBBBBBBBBBBBBB')
     if (this.state.public === 'false') {
       this.setState({
         characterInfo: {
@@ -264,6 +257,7 @@ class CharacterCreationForm extends React.Component {
       delete this.state.characterInfo.userId
     }
 
+    // console.log('CCCCCCCCCCCCCCCCCCC')
     // setTimeout(() => {
     //   this.props.createCharacter(
     //     this.state.characterInfo,
@@ -271,13 +265,22 @@ class CharacterCreationForm extends React.Component {
     //   )
     // }, 1200)
 
+    // console.log('DDDDDDDDDDDDDDDDDDDDDD')
+    // console.log(
+    //   'THIS.STATE.EDITING BEFORE SUBMSSION FINALIZATION:',
+    //   this.state.editing
+    // )
+
+    // console.log('EEEEEEEEEEEEEEEEEEEEEEEE')
     setTimeout(() => {
       if (this.state.editing) {
+        // console.log('SENDING FORM INFO TO UPDATE CHARA REDUX  =====')
         this.props.updateCharacter(
           this.state.characterInfo,
           this.state.updatingCharacterId
         )
       } else {
+        // console.log('SENDING FORM INFO TO CREATE CHARA REDUX  ++++++')
         this.props.createCharacter(
           this.state.characterInfo,
           this.props.currentUser.token
@@ -296,12 +299,12 @@ class CharacterCreationForm extends React.Component {
           this.props.history.push('/userprofile')
         }
       }
-    }, 2000)
+    }, 1300)
     /* } */
   }
 
   render() {
-   /*  console.log('this.state.editing:', this.state.editing)
+    /*  console.log('this.state.editing:', this.state.editing)
     console.log(
       'this.state.updatingCharacterId:',
       this.state.updatingCharacterId
@@ -309,6 +312,9 @@ class CharacterCreationForm extends React.Component {
     console.log('old chara info:', this.state.oldCharacterInfo)
 
     console.log('chara info test:', this.state.characterInfo) */
+    // console.log('OLD CHARA INFO:', this.state.oldCharacterInfo)
+    // console.log('RENDER CHARA INFO:', this.state.characterInfo)
+    // console.log('this.state.public:', this.state.public)
     return (
       <div className="creation-form">
         {this.state.editing ? (
@@ -449,6 +455,7 @@ class CharacterCreationForm extends React.Component {
                   <label htmlFor="male">Male</label>
                 </div>
               )}
+
               {this.state.characterInfo.gender === 'female' ? (
                 <div className="gender-female">
                   <input
@@ -459,7 +466,7 @@ class CharacterCreationForm extends React.Component {
                     value="female"
                     onChange={(e) => this.handleGenderSelectChange(e)}
                   ></input>
-                  <label htmlFor="female">Female</label>
+                  <label>Female</label>
                 </div>
               ) : (
                 <div className="gender-female">
@@ -470,7 +477,7 @@ class CharacterCreationForm extends React.Component {
                     value="female"
                     onChange={(e) => this.handleGenderSelectChange(e)}
                   ></input>
-                  <label htmlFor="female">Female</label>
+                  <label>Female</label>
                 </div>
               )}
 
@@ -499,7 +506,6 @@ class CharacterCreationForm extends React.Component {
                 </div>
               )}
             </div>
-
             {/* End Gender Select  */}
 
             {/* Main Stats */}
@@ -536,20 +542,6 @@ class CharacterCreationForm extends React.Component {
                   {this.state.characterInfo.armorClass}
                 </span>
               </label>
-
-              {/* <br></br>
-          <label>
-            Initiative
-            <br></br>
-            <input
-              type="number"
-              name="Initiative"
-              placeholder={ Math.floor( Math.random() * 15 ) }
-              // defaultValue={Math.floor(Math.random() * 15)}
-              onChange={ ( e ) => this.handleMainStatChange( e ) }
-              required
-            ></input>
-          </label> */}
 
               <br></br>
               <label>
