@@ -5,10 +5,7 @@ import { connect } from 'react-redux'
 import { getApiData } from '../../../../../redux/reducers'
 import '../../../../../css/displayproficiencies.css'
 class DisplayProficiencies extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
+  
   async componentDidMount() {
     
     let url = `/proficiencies/${this.props.match.params.index}`

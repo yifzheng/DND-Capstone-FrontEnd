@@ -7,10 +7,6 @@ import { Link } from 'react-router-dom'
 import "../../css/builds.css"
 
 class Builds extends Component {
-    constructor ( props ) {
-        super( props )
-
-    }
 
     async componentDidMount () {
        

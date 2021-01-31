@@ -9,9 +9,6 @@ import SubClassSpells from "./SubClassSpells";
 import "../../../css/individualsubclass.css"
 
 class IndividualSubClass extends Component {
-    constructor ( props ) {
-        super( props );
-    }
 
     async componentDidMount () {
         try {

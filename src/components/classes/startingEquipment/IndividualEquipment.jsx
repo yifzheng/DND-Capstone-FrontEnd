@@ -8,9 +8,6 @@ import { getApiData } from "../../../redux/reducers/index"
 import "../../../css/individualequipment.css"
 
 class IndividualEquipment extends Component {
-    constructor ( props ) {
-        super( props );
-    }
 
     async componentDidMount () {
         try {

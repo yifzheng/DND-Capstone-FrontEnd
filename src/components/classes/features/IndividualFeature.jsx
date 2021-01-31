@@ -8,9 +8,6 @@ import FeatureChoice from "./FeatureChoice";
 import "../../../css/individualfeature.css"
 
 class IndividualFeature extends Component {
-    constructor ( props ) {
-        super( props );
-    }
 
     async componentDidMount () {
         try {
