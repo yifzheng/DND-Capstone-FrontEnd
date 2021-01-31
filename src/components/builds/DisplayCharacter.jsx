@@ -44,43 +44,40 @@ class DisplayCharacter extends Component {
   }
   getInitiative = () => {
     let modifier = Math.floor((parseInt(this.props.character.dex) - 10) / 2)
-    let d20 = Math.round(Math.random()*20);
+    let d20 = Math.round(Math.random() * 20)
     this.setState({
-      initiative: modifier + d20
+      initiative: modifier + d20,
     })
   }
   lvlUp = () => {
     this.setState({
-      level: this.state.level + 1
+      level: this.state.level + 1,
     })
   }
   lvlDown = () => {
-    if (this.state.level === 1){
-      alert("You can't be lower than lvl. 1");
-    }
-    else{
+    if (this.state.level === 1) {
+      alert("You can't be lower than lvl. 1")
+    } else {
       this.setState({
-        level: this.state.level - 1
+        level: this.state.level - 1,
       })
     }
   }
   setSucess = () => {
-    if (this.state.success === 3){
-      alert("Death Save Success caps at 3")
-    }
-    else{
+    if (this.state.success === 3) {
+      alert('Death Save Success caps at 3')
+    } else {
       this.setState({
-        success: this.state.success + 1
+        success: this.state.success + 1,
       })
     }
   }
   setFailure = () => {
-    if (this.state.failure === 3){
-      alert("Death Save failure caps at 3")
-    }
-    else{
+    if (this.state.failure === 3) {
+      alert('Death Save failure caps at 3')
+    } else {
       this.setState({
-        failure: this.state.failure + 1
+        failure: this.state.failure + 1,
       })
     }
   }
@@ -184,10 +181,14 @@ class DisplayCharacter extends Component {
                   <div className="character-info">
                     <div id="general-info">
                       <h3>Character Name : {this.props.character.name}</h3>
-                      <div id = "character-level-counter">
-                        <h3 id = "current-level">Level: {this.state.level}</h3> 
-                        <button id = "lvl-up" onClick = {() => this.lvlUp()}>Level Up</button> 
-                        <button id = "lvl-down"onClick = {() => this.lvlDown()}>Level Down</button>
+                      <div id="character-level-counter">
+                        <h3 id="current-level">Level: {this.state.level}</h3>
+                        <button id="lvl-up" onClick={() => this.lvlUp()}>
+                          Level Up
+                        </button>
+                        <button id="lvl-down" onClick={() => this.lvlDown()}>
+                          Level Down
+                        </button>
                       </div>
                       <h3>
                         Class :{' '}
@@ -207,33 +208,55 @@ class DisplayCharacter extends Component {
                       <h3>Armor Class : {this.props.character.armorClass}</h3>
                       <h3>Speed : {this.props.character.speed}</h3>
 
-                      <div id = "character-skills-1-4">
-                      {this.props.character.skill1 !== null ? (
-                        <h3>Skill #1 : {this.props.character.skill1}</h3>
-                      ) : (
-                        <h3>Skill #1 : No Skill Chosen</h3>
-                      )}
-                      {this.props.character.skill2 !== null ? (
-                        <h3>Skill #2 : {this.props.character.skill2}</h3>
-                      ) : (
-                        <h3>Skill #2 : No Skill Chosen</h3>
-                      )}
-                      {this.props.character.skill3 !== null ? (
-                        <h3>Skill #3 : {this.props.character.skill3}</h3>
-                      ) : (
-                        <h3>Skill #3 : No Skill Chosen</h3>
-                      )}
-                      {this.props.character.skill4 !== null ? (
-                        <h3>Skill #4 : {this.props.character.skill4}</h3>
-                      ) : (
-                        <h3>Skill #4 : No Skill Chosen</h3>
-                      )}
+                      <div id="character-skills-1-4">
+                        {this.props.character.skill1 !== null ? (
+                          <h3>Skill #1 : {this.props.character.skill1}</h3>
+                        ) : (
+                          <h3>Skill #1 : No Skill Chosen</h3>
+                        )}
+                        {this.props.character.skill2 !== null ? (
+                          <h3>Skill #2 : {this.props.character.skill2}</h3>
+                        ) : (
+                          <h3>Skill #2 : No Skill Chosen</h3>
+                        )}
+                        {this.props.character.skill3 !== null ? (
+                          <h3>Skill #3 : {this.props.character.skill3}</h3>
+                        ) : (
+                          <h3>Skill #3 : No Skill Chosen</h3>
+                        )}
+                        {this.props.character.skill4 !== null ? (
+                          <h3>Skill #4 : {this.props.character.skill4}</h3>
+                        ) : (
+                          <h3>Skill #4 : No Skill Chosen</h3>
+                        )}
                       </div>
-                      <h3>Passive Wisdom {"("}Perception{")"}: {this.props.character.passiveWisdom}</h3>
-                      <div id = "initiative-check"><h3 id = "initative-tag">Initiative: {this.state.initiative}</h3> <button id = "getInitiative" onClick = {e => this.getInitiative()}>Get Initative</button></div>
-                      <div id = "death-saves">
-                        <div id = "death-saves-success"> <button onClick ={e => this.setSucess()}>Death Saves{"(Successes)"}: {this.state.success}</button></div>
-                        <div id = "death-saves-failures"><button onClick ={e => this.setFailure()}>Death Saves{"(Failures)"}: {this.state.failure}</button></div>
+                      <h3>
+                        Passive Wisdom {'('}Perception{')'}:{' '}
+                        {this.props.character.passiveWisdom}
+                      </h3>
+                      <div id="initiative-check">
+                        <h3 id="initative-tag">
+                          Initiative: {this.state.initiative}
+                        </h3>{' '}
+                        <button
+                          id="getInitiative"
+                          onClick={(e) => this.getInitiative()}
+                        >
+                          Get Initative
+                        </button>
+                      </div>
+                      <div id="death-saves">
+                        <div id="death-saves-success">
+                          {' '}
+                          <button onClick={(e) => this.setSucess()}>
+                            Death Saves{'(Successes)'}: {this.state.success}
+                          </button>
+                        </div>
+                        <div id="death-saves-failures">
+                          <button onClick={(e) => this.setFailure()}>
+                            Death Saves{'(Failures)'}: {this.state.failure}
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -270,12 +293,14 @@ class DisplayCharacter extends Component {
                 <div id="further-info2">
                   <div id="further-info2-attacksAndSpellcasting">
                     <h3 id="further-info2-attacksAndSpellcasting-h3">
-                      Attacks {"&"} Spellcasting
+                      Attacks {'&'} Spellcasting
                     </h3>
-                    <p>{this.props.character.attacksAnfSpellcasting}</p>
+                    <p>{this.props.character.attacksAndSpellcasting}</p>
                   </div>
                   <div id="further-info2-featuresAndTraits">
-                    <h3 id="further-info2-featuresAndTraits-h3">Features {"&"} Traits</h3>{' '}
+                    <h3 id="further-info2-featuresAndTraits-h3">
+                      Features {'&'} Traits
+                    </h3>{' '}
                     <p>{this.props.character.featuresAndTraits}</p>
                   </div>
                   <div id="further-info2-equipment">
@@ -283,11 +308,13 @@ class DisplayCharacter extends Component {
                     <p>{this.props.character.equipment}</p>
                   </div>
                   <div id="further-info2-profAndLang">
-                    <h3 id="further-info2-profAndLang-h3">Proficiencies {"&"} Languages</h3>{' '}
+                    <h3 id="further-info2-profAndLang-h3">
+                      Proficiencies {'&'} Languages
+                    </h3>{' '}
                     <p>{this.props.character.profAndLang}</p>
                   </div>
                 </div>
-                { /* this.props.currentUser.userId === this.props.character.userId ? <Link to = {`/editCharacter/${this.props.match.params.id}`}><button id = "edit-character-btn">Edit</button></Link> : <span/> */ }
+                {/* this.props.currentUser.userId === this.props.character.userId ? <Link to = {`/editCharacter/${this.props.match.params.id}`}><button id = "edit-character-btn">Edit</button></Link> : <span/> */}
               </div>
 
               {/* Can only see these buttons if this character has a userId (i.e. it's private). */}
@@ -302,8 +329,13 @@ class DisplayCharacter extends Component {
                         oldCharacterInfo: this.props.character,
                       },
                     }}
-                  ><button id = "edit-character-btn">Edit Character</button></Link>
-                  <button id = "delete-character-btn" onClick={() => this.handleDelete()}>
+                  >
+                    <button id="edit-character-btn">Edit Character</button>
+                  </Link>
+                  <button
+                    id="delete-character-btn"
+                    onClick={() => this.handleDelete()}
+                  >
                     Delete Character
                   </button>
                 </div>

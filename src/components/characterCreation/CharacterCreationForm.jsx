@@ -740,6 +740,7 @@ class CharacterCreationForm extends React.Component {
                 name="bonds"
                 cols="40"
                 rows="6"
+                value={this.state.characterInfo.bonds}
                 onChange={(e) => this.handleTextareaChange(e)}
               ></textarea>
             </div>
@@ -750,16 +751,18 @@ class CharacterCreationForm extends React.Component {
                 name="attacksAndSpellcasting"
                 cols="40"
                 rows="6"
+                value={this.state.characterInfo.attacksAndSpellcasting}
                 onChange={(e) => this.handleTextareaChange(e)}
               ></textarea>
             </div>
 
-            <div>
+            <div id="features-and-traits">
               <h3>Features {'&'} Traits</h3>
               <textarea
                 name="featuresAndTraits"
                 cols="40"
                 rows="6"
+                value={this.state.characterInfo.featuresAndTraits}
                 onChange={(e) => this.handleTextareaChange(e)}
               ></textarea>
             </div>
@@ -770,6 +773,7 @@ class CharacterCreationForm extends React.Component {
                 name="equipment"
                 cols="40"
                 rows="6"
+                value={this.state.characterInfo.equipment}
                 onChange={(e) => this.handleTextareaChange(e)}
               ></textarea>
             </div>
@@ -780,6 +784,7 @@ class CharacterCreationForm extends React.Component {
                 name="profAndLang"
                 cols="40"
                 rows="6"
+                value={this.state.characterInfo.profAndLang}
                 onChange={(e) => this.handleTextareaChange(e)}
               ></textarea>
             </div>

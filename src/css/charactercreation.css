@@ -346,3 +346,78 @@
 
   padding: 1rem;
 }
+
+#bonds h3 {
+  margin-left: 41.1%;
+}
+
+#bonds textarea {
+  margin-left: 16%;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+
+  line-height: 1.6rem;
+
+  padding: 1rem;
+}
+
+#attacks-and-spellcasting h3 {
+  margin-left: 21.8%;
+}
+
+#attacks-and-spellcasting textarea {
+  margin-left: 16%;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+
+  line-height: 1.6rem;
+
+  padding: 1rem;
+}
+
+#features-and-traits h3 {
+  margin-left: 28%;
+}
+
+#features-and-traits textarea {
+  margin-left: 16%;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+
+  line-height: 1.6rem;
+
+  padding: 1rem;
+}
+
+#equipment-cc h3 {
+  margin-left: 35.6%;
+}
+
+#equipment-cc textarea {
+  margin-left: 16%;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+
+  line-height: 1.6rem;
+
+  padding: 1rem;
+}
+
+#prof-and-lang h3 {
+  margin-left: 16.2%;
+}
+
+#prof-and-lang textarea {
+  margin-left: 16%;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+
+  line-height: 1.6rem;
+
+  padding: 1rem;
+}
