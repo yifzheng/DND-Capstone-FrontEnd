@@ -3,8 +3,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getApiData } from '../../redux/reducers'
 
-import { Link } from 'react-router-dom'
-
 class Bonus extends Component {
   state = {
     raceThatCalled: this.props.bonus, // holds the race that called this page before redux state is overwritten
