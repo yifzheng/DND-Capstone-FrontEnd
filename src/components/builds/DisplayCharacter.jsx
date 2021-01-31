@@ -22,6 +22,8 @@ class DisplayCharacter extends Component {
       redirect: false,
       initiative: 0,
       level: 1,
+      success: 0,
+      failure: 0,
     }
   }
 
@@ -59,6 +61,26 @@ class DisplayCharacter extends Component {
     else{
       this.setState({
         level: this.state.level - 1
+      })
+    }
+  }
+  setSucess = () => {
+    if (this.state.success === 3){
+      alert("Death Save Success caps at 3")
+    }
+    else{
+      this.setState({
+        success: this.state.success + 1
+      })
+    }
+  }
+  setFailure = () => {
+    if (this.state.failure === 3){
+      alert("Death Save failure caps at 3")
+    }
+    else{
+      this.setState({
+        failure: this.state.failure + 1
       })
     }
   }
@@ -185,6 +207,7 @@ class DisplayCharacter extends Component {
                       <h3>Armor Class : {this.props.character.armorClass}</h3>
                       <h3>Speed : {this.props.character.speed}</h3>
 
+                      <div id = "character-skills-1-4">
                       {this.props.character.skill1 !== null ? (
                         <h3>Skill #1 : {this.props.character.skill1}</h3>
                       ) : (
@@ -205,8 +228,13 @@ class DisplayCharacter extends Component {
                       ) : (
                         <h3>Skill #4 : No Skill Chosen</h3>
                       )}
-                      <h3>Passive Wisdom {"("}Perception{")"}: </h3>
+                      </div>
+                      <h3>Passive Wisdom {"("}Perception{")"}: {this.props.character.passiveWisdom}</h3>
                       <div id = "initiative-check"><h3 id = "initative-tag">Initiative: {this.state.initiative}</h3> <button id = "getInitiative" onClick = {e => this.getInitiative()}>Get Initative</button></div>
+                      <div id = "death-saves">
+                        <div id = "death-saves-success"> <button onClick ={e => this.setSucess()}>Death Saves{"(Successes)"}: {this.state.success}</button></div>
+                        <div id = "death-saves-failures"><button onClick ={e => this.setFailure()}>Death Saves{"(Failures)"}: {this.state.failure}</button></div>
+                      </div>
                     </div>
                   </div>
                   <br></br>

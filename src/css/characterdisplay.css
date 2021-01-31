@@ -7,10 +7,10 @@
 }
 #character-info-container {
 	border: 3px solid #2b516e;
-	width: 50vw;
+	width: 55vw;
 	border-radius: 20px;
 	opacity: 0.85;
-	margin-left: 24vw;
+	margin-left: 22vw;
 	margin-top: 100px;
 	background-color: #618b8e;
 	font-family: fantasy;
@@ -27,9 +27,9 @@
 }
 .character-info {
 	font-size: 1.2em;
-	margin-top: 40px;
+	margin-top: 30px;
 	color: #163266;
-	margin-left: 40px;
+	margin-left: 20px;
 }
 #general-info h3 {
 	padding: 5px 0px;
@@ -39,6 +39,32 @@
 }
 #initiative-check {
 	display: inline-flex;
+}
+#death-saves-success button{
+  border: 2px solid #ecf0f1;
+	background-color: #03ad0c;
+	color: #ecf0f1;
+	border-radius: 10px;
+	width: 350px;
+	height: 40px;
+	font-family: fantasy;
+	font-weight: 100;
+	font-size: 20px;
+  outline: none;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+#death-saves-failures button{
+  border: 2px solid #ecf0f1;
+	background-color: #8b0000;
+	color: #ecf0f1;
+	border-radius: 10px;
+	width: 350px;
+	height: 40px;
+	font-family: fantasy;
+	font-weight: 100;
+	font-size: 20px;
+	outline: none;
 }
 #lvl-up{
   border: 2px solid #ecf0f1;
@@ -66,6 +92,13 @@
 	margin-left: 20px;
 	outline: none;
 }
+#character-skills-1-4{
+  display: inline-flex;
+  max-width: 550px;
+  column-gap: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 #getInitiative {
 	border: 2px solid #ecf0f1;
 	background-color: #c7a323;
@@ -84,7 +117,7 @@
 	border: 2px solid #2b516e;
 	background-color: #80b6ba;
 	margin-top: 1vh;
-	margin-left: 6%;
+	margin-left: 8%;
 	border-radius: 10px;
 	display: inline-flex;
 	padding: 15px;
