@@ -93,6 +93,8 @@ export const getSingleCharacter = (id) => {
         `https://dnd-capstone-backend.herokuapp.com/api/characters/${id}`
       )
       dispatch(gotSingleCharacter(response.data))
+      // okay this below line is really cool. so if you chain a .then() to this function, (such as in the DisplayCharacter.jsx component), the value is usually undefined becuase you call the dispatch to handle state, but never acutally return anything, and a promise, i.e. a .then() request relys on a value returned. so here, we are letting disptach handle state and returning the value our promise needs to function. 2 birds, 1 response.
+      return response.data
     } catch (error) {
       console.error(error)
     }

@@ -29,7 +29,20 @@ class DisplayCharacter extends Component {
 
   async componentDidMount() {
     try {
-      await this.props.getSingleCharacter(this.props.match.params.id)
+      await this.props
+        .getSingleCharacter(this.props.match.params.id)
+        .then((character) => {
+          // character.characters returns the single chara data. yes. it makes no sense. its becuase the route was originally a get all charas route but we copied and pasted it for get single chara and didn't change the response variable name in the backend.
+          if (character.characters.userId) {
+            if (character.characters.userId !== this.props.currentUser.userId) {
+              alert("You don't have permossion to view this character!")
+              // return <Redirect to="/" />   <--- this doesn' work
+              this.setState({
+                redirect: true,
+              })
+            }
+          }
+        })
     } catch (error) {
       console.log(error)
     }
@@ -83,8 +96,24 @@ class DisplayCharacter extends Component {
   }
   render() {
     if (this.state.redirect) {
-      return <Redirect to="/userprofile" />
+      // if chara is not logged in, userprofile will redirect them to the homepage
+      return <Redirect to="/userprofile" /> // this logs out the user for some reason
     }
+    console.log(
+      'current user:',
+      this.props.currentUser,
+      'current chara info:',
+      this.props.character
+    )
+    // checks to ensure user own's this character
+    // if (this.props.character) {
+    //   if (this.props.character.userId) {
+    //     if (!this.props.currentUser) {
+    //       alert('You cannot view private characters while not logged in!')
+    //       return <Redirect to="/" />
+    //     }
+    //   }
+    // }
     return (
       <div id="character-container">
         <div id="character-info-container">
