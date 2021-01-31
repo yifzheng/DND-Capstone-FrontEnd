@@ -228,7 +228,7 @@ class CharacterCreationForm extends React.Component {
   }
 
   handleDisplayStatusChange = (e) => {
-    console.log("status update:", e.target.value)
+
     this.setState({
       public: e.target.value,
     })
