@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+
 import { connect } from 'react-redux'
 import { getApiData } from '../../../../../redux/reducers'
 import '../../../../../css/displayproficiencies.css'
@@ -35,7 +35,7 @@ class DisplayProficiencies extends React.Component {
                       to={`/class/${item.index}`}
                       style={{ textDecoration: 'none' }}
                     >
-                      <p id = "prof-class-name">{item.name}</p>
+                      <p key = {index} id = "prof-class-name">{item.name}</p>
                     </Link>
                   )
                 })}
@@ -59,7 +59,7 @@ class DisplayProficiencies extends React.Component {
                     to={`/race/${item.index}`}
                     style={{ textDecoration: 'none' }}
                   >
-                    <p id = "prof-race-name">{item.name}</p>
+                    <p key = {index} id = "prof-race-name">{item.name}</p>
                   </Link>
                 )
               })}

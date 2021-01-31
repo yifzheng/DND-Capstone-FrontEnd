@@ -28,7 +28,7 @@ class AllEquipment extends Component {
                         { this.state.equipment.map( ( item, index ) => {
                             return (
                                 <div id = "all-equipment">
-                                <Link to={ `/equipment/${item.index}` } style={ { textDecoration: 'none' } }><h3 id ="equipment-name">{ item.name }</h3></Link>
+                                <Link to={ `/equipment/${item.index}` } style={ { textDecoration: 'none' } }><h3 key = {index} id ="equipment-name">{ item.name }</h3></Link>
                                 </div>
                             )
                         } ) }

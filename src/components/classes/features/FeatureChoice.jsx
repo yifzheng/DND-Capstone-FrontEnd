@@ -6,7 +6,7 @@ const FeatureChoice = ({from}) => {
             {
             from.map((item, index) => {
                 return(
-                    <h3>{item.name}</h3>
+                    <h3 key = {index}>{item.name}</h3>
                 )
             })
         }

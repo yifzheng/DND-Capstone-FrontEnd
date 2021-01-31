@@ -1,6 +1,6 @@
-import axios from "axios";
+
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+
 import { connect } from 'react-redux';
 
 import { getApiData } from "../../../redux/reducers/index"
@@ -39,9 +39,9 @@ class IndividualFeature extends Component {
                         { this.props.feature.prerequisites !== undefined ?
                             <div id="prerequisites">
                                 {
-                                    this.props.feature.prerequisites.map( item => {
+                                    this.props.feature.prerequisites.map( (item, index) => {
                                         return (
-                                            <h3>{ item.type }</h3>
+                                            <h3 key = {index}>{ item.type }</h3>
                                         )
                                     } )
                                 }
