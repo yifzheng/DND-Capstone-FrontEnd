@@ -1,10 +1,10 @@
-import axios from "axios";
+
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { getApiData } from "../../../redux/reducers/index"
-import Options from "./Options"
+
 import "../../../css/individualequipment.css"
 
 class IndividualEquipment extends Component {
@@ -37,8 +37,8 @@ class IndividualEquipment extends Component {
                             this.props.equipment.starting_equipment.map( ( item, index ) => {
                                 return (
                                     <div>
-                                        <h3>Quantity: { item.quantity }</h3>
-                                        <Link to={ `/equipment/${item.equipment.index}` } style={ { textDecoration: 'none' } }><h3 id = "start-equip-name">{ item.equipment.name }</h3></Link>
+                                        <h3 key = {index}>Quantity: { item.quantity }</h3>
+                                        <Link to={ `/equipment/${item.equipment.index}` } style={ { textDecoration: 'none' } }><h3 key = {index} id = "start-equip-name">{ item.equipment.name }</h3></Link>
                                     </div>
                                 )
                             } ) :

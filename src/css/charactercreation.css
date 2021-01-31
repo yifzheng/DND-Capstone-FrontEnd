@@ -21,10 +21,11 @@
   font-weight: 100;
   border-radius: 30px;
   opacity: 0.8;
-  margin-left: 30vw;
+  margin-left: 28.6vw;
   margin-top: 20px;
   outline: none;
   margin-bottom: 2%;
+  padding: 30px;
 }
 /* #character-creation-form label{
     
@@ -156,24 +157,33 @@
   font-size: 20px;
   padding-left: 10px;
 }
-#character-attributes{
-  display: inline-flex;
-  flex-wrap: wrap;
+/* #character-attributes{
+  font-family: fantasy;
+	font-weight: 100;
+  display: flex;
   flex-direction: row;
-  column-gap: 41px;
-  margin-left: 20px;
+  flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin: 0 -10px;
+	margin-top: 1rem;
+	text-align: center;
+	padding: 30px;
 }
+#character-attributes div{
+  min-width: 200px;
+	margin: 0 10px;
+} */
 /* #str{
   border: 2px solid #8b0000;
   padding: 10px;
   width: 150px;
 } */
 #str label {
-  margin-left: 54%;
+  margin-left: 40%;
   font-size: 40px;
 }
 #str input {
-  margin-left: 67%;
+  margin-left: 43%;
   width: 70px;
   border-radius: 10px;
   height: 30px;
@@ -186,11 +196,11 @@
   margin-bottom: 30px;
 }
 #dex label {
-  margin-left: 47%;
+  margin-left: 40%;
   font-size: 40px;
 }
 #dex input {
-  margin-left: 61%;
+  margin-left: 43%;
   width: 70px;
   border-radius: 10px;
   height: 30px;
@@ -203,11 +213,11 @@
   margin-bottom: 30px;
 }
 #con label {
-  margin-left: 38%;
+  margin-left: 36%;
   font-size: 40px;
 }
 #con input {
-  margin-left: 61%;
+  margin-left: 43%;
   width: 70px;
   border-radius: 10px;
   height: 30px;
@@ -220,11 +230,11 @@
   margin-bottom: 30px;
 }
 #int label {
-  margin-left: 32%;
+  margin-left: 37%;
   font-size: 40px;
 }
 #int input {
-  margin-left: 55%;
+  margin-left: 43%;
   width: 70px;
   border-radius: 10px;
   height: 30px;
@@ -237,11 +247,11 @@
   margin-bottom: 30px;
 }
 #wis label {
-  margin-left: 45%;
+  margin-left: 41%;
   font-size: 40px;
 }
 #wis input {
-  margin-left: 58%;
+  margin-left: 43%;
   width: 70px;
   border-radius: 10px;
   height: 30px;
@@ -254,11 +264,11 @@
   margin-bottom: 30px;
 }
 #cha label {
-  margin-left: 43%;
+  margin-left: 39.7%;
   font-size: 40px;
 }
 #cha input {
-  margin-left: 60%;
+  margin-left: 43%;
   color: #700819;
   width: 70px;
   border-radius: 10px;

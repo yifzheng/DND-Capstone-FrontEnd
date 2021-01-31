@@ -1,6 +1,6 @@
-import axios from "axios";
+
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+
 import { connect } from 'react-redux';
 
 import { getApiData } from "../../../redux/reducers/index"
@@ -39,9 +39,9 @@ class IndividualSubClass extends Component {
                 <div className="subclass-desc">
                     <h2>--Sub Class Desciption--</h2>
                     <div id = "subclass-description">
-                        { this.props.class.desc.map( ( item ) => {
+                        { this.props.class.desc.map( ( item, index ) => {
                             return (
-                                <p>{ item }</p>
+                                <p key = {index}>{ item }</p>
                             )
                         } ) }
                     </div>
