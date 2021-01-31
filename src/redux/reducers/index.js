@@ -283,6 +283,11 @@ export const createCharacter = (characterInfo, userToken) => {
           personalityTraits: characterInfo.personalityTraits,
           flaws: characterInfo.flaws,
           ideals: characterInfo.ideals,
+          bonds: characterInfo.bonds,
+          attacksAndSpellcasting: characterInfo.attacksAndSpellcasting,
+          featuresAndTraits: characterInfo.featuresAndTraits,
+          equipment: characterInfo.equipment,
+          profAndLang: characterInfo.profAndLang,
           userId: characterInfo.userId,
         },
         { headers: { Authorization: `Bearer ${userToken}` } }
@@ -360,6 +365,11 @@ export const updateCharacter = (characterInfo, updatingCharacterId) => {
           personalityTraits: characterInfo.personalityTraits,
           flaws: characterInfo.flaws,
           ideals: characterInfo.ideals,
+          bonds: characterInfo.bonds,
+          attacksAndSpellcasting: characterInfo.attacksAndSpellcasting,
+          featuresAndTraits: characterInfo.featuresAndTraits,
+          equipment: characterInfo.equipment,
+          profAndLang: characterInfo.profAndLang,
           userId: characterInfo.userId,
         }
       )

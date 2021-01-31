@@ -33,6 +33,11 @@ class CharacterCreationForm extends React.Component {
         personalityTraits: '',
         flaws: '',
         ideals: '',
+        bonds: '',
+        attacksAndSpellcasting: '',
+        featuresAndTraits: '',
+        equipment: '',
+        profAndLang: '',
         userId: '',
       },
       public: true,
@@ -72,19 +77,24 @@ class CharacterCreationForm extends React.Component {
         personalityTraits,
         flaws,
         ideals,
+        bonds,
+        attacksAndSpellcasting,
+        featuresAndTraits,
+        equipment,
+        profAndLang,
       } = this.state.oldCharacterInfo
       const charaClass = this.state.oldCharacterInfo.class
-      let arr = [];
-      if (skill1 !== null){
+      let arr = []
+      if (skill1 !== null) {
         arr.push(skill1)
       }
-      if (skill2 !== null){
+      if (skill2 !== null) {
         arr.push(skill2)
       }
-      if (skill3 !== null){
+      if (skill3 !== null) {
         arr.push(skill3)
       }
-      if (skill4 !== null){
+      if (skill4 !== null) {
         arr.push(skill4)
       }
       this.setState({
@@ -107,6 +117,11 @@ class CharacterCreationForm extends React.Component {
           personalityTraits: personalityTraits,
           flaws: flaws,
           ideals: ideals,
+          bonds: bonds,
+          attacksAndSpellcasting: attacksAndSpellcasting,
+          featuresAndTraits: featuresAndTraits,
+          equipment: equipment,
+          profAndLang: profAndLang,
           userId: '',
         },
       })
@@ -553,14 +568,22 @@ class CharacterCreationForm extends React.Component {
             {/* Skill Select */}
             <div id="select-character-skill">
               <label>
-               Select Your Skills (Choose up to 4)
+                Select Your Skills (Choose up to 4)
                 <br></br>
                 <select
                   name="skillsSelect"
                   onChange={(e) => this.handleSkillsSelectChange(e)}
                   required
                 >
-                  {this.state.editing ? <option value="Add more skills">--Add More Skills?--</option> : <option value="Choose Your Skills">--Choose Your Skills--</option>}
+                  {this.state.editing ? (
+                    <option value="Add more skills">
+                      --Add More Skills?--
+                    </option>
+                  ) : (
+                    <option value="Choose Your Skills">
+                      --Choose Your Skills--
+                    </option>
+                  )}
                   {this.props.allSkills !== undefined ? (
                     this.props.allSkills.map((element, index) => {
                       return (
@@ -574,7 +597,7 @@ class CharacterCreationForm extends React.Component {
                   )}
                 </select>
               </label>
-            </div> 
+            </div>
             {/* End Skill Select */}
 
             <br></br>
@@ -707,6 +730,56 @@ class CharacterCreationForm extends React.Component {
                 cols="40"
                 rows="6"
                 value={this.state.characterInfo.ideals}
+                onChange={(e) => this.handleTextareaChange(e)}
+              ></textarea>
+            </div>
+
+            <div id="bonds">
+              <h3>Bonds</h3>
+              <textarea
+                name="bonds"
+                cols="40"
+                rows="6"
+                onChange={(e) => this.handleTextareaChange(e)}
+              ></textarea>
+            </div>
+
+            <div id="attacks-and-spellcasting">
+              <h3>Attacks {'&'} Spellcasting</h3>
+              <textarea
+                name="attacksAndSpellcasting"
+                cols="40"
+                rows="6"
+                onChange={(e) => this.handleTextareaChange(e)}
+              ></textarea>
+            </div>
+
+            <div>
+              <h3>Features {'&'} Traits</h3>
+              <textarea
+                name="featuresAndTraits"
+                cols="40"
+                rows="6"
+                onChange={(e) => this.handleTextareaChange(e)}
+              ></textarea>
+            </div>
+
+            <div id="equipment-cc">
+              <h3>Equipment</h3>
+              <textarea
+                name="equipment"
+                cols="40"
+                rows="6"
+                onChange={(e) => this.handleTextareaChange(e)}
+              ></textarea>
+            </div>
+
+            <div id="prof-and-lang">
+              <h3>Proficiencies {'&'} Languages</h3>
+              <textarea
+                name="profAndLang"
+                cols="40"
+                rows="6"
                 onChange={(e) => this.handleTextareaChange(e)}
               ></textarea>
             </div>
