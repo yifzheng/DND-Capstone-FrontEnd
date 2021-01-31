@@ -169,6 +169,7 @@
   font-size: 28px;
   font-family: fantasy;
   font-weight: 100;
+  color: #700819;
   padding-left: 30px;
   margin-bottom: 30px;
 }
@@ -185,6 +186,7 @@
   font-size: 28px;
   font-family: fantasy;
   font-weight: 100;
+  color: #700819;
   padding-left: 30px;
   margin-bottom: 30px;
 }
@@ -201,6 +203,7 @@
   font-size: 28px;
   font-family: fantasy;
   font-weight: 100;
+  color: #700819;
   padding-left: 30px;
   margin-bottom: 30px;
 }
@@ -217,6 +220,7 @@
   font-size: 28px;
   font-family: fantasy;
   font-weight: 100;
+  color: #700819;
   padding-left: 30px;
   margin-bottom: 30px;
 }
@@ -231,6 +235,7 @@
   height: 30px;
   outline: none;
   font-size: 28px;
+  color: #700819;
   font-family: fantasy;
   font-weight: 100;
   padding-left: 30px;
@@ -242,6 +247,7 @@
 }
 #cha input {
   margin-left: 43%;
+  color: #700819;
   width: 70px;
   border-radius: 10px;
   height: 30px;
@@ -301,11 +307,12 @@
 #personality-traits textarea {
   margin-left: 16%;
 
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: fantasy;
+  font-weight: 100;
   font-size: 24px;
-
+  color: #700819;
   line-height: 1.6rem;
-
+  border-radius: 10px;
   padding: 1rem;
 }
 
@@ -320,11 +327,12 @@
 #flaws textarea {
   margin-left: 16%;
 
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: fantasy;
+  font-weight: 100;
   font-size: 24px;
-
+  color: #700819;
   line-height: 1.6rem;
-
+  border-radius: 10px;
   padding: 1rem;
 }
 
@@ -339,11 +347,12 @@
 #ideals textarea {
   margin-left: 16%;
 
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: fantasy;
+  font-weight: 100;
   font-size: 24px;
-
+  color: #700819;
   line-height: 1.6rem;
-
+  border-radius: 10px;
   padding: 1rem;
 }
 
