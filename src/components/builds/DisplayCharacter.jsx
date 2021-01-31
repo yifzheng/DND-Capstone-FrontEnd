@@ -45,9 +45,8 @@ class DisplayCharacter extends Component {
   getInitiative = () => {
     let modifier = Math.floor((parseInt(this.props.character.dex) - 10) / 2)
     let d20 = Math.round(Math.random() * 20)
-    this.setState({
-      initiative: modifier + d20,
-    })
+    let sum = modifier + d20;
+    sum < 0 ? this.setState({initiative: 0,}) : this.setState({initiative: modifier + d20,})
   }
   lvlUp = () => {
     this.setState({
