@@ -99,7 +99,7 @@ class DisplayCharacter extends Component {
                         alt="race-image"
                         height="500px"
                         width="420px"
-                        marginLeft="30px"
+                        marginleft="30px"
                       ></img>
                     )}
                     {this.props.character.race === 'dwarf' && (
@@ -108,7 +108,7 @@ class DisplayCharacter extends Component {
                         alt="race-image"
                         height="500px"
                         width="420px"
-                        marginLeft="30px"
+                        marginleft="30px"
                       ></img>
                     )}
                     {this.props.character.race === 'elf' && (
@@ -117,7 +117,7 @@ class DisplayCharacter extends Component {
                         alt="race-image"
                         height="500px"
                         width="420px"
-                        marginLeft="30px"
+                        marginleft="30px"
                       ></img>
                     )}
                     {this.props.character.race === 'gnome' && (
@@ -126,7 +126,7 @@ class DisplayCharacter extends Component {
                         alt="race-image"
                         height="500px"
                         width="420px"
-                        marginLeft="30px"
+                        marginleft="30px"
                       ></img>
                     )}
                     {this.props.character.race === 'half-elf' && (
@@ -135,7 +135,7 @@ class DisplayCharacter extends Component {
                         alt="race-image"
                         height="500px"
                         width="420px"
-                        marginLeft="30px"
+                        marginleft="30px"
                       ></img>
                     )}
                     {this.props.character.race === 'halfling' && (
@@ -144,7 +144,7 @@ class DisplayCharacter extends Component {
                         alt="race-image"
                         height="500px"
                         width="420px"
-                        marginLeft="30px"
+                        marginleft="30px"
                       ></img>
                     )}
                     {this.props.character.race === 'half-orc' && (
@@ -153,7 +153,7 @@ class DisplayCharacter extends Component {
                         alt="race-image"
                         height="500px"
                         width="420px"
-                        marginLeft="30px"
+                        marginleft="30px"
                       ></img>
                     )}
                     {this.props.character.race === 'human' && (
@@ -162,7 +162,7 @@ class DisplayCharacter extends Component {
                         alt="race-image"
                         height="500px"
                         width="420px"
-                        marginLeft="30px"
+                        marginleft="30px"
                       ></img>
                     )}
                     {this.props.character.race === 'tiefling' && (
@@ -171,11 +171,11 @@ class DisplayCharacter extends Component {
                         alt="race-image"
                         height="500px"
                         width="420px"
-                        marginLeft="30px"
+                        marginleft="30px"
                       ></img>
                     )}
                     {/* {
-                                        this.props.character.race !== ("dragonborn" || "dwarf" || "elf" || "half-elf" || "gnome" || "halfling" || "half-orc" || "human" || "tiefling") && <img src={ "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/15/94223.png" } alt="race-image" height="500px" width="420px" marginLeft = "30px"></img>
+                                        this.props.character.race !== ("dragonborn" || "dwarf" || "elf" || "half-elf" || "gnome" || "halfling" || "half-orc" || "human" || "tiefling") && <img src={ "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/15/94223.png" } alt="race-image" height="500px" width="420px" marginleft = "30px"></img>
                                     } */}
                   </div>
                   <div className="character-info">

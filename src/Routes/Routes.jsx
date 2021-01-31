@@ -45,7 +45,6 @@ import SignUpForm from '../components/SignUpForm'
 import Profile from '../components/profile/Profile'
 // Login Form
 import LoginForm from '../components/LoginPage'
-import EditCharacter from '../components/editCharacters/EditCharacter'
 const Routes = () => {
   return (
     <Switch>
@@ -99,7 +98,7 @@ const Routes = () => {
       {/* END OF MONSTERS ROUTES */}
 
       {/* CREATE CHARACTER ROUTES */}
-      <Route path="/createCharacter" component={CreateCharacter} />
+      {/* <Route path="/createCharacter" component={CreateCharacter} /> */}
       <Route path="/CharacterCreation" component={CharacterCreationForm} />
       {/* END OF CREATE CHARACTER ROUTES */}
 
@@ -109,7 +108,6 @@ const Routes = () => {
 
       {/* LOGIN FORM */}
       <Route path="/login" component={LoginForm} />
-      <Route path = "/editCharacter/:id" component = {EditCharacter}/>
     </Switch>
   )
 }

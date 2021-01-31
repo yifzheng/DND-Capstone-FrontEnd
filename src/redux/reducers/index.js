@@ -337,6 +337,20 @@ const updatedCharacter = (data) => {
 export const updateCharacter = (characterInfo, updatingCharacterId) => {
   return async (dispatch) => {
     try {
+      // console.log(
+      //   'UPDATE REDUX CHARA INFO:',
+      //   characterInfo,
+      //   'UPDATING CHARA ID:',
+      //   updatingCharacterId
+      // )
+      let userIdFinal
+      if (characterInfo.userId) {
+        // console.log('USER ID FINAL SET TO CHARA INFO USER ID')
+        userIdFinal = this.characterInfo.userId
+      } else {
+        // console.log('USER ID FINAL SET TO NULL ===*****')
+        userIdFinal = null
+      }
       // cannot pass array as data type while keeping sanity
       const skill1 = characterInfo.skills[0]
       const skill2 = characterInfo.skills[1]
@@ -370,7 +384,7 @@ export const updateCharacter = (characterInfo, updatingCharacterId) => {
           featuresAndTraits: characterInfo.featuresAndTraits,
           equipment: characterInfo.equipment,
           profAndLang: characterInfo.profAndLang,
-          userId: characterInfo.userId,
+          userId: userIdFinal,
         }
       )
       dispatch(updatedCharacter(response.data))
