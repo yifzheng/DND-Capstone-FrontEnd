@@ -299,7 +299,7 @@ class CharacterCreationForm extends React.Component {
           this.props.history.push('/userprofile')
         }
       }
-    }, 1300)
+    }, 2000)
     /* } */
   }
 
