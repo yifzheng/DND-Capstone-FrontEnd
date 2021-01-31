@@ -230,10 +230,7 @@ class DisplayCharacter extends Component {
                           <h3>Skill #4 : No Skill Chosen</h3>
                         )}
                       </div>
-                      <h3>
-                        Passive Wisdom {'('}Perception{')'}:{' '}
-                        {this.props.character.passiveWisdom}
-                      </h3>
+                      <br></br>
                       <div id="initiative-check">
                         <h3 id="initative-tag">
                           Initiative: {this.state.initiative}

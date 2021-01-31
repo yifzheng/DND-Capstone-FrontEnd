@@ -34,7 +34,7 @@
    text-align: center;
 }
 .equipment-card{
-    margin-top: 4%;
+    margin-top: 8%;
     width: 100vw;
     height: 400px;
     display: inline-flex;
@@ -46,7 +46,7 @@
 
 #equipments {
     padding: 60px 0;
-	width: 255px;
+	width: 240px;
     margin: 2%;
     border-radius: 20px;
     background-color: #8b0000;

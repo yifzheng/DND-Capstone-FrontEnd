@@ -6,10 +6,11 @@ import {
     getAllClasses,
     getAllRaces,
     getAllSkills,
-    getSingleCharacter
+    createCharacter,
+    getSingleCharacter,
 } from '../../redux/reducers'
 import '../../css/charactercreation.css'
-class EditCharacter extends React.Component {
+class EditCharacterForm extends React.Component {
     constructor ( props ) {
         super( props )
         this.state = {
@@ -42,13 +43,17 @@ class EditCharacter extends React.Component {
         await this.props.getAllClasses()
         await this.props.getAllRaces()
         await this.props.getAllSkills()
-        await this.props.getSingleCharacter( this.props.match.params.id )
+        await this.props.getSingleCharacter( this.props.match.params.id );
         this.setState( {
             characterInfo: {
                 characterName: this.props.character.characterName,
                 class: this.props.character.class,
                 race: this.props.character.race,
                 gender: this.props.character.gender,
+                proficiencyBonus: '2',
+                armorClass: this.props.character.armorClass,
+                speed: this.props.character.speed,
+                skills: [],
                 str: this.props.character.str,
                 dex: this.props.character.dex,
                 con: this.props.character.con,
@@ -179,6 +184,11 @@ class EditCharacter extends React.Component {
 
     handleFormSubmit = ( e ) => {
         e.preventDefault()
+        /*  const { str, dex, con, wis, int, cha } = this.state
+         if ( ( str || dex || con || wis || int || cha ) > 30 || ( str || dex || con || wis || int || cha ) < 0 ) {
+           alert( "Characters Attritbutes Are Maxed at 30" )
+         }
+         else { */
         if ( this.state.public === 'false' ) {
             this.setState( {
                 characterInfo: {
@@ -190,12 +200,12 @@ class EditCharacter extends React.Component {
             delete this.state.characterInfo.userId
         }
 
-         setTimeout(() => {
-            this.props.updateCharacter(
+        setTimeout( () => {
+            this.props.createCharacter(
                 this.state.characterInfo,
-                this.props.match.params.id
-              )
-        }, 1200) 
+                this.props.currentUser.token
+            )
+        }, 1200 )
         setTimeout( () => {
             if ( this.props.newCharacter !== undefined ) {
                 if ( this.state.public === 'true' ) {
@@ -223,7 +233,7 @@ class EditCharacter extends React.Component {
                                 <input
                                     type="text"
                                     name="characterName"
-                                    defaultValue={ this.state.characterInfo.characterName }
+                                    value = {this.state.userInfocharacterName}
                                     onChange={ ( e ) =>
                                         this.setState( {
                                             characterInfo: {
@@ -242,7 +252,7 @@ class EditCharacter extends React.Component {
                         {/* Class Select */ }
                         <div id="class-select">
                             <label>
-                                Select Your Classes<br></br>
+                                Select Your Class<br></br>
                                 <select
                                     name="classSelect"
                                     onChange={ ( e ) => this.handleClassSelectChange( e ) }
@@ -400,7 +410,7 @@ class EditCharacter extends React.Component {
                         {/* Skill Select */ }
                         <div id="select-character-skill">
                             <label>
-                                Reselect Your Skills (Choose up to 4)
+                                Skills Reset: Select Your Skills (Choose up to 4)
                 <br></br>
                                 <select
                                     name="skillsSelect"
@@ -531,7 +541,6 @@ class EditCharacter extends React.Component {
                                 name="personalityTraits"
                                 cols="40"
                                 rows="6"
-                                defaultValue={ this.state.characterInfo.personalityTraits }
                                 onChange={ ( e ) => this.handleTextareaChange( e ) }
                             ></textarea>
                         </div>
@@ -542,7 +551,6 @@ class EditCharacter extends React.Component {
                                 name="flaws"
                                 cols="40"
                                 rows="6"
-                                defaultValue={ this.state.characterInfo.flaws }
                                 onChange={ ( e ) => this.handleTextareaChange( e ) }
                             ></textarea>
                         </div>
@@ -553,7 +561,6 @@ class EditCharacter extends React.Component {
                                 name="ideals"
                                 cols="40"
                                 rows="6"
-                                defaultValue={ this.state.characterInfo.ideals }
                                 onChange={ ( e ) => this.handleTextareaChange( e ) }
                             ></textarea>
                         </div>
@@ -600,8 +607,8 @@ const mapStateToProps = ( state ) => {
         allRaces: state.allRaces,
         allSkills: state.allSkills,
         newCharacter: state.newCharacter,
-        character: state.character.characters,
         currentUser: state.currentLoggedInUserInfo,
+        character: state.character.characters,
     }
 }
 
@@ -610,8 +617,8 @@ const mapDispatchToProps = ( dispatch ) => {
         getAllClasses: () => dispatch( getAllClasses() ),
         getAllRaces: () => dispatch( getAllRaces() ),
         getAllSkills: () => dispatch( getAllSkills() ),
-        /*  createCharacter: (characterInfo, userToken) =>
-         dispatch(createCharacter(characterInfo, userToken)), */
+        createCharacter: ( characterInfo, userToken ) =>
+            dispatch( createCharacter( characterInfo, userToken ) ),
         getSingleCharacter: ( id ) => dispatch( getSingleCharacter( id ) ),
     }
 }
@@ -619,4 +626,4 @@ const mapDispatchToProps = ( dispatch ) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)( EditCharacter )
+)( EditCharacterForm )

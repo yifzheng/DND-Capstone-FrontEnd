@@ -156,12 +156,24 @@
   font-size: 20px;
   padding-left: 10px;
 }
+#character-attributes{
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  column-gap: 41px;
+  margin-left: 20px;
+}
+/* #str{
+  border: 2px solid #8b0000;
+  padding: 10px;
+  width: 150px;
+} */
 #str label {
-  margin-left: 41%;
+  margin-left: 54%;
   font-size: 40px;
 }
 #str input {
-  margin-left: 43%;
+  margin-left: 67%;
   width: 70px;
   border-radius: 10px;
   height: 30px;
@@ -174,11 +186,11 @@
   margin-bottom: 30px;
 }
 #dex label {
-  margin-left: 41%;
+  margin-left: 47%;
   font-size: 40px;
 }
 #dex input {
-  margin-left: 43%;
+  margin-left: 61%;
   width: 70px;
   border-radius: 10px;
   height: 30px;
@@ -195,7 +207,7 @@
   font-size: 40px;
 }
 #con input {
-  margin-left: 43%;
+  margin-left: 61%;
   width: 70px;
   border-radius: 10px;
   height: 30px;
@@ -208,11 +220,11 @@
   margin-bottom: 30px;
 }
 #int label {
-  margin-left: 38%;
+  margin-left: 32%;
   font-size: 40px;
 }
 #int input {
-  margin-left: 43%;
+  margin-left: 55%;
   width: 70px;
   border-radius: 10px;
   height: 30px;
@@ -225,11 +237,11 @@
   margin-bottom: 30px;
 }
 #wis label {
-  margin-left: 42%;
+  margin-left: 45%;
   font-size: 40px;
 }
 #wis input {
-  margin-left: 43%;
+  margin-left: 58%;
   width: 70px;
   border-radius: 10px;
   height: 30px;
@@ -242,11 +254,11 @@
   margin-bottom: 30px;
 }
 #cha label {
-  margin-left: 40%;
+  margin-left: 43%;
   font-size: 40px;
 }
 #cha input {
-  margin-left: 43%;
+  margin-left: 60%;
   color: #700819;
   width: 70px;
   border-radius: 10px;
@@ -305,7 +317,7 @@
 }
 
 #personality-traits textarea {
-  margin-left: 16%;
+  margin-left: 21%;
 
   font-family: fantasy;
   font-weight: 100;
@@ -314,6 +326,7 @@
   line-height: 1.6rem;
   border-radius: 10px;
   padding: 1rem;
+  outline: none;
 }
 
 #flaws {
@@ -325,7 +338,7 @@
 }
 
 #flaws textarea {
-  margin-left: 16%;
+  margin-left: 21%;
 
   font-family: fantasy;
   font-weight: 100;
@@ -334,6 +347,7 @@
   line-height: 1.6rem;
   border-radius: 10px;
   padding: 1rem;
+  outline: none;
 }
 
 #ideals {
@@ -345,7 +359,7 @@
 }
 
 #ideals textarea {
-  margin-left: 16%;
+  margin-left: 21%;
 
   font-family: fantasy;
   font-weight: 100;
@@ -354,6 +368,7 @@
   line-height: 1.6rem;
   border-radius: 10px;
   padding: 1rem;
+  outline: none;
 }
 
 #bonds h3 {
@@ -361,7 +376,7 @@
 }
 
 #bonds textarea {
-  margin-left: 16%;
+  margin-left: 21%;
 
   font-family: fantasy;
   font-weight: 100;
@@ -370,6 +385,7 @@
   line-height: 1.6rem;
   border-radius: 10px;
   padding: 1rem;
+  outline: none;
 }
 
 #attacks-and-spellcasting h3 {
@@ -377,7 +393,7 @@
 }
 
 #attacks-and-spellcasting textarea {
-  margin-left: 16%;
+  margin-left: 21%;
 
   font-family: fantasy;
   font-weight: 100;
@@ -386,6 +402,7 @@
   line-height: 1.6rem;
   border-radius: 10px;
   padding: 1rem;
+  outline: none;
 }
 
 #features-and-traits h3 {
@@ -393,7 +410,7 @@
 }
 
 #features-and-traits textarea {
-  margin-left: 16%;
+  margin-left: 21%;
 
   font-family: fantasy;
   font-weight: 100;
@@ -402,6 +419,7 @@
   line-height: 1.6rem;
   border-radius: 10px;
   padding: 1rem;
+  outline: none;
 }
 
 #equipment-cc h3 {
@@ -409,7 +427,7 @@
 }
 
 #equipment-cc textarea {
-  margin-left: 16%;
+  margin-left: 21%;
 
   font-family: fantasy;
   font-weight: 100;
@@ -418,6 +436,7 @@
   line-height: 1.6rem;
   border-radius: 10px;
   padding: 1rem;
+  outline: none;
 }
 
 #prof-and-lang h3 {
@@ -425,8 +444,7 @@
 }
 
 #prof-and-lang textarea {
-  margin-left: 16%;
-
+  margin-left: 21%;
   font-family: fantasy;
   font-weight: 100;
   font-size: 24px;
@@ -434,4 +452,5 @@
   line-height: 1.6rem;
   border-radius: 10px;
   padding: 1rem;
+  outline: none;
 }

@@ -13,7 +13,6 @@ class IndividualSpell extends Component {
   }
 
   render() {
-    console.log('spell:', this.props.spellName)
     return (
       <div className="single-spell-container">
         <div className="single-spell-title">

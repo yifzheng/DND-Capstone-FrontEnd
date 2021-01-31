@@ -30,21 +30,19 @@ class ClassLevels extends Component {
   }
 
   render () {
-    console.log(this.state.array)
-    console.log(this.props.class)
     /* if ( !this.state.array.length ) {
       return <h1>Loading</h1>
     } */
     return (
       <div id="class-level-container">
-        <Link
+        {/* <Link
           to={ `/class/${this.props.match.params.index}` }
           style={ { textDecoration: 'none' } }
         >
           <h3 id="back">
             Back to { this.props.match.params.index } Information
           </h3>
-        </Link>
+        </Link> */}
         <h1 className="class-level-name">
           { this.props.match.params.index.charAt( 0 ).toUpperCase() }
           { this.props.match.params.index.substring( 1 ) }
