@@ -58,8 +58,10 @@ class DisplayCharacter extends Component {
   getInitiative = () => {
     let modifier = Math.floor((parseInt(this.props.character.dex) - 10) / 2)
     let d20 = Math.round(Math.random() * 20)
-    let sum = modifier + d20;
-    sum < 0 ? this.setState({initiative: 0,}) : this.setState({initiative: modifier + d20,})
+    let sum = modifier + d20
+    sum < 0
+      ? this.setState({ initiative: 0 })
+      : this.setState({ initiative: modifier + d20 })
   }
   lvlUp = () => {
     this.setState({
@@ -98,21 +100,6 @@ class DisplayCharacter extends Component {
       // if chara is not logged in, userprofile will redirect them to the homepage
       return <Redirect to="/userprofile" /> // this logs out the user for some reason
     }
-    console.log(
-      'current user:',
-      this.props.currentUser,
-      'current chara info:',
-      this.props.character
-    )
-    // checks to ensure user own's this character
-    // if (this.props.character) {
-    //   if (this.props.character.userId) {
-    //     if (!this.props.currentUser) {
-    //       alert('You cannot view private characters while not logged in!')
-    //       return <Redirect to="/" />
-    //     }
-    //   }
-    // }
     return (
       <div id="character-container">
         <div id="character-info-container">
