@@ -13,12 +13,12 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          {/* <ScrollToTop> */}
-          <header>
-            <NavBar />
-          </header>
-          <Routes />
-          {/* </ScrollToTop> */}
+          <ScrollToTop>
+            <header>
+              <NavBar />
+            </header>
+            <Routes />
+          </ScrollToTop>
         </Router>
       </div>
     )
