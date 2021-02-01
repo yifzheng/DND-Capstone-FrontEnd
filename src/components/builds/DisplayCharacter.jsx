@@ -35,7 +35,7 @@ class DisplayCharacter extends Component {
           // character.characters returns the single chara data. yes. it makes no sense. its becuase the route was originally a get all charas route but we copied and pasted it for get single chara and didn't change the response variable name in the backend.
           if (character.characters.userId) {
             if (character.characters.userId !== this.props.currentUser.userId) {
-              alert("You don't have permossion to view this character!")
+              alert("You don't have permission to view this character!")
               // return <Redirect to="/" />   <--- this doesn' work
               this.setState({
                 redirect: true,
@@ -96,7 +96,7 @@ class DisplayCharacter extends Component {
   render() {
     if (this.state.redirect) {
       // if chara is not logged in, userprofile will redirect them to the homepage
-      return <Redirect to="/userprofile" /> // this logs out the user for some reason
+     return <Redirect to="/" /> // this logs out the user for some reason
     }
     console.log(
       'current user:',
