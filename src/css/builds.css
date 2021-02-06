@@ -1,16 +1,16 @@
 #builds-container{
-    background-image: url("https://cdn3.dualshockers.com/wp-content/uploads/2019/01/The-Elder-Scrolls-Online-elsweyr-featured-image.jpg");
+    background-image: url("https://uhdwallpapers.org/uploads/converted/19/08/18/fantasy-wallpaper-from-asus-rog-phone-2-2560x1440_666684-mm-90.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	overflow: hidden;
     height: calc(100% - 72px);
-    color: #273B2C;
+    color:  #2b516e;
     text-align: center;
 }
 #builds-container-h1{
     font-size: 60px;
     text-align: center;
-    color:#273B2C;
+    color: #2b516e;
     font-family: fantasy;
     font-weight: 100;
     margin-top: 30px;
@@ -20,18 +20,18 @@
     flex-direction: row;
     flex-wrap: wrap;
     text-decoration: none;
-    color: #273B2C;
+    color:  #2b516e;
     gap: 30px;
     margin-top: 30px;
     margin-left: 30px;
 }
 #public-characters{
-    color: #273B2C;
+    color:  #2b516e;
     font-size: 30px;
     font-family: fantasy;
     font-weight: 100;
     padding: 20px;
     opacity: .8;
     border-radius: 30px;
-    background-color: #548060;
+    background-color: #618b8e;
 }
