@@ -348,7 +348,7 @@ export const updateCharacter = (characterInfo, updatingCharacterId) => {
       let userIdFinal
       if (characterInfo.userId) {
         // console.log('USER ID FINAL SET TO CHARA INFO USER ID')
-        userIdFinal = this.characterInfo.userId
+        userIdFinal = characterInfo.userId
       } else {
         // console.log('USER ID FINAL SET TO NULL ===*****')
         userIdFinal = null
