@@ -274,12 +274,14 @@ class CharacterCreationForm extends React.Component {
     setTimeout(() => {
       if (this.state.editing) {
         // console.log('SENDING FORM INFO TO UPDATE CHARA REDUX  =====')
+        // console.log('INFO:', this.state.characterInfo)
         this.props.updateCharacter(
           this.state.characterInfo,
           this.state.updatingCharacterId
         )
       } else {
         // console.log('SENDING FORM INFO TO CREATE CHARA REDUX  ++++++')
+        // console.log('INFO:', this.state.characterInfo)
         this.props.createCharacter(
           this.state.characterInfo,
           this.props.currentUser.token
